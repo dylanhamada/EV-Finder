@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.2 - 2020-10-08
+
+- Finished mobile questionnaire and browse wireframing, started mobile compare
+
 ## 0.0.1 - 2020-10-07
 
 - Initialized Create-React-App app and Git repo
