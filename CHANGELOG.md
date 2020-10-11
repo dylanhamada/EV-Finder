@@ -6,9 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.3 - 2020-10-11
+
+- Finished wireframing mobile compare and favourites screens, slight amendments to README
+
 ## 0.0.2 - 2020-10-08
 
-- Finished mobile questionnaire and browse wireframing, started mobile compare
+- Finished wireframing mobile questionnaire and browse screens, started compare screen
 
 ## 0.0.1 - 2020-10-07
 

@@ -4,28 +4,28 @@ A full-stack app built with React that helps users find the right full-electric 
 
 ## Introduction
 
-After completing my [previous app](https://github.com/dylanhamada/blog-project), which focused on combining React with HTTP requests to a database, I decided to build a new app to implement what I learned about React Router and Redux.
+After completing my [previous app](https://github.com/dylanhamada/blog-project), which focused on combining React with HTTP requests to a database, I decided to build a new app to implement what I learned about React-Router and Redux.
 
 In the previous year, I had purchased a new car, and wished there was an app to help me find and compare potential candidates. Eventually this became the kernel of an app idea, with a focus on electric vehicles.
 
 ## Project Status
 
-The app is in its early planning stages. I am currently deliberating on app functionality and beginning an early wireframe/layout.
+The app is in its early planning stages. I am currently deliberating on app functionality and beginning an early wireframe.
 
-The [current iteration](https://excalidraw.com/#json=5197653080014848,zOty6Bi10PL5D9Bh7XqBTA) of the wireframe can be viewed on Excalidraw.
+The [current iteration](https://excalidraw.com/#json=4880018370985984,5tkoUWiaLVwso6oSOvpioA) of the wireframe can be viewed on Excalidraw.
 
-A record of important changes can be found on the CHANGELOG file.
+A record of notable changes can be found in the CHANGELOG file.
 
 ## App Overview
 
 1. A questionnaire that provides users with a vehicle recommendation
-   1. Present user with priorities/values that can be arranged by importance
-   2. Secondary and tertiary recommendations available
+   1. Present user with qualities that can be arranged by importance
+   2. Secondary recommendations available
    3. Users can share their vehicle via Twitter or Facebook
 2. Vehicle browser with various filters
    1. Vehicles can be selected and their relevant info displayed
-3. Two vehicles can be compared side-by-side, with superior stats highlighted
-4. User authentication allows for saved questionnaire results
+3. Two vehicles can be compared side-by-side, with highlighting of superior/inferior stats
+4. User authentication allows for saved favourites
 
 ## Technologies
 
