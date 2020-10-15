@@ -12,7 +12,7 @@ In the previous year, I had purchased a new car, and wished there was an app to 
 
 The app is in its early planning stages. I am currently deliberating on app functionality and beginning an early wireframe.
 
-The [current iteration](https://excalidraw.com/#json=4880018370985984,5tkoUWiaLVwso6oSOvpioA) of the wireframe can be viewed on Excalidraw.
+The [current iteration](https://excalidraw.com/#json=6296466674941952,8pC8afHzJSAaJ_14l3oL7Q) of the wireframe can be viewed on Excalidraw.
 
 A record of notable changes can be found in the CHANGELOG file.
 
@@ -21,7 +21,6 @@ A record of notable changes can be found in the CHANGELOG file.
 1. A questionnaire that provides users with a vehicle recommendation
    1. Present user with qualities that can be arranged by importance
    2. Secondary recommendations available
-   3. Users can share their vehicle via Twitter or Facebook
 2. Vehicle browser with various filters
    1. Vehicles can be selected and their relevant info displayed
 3. Two vehicles can be compared side-by-side, with highlighting of superior/inferior stats
@@ -34,4 +33,5 @@ I plan to use the following tech stack:
 - React
     - React Router
     - Redux
+    - React Drag and Drop
 - Firebase
