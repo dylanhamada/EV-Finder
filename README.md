@@ -12,7 +12,7 @@ In the previous year, I had purchased a new car, and wished there was an app to 
 
 The app is in its early planning stages. I am currently deliberating on app functionality and beginning an early wireframe.
 
-The [current iteration](https://excalidraw.com/#json=6296466674941952,8pC8afHzJSAaJ_14l3oL7Q) of the wireframe can be viewed on Excalidraw.
+The [current iteration](https://excalidraw.com/#json=5689566321180672,aDVm3j7vVG_IXqRH0fvtIA) of the wireframe can be viewed on Excalidraw.
 
 A record of notable changes can be found in the CHANGELOG file.
 
