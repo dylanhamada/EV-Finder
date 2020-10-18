@@ -10,9 +10,11 @@ In the previous year, I had purchased a new car, and wished there was an app to 
 
 ## Project Status
 
-The app is in its early planning stages. I am currently deliberating on app functionality and beginning an early wireframe.
+The app is in its early planning stages. I am currently designing the app layout. Previously, I completed the app wireframe and functionality.
 
-The [current iteration](https://excalidraw.com/#json=5689566321180672,aDVm3j7vVG_IXqRH0fvtIA) of the wireframe can be viewed on Excalidraw.
+The current iteration of the [design](https://www.figma.com/file/LiZL6BMFyBA22YfizVdSvj/EV-Finder-Layout?node-id=0%3A1) can be viewed on Figma.
+
+The current iteration of the [wireframe](https://excalidraw.com/#json=5689566321180672,aDVm3j7vVG_IXqRH0fvtIA) can be viewed on Excalidraw.
 
 A record of notable changes can be found in the CHANGELOG file.
 
