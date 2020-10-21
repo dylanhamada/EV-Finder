@@ -12,7 +12,7 @@ In the previous year, I had purchased a new car, and wished there was an app to 
 
 The app is in its early planning stages. I am currently designing the app layout. Previously, I completed the app wireframe and functionality.
 
-The current iteration of the [design](https://www.figma.com/file/LiZL6BMFyBA22YfizVdSvj/EV-Finder-Layout?node-id=0%3A1) can be viewed on Figma.
+The current iteration of the [design](https://www.figma.com/file/LiZL6BMFyBA22YfizVdSvj/EV-Finder-Layout-Greyscale?node-id=0%3A1) can be viewed on Figma.
 
 The current iteration of the [wireframe](https://excalidraw.com/#json=5689566321180672,aDVm3j7vVG_IXqRH0fvtIA) can be viewed on Excalidraw.
 

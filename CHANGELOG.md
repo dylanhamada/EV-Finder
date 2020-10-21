@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.4 - 2020-10-20
+
+- Finished greyscale layout for mobile landing page, dashboard, and pop-up menu on Figma
+
 ## 0.0.3 - 2020-10-11
 
 - Finished wireframing desktop and tablet layout
