@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.5 - 2020-10-22
+
+### Added
+
+- Almost completed greyscale layout for mobile questionnaire on Figma
+- Added local styles to Figma file to streamline design process
+
 ## 0.0.4 - 2020-10-20
 
 - Finished greyscale layout for mobile landing page, dashboard, and pop-up menu on Figma
