@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.6 - 2020-10-28
+
+### Added
+
+- Began Browse section of greyscale layout
+
+### Changed
+
+- Added profile photo for dashboard and menu
+- Added background to Questionnaire Recommendation page
+
 ## 0.0.6 - 2020-10-26
 
 ### Added
