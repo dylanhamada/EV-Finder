@@ -26,7 +26,7 @@ A record of notable changes can be found in the CHANGELOG file.
 2. Vehicle browser with various filters
    1. Vehicles can be selected and their relevant info displayed
 3. Two vehicles can be compared side-by-side, with highlighting of superior/inferior stats
-4. User authentication allows for saved favourites
+4. User authentication allows for saved favourites and comparisons
 
 ## Technologies
 
@@ -37,3 +37,5 @@ I plan to use the following tech stack:
     - Redux
     - React Drag and Drop
 - Firebase
+    - Auth
+    - Firestore
