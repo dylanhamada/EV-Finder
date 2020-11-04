@@ -6,13 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-## 0.0.6 - 2020-10-30
+## 0.0.
 
-### Changed
+## 0.0.7 - 2020-11-02
 
-- Tweaked scrolling orientation for questionnaire
+### Added
 
-## 0.0.6 - 2020-10-28
+- Finished filter and sort menu design in Figma
+- Finished compare home page (default and populated) design
+
+## 0.0.8 - 2020-10-28
 
 ### Added
 
@@ -23,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added profile photo for dashboard and menu
 - Added background to Questionnaire Recommendation page
 
-## 0.0.6 - 2020-10-26
+## 0.0.7 - 2020-10-26
 
 ### Added
 

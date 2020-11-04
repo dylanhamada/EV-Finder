@@ -10,7 +10,7 @@ In the previous year, I had purchased a new car, and wished there was an app to 
 
 ## Project Status
 
-The app is in its design stage, which is being done on Figma. Previously, I completed the app wireframe and functionality.
+I am currently designing the app and basic functionality on Figma. Previously, I completed the app wireframe and functionality.
 
 The current iteration of the [design](https://www.figma.com/file/LiZL6BMFyBA22YfizVdSvj/EV-Finder-Layout-Greyscale?node-id=0%3A1) can be viewed on Figma.
 
