@@ -6,9 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-## 0.0.
+## 0.0.10 - 2020-11-05
 
-## 0.0.7 - 2020-11-02
+### Added
+
+- Completed Comparison pages in Figma
+- Began prototyping UI behavior
+
+## 0.0.9 - 2020-11-02
 
 ### Added
 
