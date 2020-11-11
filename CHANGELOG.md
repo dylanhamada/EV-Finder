@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.10 - 2020-11-11
+
+### Added
+
+- Added Share Result page to Figma design
+
 ## 0.0.10 - 2020-11-05
 
 ### Added
