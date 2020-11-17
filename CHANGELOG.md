@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.13 - 2020-11-16
+
+- Completed Dashboard, Menu, and Questionnaire desktop page designs on Figma
+
 ## 0.0.12 - 2020-11-12
 
 - Began adding color to mobile design on Figma
