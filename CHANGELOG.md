@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.16 - 2020-11-25
+
+### Added
+
+- Tweaked color scheme on Figma
+- Finished Browse Filter and Sort design on Figma
+- Began Compare page design on Figma
+
 ## 0.0.15 - 2020-11-23
 
 - Finished Browse/Favorites page design on Figma
