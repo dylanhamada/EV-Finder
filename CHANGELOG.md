@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.18 - 2020-12-01
+
+### Changed
+
+- Complete majority of Comparison page design
+
 ## 0.0.17 - 2020-11-29
 
 ### Changed
