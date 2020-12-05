@@ -6,11 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.19 - 2020-12-05
+
+### Changed
+
+- Completed desktop design on Figma
+
 ## 0.0.18 - 2020-12-01
 
 ### Changed
 
-- Complete majority of Comparison page design
+- Completed majority of Comparison page design
 
 ## 0.0.17 - 2020-11-29
 
