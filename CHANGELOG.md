@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.20 - 2020-12-07
+
+### Changed
+
+- Edit mobile design to reflect desktop final iteration
+
 ## 0.0.19 - 2020-12-05
 
 ### Changed
