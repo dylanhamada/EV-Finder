@@ -1,0 +1,61 @@
+{
+    "boilerplate": {
+        "name": null,
+        "manufacturer": null,
+        "blurb": null,
+        "price": null,
+        "range": null,
+        "body": null,
+        "seating": null,
+        "horsepower": null,
+        "charge_time": null,
+        "battery": null,
+        "mpg": null,
+        "brakes": null,
+        "cargo": null,
+        "dimensions": null,
+        "weight": null
+    },
+    "audi_etron": {
+        "name": "E-Tron",
+        "manufacturer": "Audi",
+        "blurb": "Sporting classy looks, a refined riding experience, and adequate range for its segment, the 2020 Audi E-Tron makes family outings a next-level affair.",
+        "price": 63995,
+        "range": 204,
+        "body": "SUV",
+        "seating": 5,
+        "horsepower": 355,
+        "charge_time": 10,
+        "battery": 95,
+        "mpg": 74,
+        "brakes": "Discs front/rear",
+        "cargo": 28.5,
+        "dimensions": [
+            193,
+            76.2,
+            65.5
+        ],
+        "weight": 5754
+    },
+    "bmw_i3": {
+        "name": "i3",
+        "manufacturer": "BMW",
+        "blurb": "The BMW i3 is unique, quirky, and perfect for zipping around the city, bringing with it the trademark BMW prestige and quality.",
+        "price": 49295,
+        "range": 126,
+        "body": "Hatchback",
+        "seating": 4,
+        "horsepower": 170,
+        "charge_time": 4.9,
+        "battery": 42.2,
+        "mpg": 31,
+        "brakes": "Discs front/rear",
+        "cargo": 15.1,
+        "dimensions": [
+            158.3,
+            69.9,
+            62.9
+        ],
+        "weight": 3276
+    },
+}
