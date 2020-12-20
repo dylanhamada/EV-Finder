@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.23 - 2020-12-19
+
+### Added
+
+- Created JSON file to store vehicle information for populating components
+
 ## 0.0.22 - 2020-12-14
 
 ### Added

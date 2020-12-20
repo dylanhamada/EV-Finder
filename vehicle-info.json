@@ -58,4 +58,151 @@
         ],
         "weight": 3276
     },
+    "chevrolet_bolt": {
+        "name": "Bolt",
+        "manufacturer": "Chevrolet",
+        "blurb": "The practical driver's electric vehicle, the Chevrolet Bolt is all about value, boasting industry-leading range, ride comfort, and interior spaciousness",
+        "price": 37495,
+        "range": 259,
+        "body": "Hatchback",
+        "seating": 5,
+        "horsepower": 200,
+        "charge_time": 8.5,
+        "battery": 66,
+        "mpg": 118,
+        "brakes": "Discs front/rear",
+        "cargo": 56.6,
+        "dimensions": [
+            164,
+            69.5,
+            62.8
+        ],
+        "weight": 3563
+    },
+    "honda_clarity": {
+        "name": "Clarity",
+        "manufacturer": "Honda",
+        "blurb": "The Honda Clarity Electric is one spacious sedan, accommodating those who want to stretch out while enjoying a comfortable, quiet ride.",
+        "price": 37555,
+        "range": 47,
+        "body": "Sedan",
+        "seating": 5,
+        "horsepower": 212,
+        "charge_time": 2.5,
+        "battery": 17,
+        "mpg": 110,
+        "brakes": "Discs front/rear",
+        "cargo": 15.5,
+        "dimensions": [
+            192.7,
+            73.9,
+            58.2
+        ],
+        "weight": 4059
+    },
+    "hyundai_ioniq": {
+        "name": "Ioniq",
+        "manufacturer": "Hyundai",
+        "blurb": "As Hyundai's main entry into the electric vehicle contest, the Ioniq gives its competitors a run for their money, with stellar fuel economy, driving ergonomics, and added features.",
+        "price": 34040,
+        "range": 170,
+        "body": "Hatchback",
+        "seating": 5,
+        "horsepower": 134,
+        "charge_time": 6,
+        "battery": 38.3,
+        "mpg": 133,
+        "brakes": "Discs front/rear",
+        "cargo": 23,
+        "dimensions": [
+            176,
+            71.7,
+            58.1
+        ],
+        "weight": 3371
+    },
+    "hyundai_kona": {
+        "name": "Kona",
+        "manufacturer": "Hyundai",
+        "blurb": "If future-facing is your cup of tea, the Hyundai Kona Electric's unique styling makes it a clear choice, especially when also considering its leading range, power, and handling",
+        "price": 38365,
+        "range": 258,
+        "body": "SUV",
+        "seating": 5,
+        "horsepower": 201,
+        "charge_time": 9,
+        "battery": 64,
+        "mpg": 120,
+        "brakes": "Discs front/rear",
+        "cargo": 45.8,
+        "dimensions": [
+            164.6,
+            70.9,
+            61.2
+        ],
+        "weight": 3715
+    },
+    "jaguar_ipace": {
+        "name": "I-Pace",
+        "manufacturer": "Jaguar",
+        "blurb": "Nothing else drives like a Jaguar, and with the British carmaker's first entry into the electric vehicle market, this sporty, luxurious SUV is sure to turn heads and tear up the streets.",
+        "price": 71000,
+        "range": 234,
+        "body": "SUV",
+        "seating": 5,
+        "horsepower": 394,
+        "charge_time": 13,
+        "battery": 90,
+        "mpg": 76,
+        "brakes": "Discs front/rear",
+        "cargo": 52,
+        "dimensions": [
+            184.3,
+            74.6,
+            61.3
+        ],
+        "weight": 4784
+    },
+    "kia_niro": {
+        "name": "Niro",
+        "manufacturer": "KIA",
+        "blurb": "Modern KIAs are hard to beat for value, and the Niro EV is no exception, with its mind-boggling range, industry-leading safety features, and planted and responsive handling.",
+        "price": 40210,
+        "range": 239,
+        "body": "SUV",
+        "seating": 5,
+        "horsepower": 201,
+        "charge_time": 9,
+        "battery": 64,
+        "mpg": 112,
+        "brakes": "Discs front/rear",
+        "cargo": 53,
+        "dimensions": [
+            171.5,
+            71.1,
+            61.4
+        ],
+        "weight": 3854
+    },
+    "nissan_leaf": {
+        "name": "Leaf",
+        "manufacturer": "Nissan",
+        "blurb": "The grandma of all electric vehicles, the Nissan Leaf is still going strong, built with the simplicity and common sense all new EVs can only hope to emulate.",
+        "price": 35115,
+        "range": 150,
+        "body": "Hatchback",
+        "seating": 5,
+        "horsepower": 147,
+        "charge_time": 8,
+        "battery": 40,
+        "mpg": 111,
+        "brakes": "Discs front/rear",
+        "cargo": 30,
+        "dimensions": [
+            176.4,
+            70.5,
+            61.6
+        ],
+        "weight": 3569
+    }
 }
