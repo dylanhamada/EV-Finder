@@ -1,21 +1,4 @@
 {
-    "boilerplate": {
-        "name": null,
-        "manufacturer": null,
-        "blurb": null,
-        "price": null,
-        "range": null,
-        "body": null,
-        "seating": null,
-        "horsepower": null,
-        "charge_time": null,
-        "battery": null,
-        "mpg": null,
-        "brakes": null,
-        "cargo": null,
-        "dimensions": null,
-        "weight": null
-    },
     "audi_etron": {
         "name": "E-Tron",
         "manufacturer": "Audi",
@@ -204,5 +187,152 @@
             61.6
         ],
         "weight": 3569
+    },
+    "nissan_leaf_plus": {
+        "name": "Leaf Plus",
+        "manufacturer": "Nissan",
+        "blurb": "With a torquier engine and greater range than its very capable little brother, the Nissan Leaf Plus quietly gets you where you need to go, and back again.",
+        "price": 40675,
+        "range": 226,
+        "body": "Hatchback",
+        "seating": 5,
+        "horsepower": 214,
+        "charge_time": 9.5,
+        "battery": 62,
+        "mpg": 104,
+        "brakes": "Discs front/rear",
+        "cargo": 30,
+        "dimensions": [
+            176.4,
+            70.5,
+            61.6
+        ],
+        "weight": 3909
+    },
+    "porsche_taycan": {
+        "name": "Taycan",
+        "manufacturer": "Porsche",
+        "blurb": "The Porsche Taycan marks the Italian sports car manufacturer's bold entry into the electric vehicle market, and with a roaring 522 horsepower and the classic Porsche refinement, the Taycan is sure to give its competitors a run for their money.",
+        "price": 105150,
+        "range": 201,
+        "body": "Coupe",
+        "seating": 4,
+        "horsepower": 522,
+        "charge_time": 9,
+        "battery": 79.2,
+        "mpg": 69,
+        "brakes": "Discs front/rear",
+        "cargo": 12.9,
+        "dimensions": [
+            195.4,
+            77.5,
+            54.3
+        ],
+        "weight": 4777
+    },
+    "tesla_model_3": {
+        "name": "Model 3",
+        "manufacturer": "Tesla",
+        "blurb": "The standard to which all other mid-price electric vehicles are compared, the Tesla Model 3 leads in virtually every category, from range and power to comfort and technology.",
+        "price": 48190,
+        "range": 322,
+        "body": "Sedan",
+        "seating": 5,
+        "horsepower": 346,
+        "charge_time": 6,
+        "battery": 80.5,
+        "mpg": 121,
+        "brakes": "Discs front/rear",
+        "cargo": 15,
+        "dimensions": [
+            184.9,
+            72.8,
+            56.8
+        ],
+        "weight": 4072
+    },
+    "tesla_model_s": {
+        "name": "Model S",
+        "manufacturer": "Tesla",
+        "blurb": "The Tesla Model S is the bar to which every aspiring premium electric vehicle must compare itself, boasting a whopping 391 mile range on a single charge, 483 horses of quiet power, and the refinement we've all come to expect from the EV pioneer.",
+        "price": 70620,
+        "range": 391,
+        "body": "Sedan",
+        "seating": 5,
+        "horsepower": 483,
+        "charge_time": 6.5,
+        "battery": 100,
+        "mpg": 117,
+        "brakes": "Discs front/rear",
+        "cargo": 26.3,
+        "dimensions": [
+            196,
+            77.3,
+            56.9
+        ],
+        "weight": 4883
+    },
+    "tesla_model_x": {
+        "name": "Model X",
+        "manufacturer": "Tesla",
+        "blurb": "With its gull-wing doors and sleek, imposing appearance, the Tesla Model X brings the SUV form factor into a whole new, electric generation.",
+        "price": 101190,
+        "range": 305,
+        "body": "SUV",
+        "seating": 7,
+        "horsepower": 680,
+        "charge_time": 6.5,
+        "battery": 100,
+        "mpg": 90,
+        "brakes": "Discs front/rear",
+        "cargo": 81.2,
+        "dimensions": [
+            198.3,
+            78.7,
+            66
+        ],
+        "weight": 5531
+    },
+    "tesla_model_y": {
+        "name": "Model Y",
+        "manufacturer": "Tesla",
+        "blurb": "The Tesla Model Y, not to be outdone by its older sibling the Model X, trades power for comfort and practicality, maintaining Tesla's unique look while at the same time squeezing in class-leading range and comfort into a more attractive value proposition.",
+        "price": 51190,
+        "range": 316,
+        "body": "SUV",
+        "seating": 5,
+        "horsepower": 346,
+        "charge_time": 6,
+        "battery": 80.5,
+        "mpg": 121,
+        "brakes": "Discs front/rear",
+        "cargo": 68,
+        "dimensions": [
+            187,
+            75.6,
+            63.9
+        ],
+        "weight": 4416
+    },
+    "volswagen_egolf": {
+        "name": "E-Golf",
+        "manufacturer": "Volkswagen",
+        "blurb": "The German manufacturer's first foray into the electric vehicle market, the E-Golf offers all the styling and performance cues we've come to expect from a modern Golf, but in a vastly more eco-friendly variant.",
+        "price": 33285,
+        "range": 144.8,
+        "body": "Hatchback",
+        "seating": 5,
+        "horsepower": 134.1,
+        "charge_time": 9.5,
+        "battery": 35.8,
+        "mpg": 113,
+        "brakes": "Discs front/rear",
+        "cargo": 43.47,
+        "dimensions": [
+            168.1,
+            70.8,
+            58.3
+        ],
+        "weight": 3560
     }
 }
