@@ -1,24 +1,46 @@
 {
     "audi_etron": {
-        "name": "E-Tron",
-        "manufacturer": "Audi",
-        "blurb": "Sporting classy looks, a refined riding experience, and adequate range for its segment, the 2020 Audi E-Tron makes family outings a next-level affair.",
-        "price": 63995,
-        "range": 204,
-        "body": "SUV",
-        "seating": 5,
-        "horsepower": 355,
-        "charge_time": 10,
-        "battery": 95,
-        "mpg": 74,
-        "brakes": "Discs front/rear",
-        "cargo": 28.5,
-        "dimensions": [
-            193,
-            76.2,
-            65.5
-        ],
-        "weight": 5754
+        "specs": {
+            "name": "E-Tron",
+            "manufacturer": "Audi",
+            "blurb": "Sporting classy looks, a refined riding experience, and adequate range for its segment, the 2020 Audi E-Tron makes family outings a next-level affair.",
+            "price": 63995,
+            "range": 204,
+            "body": "SUV",
+            "seating": 5,
+            "horsepower": 355,
+            "chargeTime": 10,
+            "battery": 95,
+            "mpg": 74,
+            "brakes": "Discs front/rear",
+            "cargo": 28.5,
+            "dimensions": [
+                193,
+                76.2,
+                65.5
+            ],
+            "weight": 5754
+        },
+        "questionnaire": {
+            "drag_and_drop": {
+                "price": 10,
+                "looks": 10,
+                "range": 10,
+                "chargingTime": 10,
+                "horsepower": 10,
+                "seating": 10,
+                "luxury": 10,
+                "cargoCapacity": 10
+            },
+            "questions": {
+                "questionOne": [
+                    10,
+                    10,
+                    10,
+                    10
+                ]
+            }
+        }
     },
     "bmw_i3": {
         "name": "i3",
@@ -61,27 +83,6 @@
             62.8
         ],
         "weight": 3563
-    },
-    "honda_clarity": {
-        "name": "Clarity",
-        "manufacturer": "Honda",
-        "blurb": "The Honda Clarity Electric is one spacious sedan, accommodating those who want to stretch out while enjoying a comfortable, quiet ride.",
-        "price": 37555,
-        "range": 47,
-        "body": "Sedan",
-        "seating": 5,
-        "horsepower": 212,
-        "charge_time": 2.5,
-        "battery": 17,
-        "mpg": 110,
-        "brakes": "Discs front/rear",
-        "cargo": 15.5,
-        "dimensions": [
-            192.7,
-            73.9,
-            58.2
-        ],
-        "weight": 4059
     },
     "hyundai_ioniq": {
         "name": "Ioniq",
