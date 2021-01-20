@@ -19,7 +19,7 @@
 2. What will this vehicle be used for?
    1. Daily commute
    2. Weekend trips
-   3. Spirited driving
+   3. Joyrides
 3. How far do you drive on a daily basis?
    1. 0 - 20 miles
    2. 20 - 100 miles
@@ -39,4 +39,4 @@
     1.  Practical
     2.  Luxurious
     3.  Quirky
-    4.  Somewhere in between
+    4.  A mix of everything
