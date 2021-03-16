@@ -876,66 +876,222 @@
         }
     },
     "tesla_model_x": {
-        "name": "Model X",
-        "manufacturer": "Tesla",
-        "blurb": "With its gull-wing doors and sleek, imposing appearance, the Tesla Model X brings the SUV form factor into a whole new, electric generation.",
-        "price": 101190,
-        "range": 305,
-        "body": "SUV",
-        "seating": 7,
-        "horsepower": 680,
-        "charge_time": 6.5,
-        "battery": 100,
-        "mpg": 90,
-        "brakes": "Discs front/rear",
-        "cargo": 81.2,
-        "dimensions": [
-            198.3,
-            78.7,
-            66
-        ],
-        "weight": 5531
+        "specs": {
+            "name": "Model X",
+            "manufacturer": "Tesla",
+            "blurb": "With its gull-wing doors and sleek, imposing appearance, the Tesla Model X brings the SUV form factor into a whole new, electric generation.",
+            "price": 101190,
+            "range": 305,
+            "body": "SUV",
+            "seating": 7,
+            "horsepower": 680,
+            "charge_time": 6.5,
+            "battery": 100,
+            "mpg": 90,
+            "brakes": "Discs front/rear",
+            "cargo": 81.2,
+            "dimensions": [
+                198.3,
+                78.7,
+                66
+            ],
+            "weight": 5531
+        },
+        "questionnaire": {
+            "drag_and_drop": {
+                "price": 1,
+                "looks": 7,
+                "range": 10,
+                "chargingTime": 10,
+                "horsepower": 9,
+                "seating": 9,
+                "luxury": 9,
+                "cargoCapacity": 10
+            },
+            "questions": {
+                "questionOne": [
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "questionTwo": [
+                    6,
+                    7,
+                    10
+                ],
+                "questionThree": [
+                    10,
+                    10,
+                    10
+                ],
+                "questionFour": [
+                    3,
+                    4,
+                    9
+                ],
+                "questionFive": [
+                    0,
+                    0,
+                    10
+                ],
+                "questionSix": [
+                    10,
+                    0
+                ],
+                "questionSeven": [
+                    2,
+                    8,
+                    3,
+                    4
+                ]
+            }
+        }
     },
     "tesla_model_y": {
-        "name": "Model Y",
-        "manufacturer": "Tesla",
-        "blurb": "The Tesla Model Y, not to be outdone by its older sibling the Model X, trades power for comfort and practicality, maintaining Tesla's unique look while at the same time squeezing in class-leading range and comfort into a more attractive value proposition.",
-        "price": 51190,
-        "range": 316,
-        "body": "SUV",
-        "seating": 5,
-        "horsepower": 346,
-        "charge_time": 6,
-        "battery": 80.5,
-        "mpg": 121,
-        "brakes": "Discs front/rear",
-        "cargo": 68,
-        "dimensions": [
-            187,
-            75.6,
-            63.9
-        ],
-        "weight": 4416
+        "specs": {
+            "name": "Model Y",
+            "manufacturer": "Tesla",
+            "blurb": "The Tesla Model Y, not to be outdone by its older sibling the Model X, trades power for comfort and practicality, maintaining Tesla's unique look while at the same time squeezing in class-leading range and comfort into a more attractive value proposition.",
+            "price": 51190,
+            "range": 316,
+            "body": "SUV",
+            "seating": 5,
+            "horsepower": 346,
+            "charge_time": 6,
+            "battery": 80.5,
+            "mpg": 121,
+            "brakes": "Discs front/rear",
+            "cargo": 68,
+            "dimensions": [
+                187,
+                75.6,
+                63.9
+            ],
+            "weight": 4416
+        },
+        "questionnaire": {
+            "drag_and_drop": {
+                "price": 5,
+                "looks": 7,
+                "range": 9,
+                "chargingTime": 10,
+                "horsepower": 8,
+                "seating": 10,
+                "luxury": 7,
+                "cargoCapacity": 9
+            },
+            "questions": {
+                "questionOne": [
+                    0,
+                    10,
+                    0,
+                    0
+                ],
+                "questionTwo": [
+                    8,
+                    8,
+                    8
+                ],
+                "questionThree": [
+                    10,
+                    10,
+                    10
+                ],
+                "questionFour": [
+                    6,
+                    7,
+                    9
+                ],
+                "questionFive": [
+                    0,
+                    0,
+                    10
+                ],
+                "questionSix": [
+                    10,
+                    0
+                ],
+                "questionSeven": [
+                    7,
+                    7,
+                    0,
+                    5
+                ]
+            }
+        }
     },
     "volswagen_egolf": {
-        "name": "E-Golf",
-        "manufacturer": "Volkswagen",
-        "blurb": "The German manufacturer's first foray into the electric vehicle market, the E-Golf offers all the styling and performance cues we've come to expect from a modern Golf, but in a vastly more eco-friendly variant.",
-        "price": 33285,
-        "range": 144.8,
-        "body": "Hatchback",
-        "seating": 5,
-        "horsepower": 134.1,
-        "charge_time": 9.5,
-        "battery": 35.8,
-        "mpg": 113,
-        "brakes": "Discs front/rear",
-        "cargo": 43.47,
-        "dimensions": [
-            168.1,
-            70.8,
-            58.3
-        ],
-        "weight": 3560
+        "specs": {
+            "name": "E-Golf",
+            "manufacturer": "Volkswagen",
+            "blurb": "The German manufacturer's first foray into the electric vehicle market, the E-Golf offers all the styling and performance cues we've come to expect from a modern Golf, but in a vastly more eco-friendly variant.",
+            "price": 33285,
+            "range": 144.8,
+            "body": "Hatchback",
+            "seating": 5,
+            "horsepower": 134.1,
+            "charge_time": 9.5,
+            "battery": 35.8,
+            "mpg": 113,
+            "brakes": "Discs front/rear",
+            "cargo": 43.47,
+            "dimensions": [
+                168.1,
+                70.8,
+                58.3
+            ],
+            "weight": 3560
+        },
+        "questionnaire": {
+            "drag_and_drop": {
+                "price": 10,
+                "looks": 7,
+                "range": 5,
+                "chargingTime": 6,
+                "horsepower": 3,
+                "seating": 7,
+                "luxury": 3,
+                "cargoCapacity": 5
+            },
+            "questions": {
+                "questionOne": [
+                    10,
+                    0,
+                    0,
+                    0
+                ],
+                "questionTwo": [
+                    9,
+                    3,
+                    2
+                ],
+                "questionThree": [
+                    10,
+                    10,
+                    8
+                ],
+                "questionFour": [
+                    9,
+                    9,
+                    6
+                ],
+                "questionFive": [
+                    0,
+                    10,
+                    0
+                ],
+                "questionSix": [
+                    0,
+                    10
+                ],
+                "questionSeven": [
+                    8,
+                    0,
+                    4,
+                    5
+                ]
+            }
+        }
     }
 }
