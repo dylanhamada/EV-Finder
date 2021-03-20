@@ -1,3 +1,12 @@
 .User {
-    
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.Photo {
+    background-color: #444444;
+    border-radius: 50%;
+    display: block;
+    height: 45px;
+    width: 45px;
 }

@@ -1,0 +1,10 @@
+.Close {
+    background-image: url(../../../assets/images/close-overlay-button.svg);
+    height: 20px;
+    margin-bottom: 50px;
+    width: 20px;
+}
+
+.Close:active, .Close:focus, .Close:hover {
+    background-image: url(../../../assets/images/close-overlay-button-active.svg);
+}
