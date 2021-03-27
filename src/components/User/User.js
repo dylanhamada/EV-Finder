@@ -8,7 +8,7 @@ const User = props => {
 
     return(
         <div className={styles.User}>
-            <img alt="User Photo" className={styles.Photo} src={userPhoto} />
+            <img alt="User" className={styles.Photo} src={userPhoto} />
             <p>Hello, {userName}.</p>
         </div>
     );

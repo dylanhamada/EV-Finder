@@ -4,7 +4,7 @@ import styles from './CloseButton.module.css';
 
 const CloseButton = props => {
     return (
-        <div className={styles.Close} title="Close Button" />
+        <div className={styles.Close} onClick={props.menuToggle} title="Close Button" />
     );
 };
 

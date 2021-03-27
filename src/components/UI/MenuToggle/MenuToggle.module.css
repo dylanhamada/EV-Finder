@@ -1,5 +1,13 @@
 .MenuToggle {
     background-image: url(../../../assets/images/menu-toggle-button.svg);
-    padding: 30px;
+    cursor: pointer;
+    height: 12px;
+    margin: 30px;
+    position: absolute;
+    width: 30px;
     z-index: 5;
+}
+
+.MenuToggle:active, .MenuToggle:focus, .MenuToggle:hover {
+    background-image: url(../../../assets/images/menu-toggle-button-active.svg);
 }

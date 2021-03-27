@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
 import styles from './App.module.css';
-import Layout from './hoc/Layout/Layout';
+import NavMenu from './containers/NavMenu/NavMenu';
 
 class App extends Component {
   render() {
     return (
       <div className={styles.App}>
-        <Layout />
+        <NavMenu />
       </div>
     );
   }
