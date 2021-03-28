@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import styles from './NavMenu.module.css';
-
 import CloseButton from '../../components/UI/CloseButton/CloseButton';
 import MenuToggle from '../../components/UI/MenuToggle/MenuToggle';
 import User from '../../components/User/User';
@@ -30,12 +29,12 @@ class NavMenu extends Component {
                 <nav className={menuClasses.join(' ')}>
                     <CloseButton menuToggle={this.toggleHandler} />
                     <User userName={this.state.userName} />
-                    <ul>
-                        <li>Find</li>
-                        <li>Browse</li>
-                        <li>Compare</li>
-                        <li>Favorites</li>
-                        <li>Log Out</li>
+                    <ul className={styles.NavList}>
+                        <li className={styles.NavListItem}>Find</li>
+                        <li className={styles.NavListItem}>Browse</li>
+                        <li className={styles.NavListItem}>Compare</li>
+                        <li className={styles.NavListItem}>Favorites</li>
+                        <li className={styles.NavListItem}>Log Out</li>
                     </ul>
                 </nav>
             </React.Fragment>
