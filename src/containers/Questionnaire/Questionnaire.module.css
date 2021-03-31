@@ -1,0 +1,15 @@
+.Questionnaire {
+    background-color: #eee;
+    box-sizing: border-box;
+    color: #444;
+    height: 100vh;
+    padding: 100px 30px 30px 30px;
+    width: 100vw;
+}
+
+p {
+    font-family: 'IBMPlexSans-Regular';
+    font-size: 14px;
+    margin: 0;
+    text-transform: none;
+}

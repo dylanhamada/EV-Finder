@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import styles from './NavMenu.module.css';
+
 import CloseButton from '../../components/UI/CloseButton/CloseButton';
 import MenuToggle from '../../components/UI/MenuToggle/MenuToggle';
 import User from '../../components/User/User';

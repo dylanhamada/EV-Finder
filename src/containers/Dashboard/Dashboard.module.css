@@ -7,29 +7,29 @@
     width: 100vw;
 }
 
-ul {
+.NavList {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-li {
+.NavListItem {
     cursor: pointer;
     margin-bottom: 30px;
 }
 
-li:hover, li:active, li:focus {
+.NavListItem:hover, .NavListItem:active, .NavListItem:focus {
     color: #00a9ef;
 }
 
-li h3 {
+.NavListItemLink {
     font-family: "IBMPlexSans-Bold", sans-serif;
     font-size: 24px;
     margin-bottom: 8px;
     text-transform: uppercase;
 }
 
-li p {
+.NavListItemDescription {
     font-family: 'IBMPlexSans-Regular';
     font-size: 14px;
     margin: 0;
