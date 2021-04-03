@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './Dashboard.module.css';
 import User from '../../components/User/User';
@@ -13,10 +14,12 @@ class Dashboard extends Component {
             <div className={styles.Dashboard}>
                 <User userName={this.state.userName} />
                 <ul className={styles.NavList}>
-                    <li className={styles.NavListItem}>
-                        <h3 className={styles.NavListItemLink}>FIND</h3>
-                        <p className={styles.NavListItemDescription}>Complete a questionnaire and get matched to an electric vehicle.</p>
-                    </li>
+                    <Link className={styles.Link} to="/find">
+                        <li className={styles.NavListItem}>
+                            <h3 className={styles.NavListItemLink}>FIND</h3>
+                            <p className={styles.NavListItemDescription}>Complete a questionnaire and get matched to an electric vehicle.</p>
+                        </li>
+                    </Link>
                     <li className={styles.NavListItem}>
                         <h3 className={styles.NavListItemLink}>Browse</h3>
                         <p className={styles.NavListItemDescription}>Browse all of 2020's electric vehicles.</p>

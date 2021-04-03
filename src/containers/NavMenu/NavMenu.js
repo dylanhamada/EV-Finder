@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './NavMenu.module.css';
 
@@ -9,13 +10,19 @@ import User from '../../components/User/User';
 class NavMenu extends Component {
     state = {
         userName: 'Dylan Hamada',
-        menuOpen: true
+        menuOpen: false
     }
 
     toggleHandler = () => {
         this.setState((prevState) => ({
             menuOpen: !prevState.menuOpen
         }));
+    }
+
+    linkClickHandler = () => {
+        this.setState({
+            menuOpen: false
+        });
     }
 
     render() {
@@ -31,7 +38,9 @@ class NavMenu extends Component {
                     <CloseButton menuToggle={this.toggleHandler} />
                     <User userName={this.state.userName} />
                     <ul className={styles.NavList}>
-                        <li className={styles.NavListItem}>Find</li>
+                        <Link className={styles.Link} to="/find">
+                            <li className={styles.NavListItem} onClick={this.linkClickHandler}>Find</li>
+                        </Link>
                         <li className={styles.NavListItem}>Browse</li>
                         <li className={styles.NavListItem}>Compare</li>
                         <li className={styles.NavListItem}>Favorites</li>

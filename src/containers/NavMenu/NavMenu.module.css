@@ -35,3 +35,8 @@
 .NavListItem:hover, .NavListItem:active, .NavListItem:focus {
     color: #444;
 }
+
+.Link {
+    color: #eee;
+    text-decoration: none;
+}
