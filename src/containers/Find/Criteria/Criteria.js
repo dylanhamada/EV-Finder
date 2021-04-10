@@ -5,11 +5,14 @@ import styles from './Criteria.module.css';
 
 class Criteria extends Component {
     state = {
-        list: ["lions", "tigers", "bears"]
+        criteria: ["Price", "Looks", "Range", "Charging Time", "Horsepower", "Seating", "Luxury", "Cargo Capacity"]
     }
 
-    onDragEnd = (result, provided) => {
-        console.log(result);
+    onDragEnd = (result) => {
+        let newCriteria = [...this.state.criteria];
+        newCriteria.splice(result.source.index, 1);
+        newCriteria.splice(result.destination.index, 0, result.draggableId);
+        this.setState({ criteria: newCriteria });
     }
 
     render() {
@@ -18,18 +21,18 @@ class Criteria extends Component {
                 onDragEnd={this.onDragEnd}
             >
                 <Droppable 
-                    droppableId="criteria-1"
+                    droppableId="criteria"
                 >
-                    {(provided, snapshot) => (
+                    {provided => (
                         <div
                             className={styles.Droppable}
                             ref={provided.innerRef}
                             {...provided.droppableProps}
                         >
-                            {this.state.list.map((item, index) => (
+                            {this.state.criteria.map((criteria, index) => (
                                 <Draggable
-                                    key={index}
-                                    draggableId={item}
+                                    key={criteria}
+                                    draggableId={criteria}
                                     index={index}    
                                 >
                                     {(provided, snapshot) => (
@@ -39,7 +42,7 @@ class Criteria extends Component {
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
                                         >
-                                            {item}
+                                            {criteria}
                                         </div>
                                     )}
                                 </Draggable>

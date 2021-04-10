@@ -1,7 +1,10 @@
 .Droppable {
-    border: 5px solid red;
 }
 
 .Draggable {
-    border: 1px solid blue;
+    background-color: #dadada;
+    height: 45px;
+    line-height: 45px;
+    margin: 15px 0;
+    text-align: center;
 }
