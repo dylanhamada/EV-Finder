@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import styles from './Criteria.module.css';
@@ -29,7 +30,6 @@ class Criteria extends Component {
                     >
                         {provided => (
                             <div
-                                className={styles.Droppable}
                                 ref={provided.innerRef}
                                 {...provided.droppableProps}
                             >
@@ -65,6 +65,7 @@ class Criteria extends Component {
                         )}
                     </Droppable>
                 </DragDropContext>
+                <Link className={styles.Link} to={'/find/questionnaire'}>Next</Link>
             </React.Fragment>
         );
     }
