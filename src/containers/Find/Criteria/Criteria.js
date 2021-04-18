@@ -4,9 +4,15 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import styles from './Criteria.module.css';
 
+import { scrollToTop } from '../../../shared/utility';
+
 class Criteria extends Component {
     state = {
         criteria: ["Price", "Looks", "Range", "Charging Time", "Horsepower", "Seating", "Luxury", "Cargo Capacity"]
+    }
+
+    componentDidMount () {
+        scrollToTop();
     }
 
     onDragEnd = (result) => {

@@ -6,3 +6,19 @@
 .Text {
     margin: 0 0 15px 0;
 }
+
+.Options {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.Option {
+    align-items: center;
+    background-color: #dadada;
+    display: flex;
+    justify-content: center;
+    min-height: 45px;
+    padding: 0 5px;
+    text-align: center;
+}

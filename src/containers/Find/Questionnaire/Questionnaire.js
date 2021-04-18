@@ -1,140 +1,60 @@
 import React, { Component } from 'react';
 
-import styles from './Questionnaire.module.css';
 import Question from '../../../components/Find/Question/Question';
+
+import { scrollToTop } from '../../../shared/utility';
 
 class Questionnaire extends Component {
     state = {
         questions: [
             {
                 question: 'What\'s your budget?',
-                options: [
-                    {
-                        option: '$0 - $40,000',
-                        selected: false
-                    }, 
-                    {
-                        option: '$40,000 - $60,000',
-                        selected: false
-                    }, 
-                    {
-                        option: '$60,000 - $80,000',
-                        selected: false
-                    }, 
-                ],
+                options: ['$0 - $40,000', '$40,000 - $60,000', '$60,000 - $80,000'],
+                selected: null,
             },
             {
                 question: 'What will this vehicle be used for?',
-                options: [
-                    {
-                        option: 'Daily commute',
-                        selected: false
-                    }, 
-                    {
-                        option: 'Weekend trips',
-                        selected: false
-                    }, 
-                    {
-                        option: 'Joyrides',
-                        selected: false
-                    }, 
-                ],
+                options: ['Daily commute', 'Weekend trips', 'Joyrides'],
+                selected: null,
             },
             {
                 question: 'How far do you drive on a daily basis?',
-                options: [
-                    {
-                        option: '0 - 20 miles',
-                        selected: false
-                    }, 
-                    {
-                        option: '20 - 100 miles',
-                        selected: false
-                    }, 
-                    {
-                        option: '100+ miles',
-                        selected: false
-                    }, 
-                ],
+                options: ['0 - 20 miles', '20 - 100 miles', '100+ miles'],
+                selected: null,
             },
             {
                 question: 'Who are you driving for?',
-                options: [
-                    {
-                        option: 'Just me',
-                        selected: false
-                    }, 
-                    {
-                        option: 'Me and one passenger',
-                        selected: false
-                    }, 
-                    {
-                        option: 'A family of four or more',
-                        selected: false
-                    }, 
-                ],
+                options: ['Just me', 'Me and one passenger', 'A family of four or more'],
+                selected: null,
             },
             {
                 question: 'What body style do you prefer?',
-                options: [
-                    {
-                        option: 'Sedan',
-                        selected: false
-                    }, 
-                    {
-                        option: 'Hatchback',
-                        selected: false
-                    }, 
-                    {
-                        option: 'SUV/Crossover',
-                        selected: false
-                    }, 
-                ],
+                options: ['Sedan', 'Hatchback', 'SUV/Crossover'],
+                selected: null,
             },
             {
                 question: 'How important is cargo space?',
-                options: [
-                    {
-                        option: 'Very',
-                        selected: false
-                    }, 
-                    {
-                        option: 'Not very',
-                        selected: false
-                    }, 
-                ],
+                options: ['Very', 'Not very'],
+                selected: null,
             },
             {
                 question: 'Which best describes your style?',
-                options: [
-                    {
-                        option: 'Practical',
-                        selected: false
-                    }, 
-                    {
-                        option: 'Luxurious',
-                        selected: false
-                    }, 
-                    {
-                        option: 'Quirky',
-                        selected: false
-                    }, 
-                    {
-                        option: 'A mix of everything',
-                        selected: false
-                    }, 
-                ],
+                options: ['Practical', 'Luxurious', 'Quirky', 'A mix of everything'],
+                selected: null,
             },
         ]
     }
 
-    questionClickHandler = () => {
+    componentDidMount () {
+        scrollToTop();
+    }
 
+    selectOptionHandler = (event, questionIdentifier) => {
     }
 
     render () {
         const questions = this.state.questions.map((question, index) => (
-            <Question key={'question-' + (index + 1)} number={index + 1} question={question.question} options={question.options} click={this.questionClickHandler} />
+            <Question key={'question-' + (index + 1)} number={index + 1} question={question.question} options={question.options} click={(event) => this.selectOptionHandler(event, index)} />
         ));
 
         return (
