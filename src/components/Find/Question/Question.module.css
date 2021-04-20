@@ -22,3 +22,8 @@
     padding: 0 5px;
     text-align: center;
 }
+
+.Selected {
+    color: #EEE;
+    background-color: #00A9EF;
+}

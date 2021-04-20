@@ -1,0 +1,13 @@
+.Links {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+
+.Link {
+    color: #444;
+    font-family: 'IBMPlexSans-SemiBold';
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
