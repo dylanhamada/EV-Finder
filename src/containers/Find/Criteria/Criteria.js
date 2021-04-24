@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import styles from './Criteria.module.css';
 
+import { updateCriteria } from '../../../store/actions/find';
 import { scrollToTop } from '../../../shared/utility';
 
 class Criteria extends Component {
-    state = {
-        criteria: ["Price", "Looks", "Range", "Charging Time", "Horsepower", "Seating", "Luxury", "Cargo Capacity"]
-    }
-
     componentDidMount () {
         scrollToTop();
     }
 
     onDragEnd = (result) => {
         if (result.destination) {
-            let newCriteria = [...this.state.criteria];
+            let newCriteria = [...this.props.criteria];
             newCriteria.splice(result.source.index, 1);
             newCriteria.splice(result.destination.index, 0, result.draggableId);
-            this.setState({ criteria: newCriteria });
+            this.props.onUpdateCriteria(newCriteria);
         }
     }
 
@@ -39,7 +37,7 @@ class Criteria extends Component {
                                 ref={provided.innerRef}
                                 {...provided.droppableProps}
                             >
-                                {this.state.criteria.map((criteria, index) => (
+                                {this.props.criteria.map((criteria, index) => (
                                     <Draggable
                                         key={criteria}
                                         draggableId={criteria}
@@ -77,4 +75,16 @@ class Criteria extends Component {
     }
 }
 
-export default Criteria;
+const mapStateToProps = state => {
+    return {
+        criteria: state.find.criteria
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onUpdateCriteria: (criteria) => dispatch(updateCriteria(criteria))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Criteria);
