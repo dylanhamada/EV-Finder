@@ -15,10 +15,7 @@ class Criteria extends Component {
 
     onDragEnd = (result) => {
         if (result.destination) {
-            let newCriteria = [...this.props.criteria];
-            newCriteria.splice(result.source.index, 1);
-            newCriteria.splice(result.destination.index, 0, result.draggableId);
-            this.props.onUpdateCriteria(newCriteria);
+            this.props.onUpdateCriteria(result);
         }
     }
 
@@ -83,7 +80,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onUpdateCriteria: (criteria) => dispatch(updateCriteria(criteria))
+        onUpdateCriteria: (result) => dispatch(updateCriteria(result))
     };
 };
 

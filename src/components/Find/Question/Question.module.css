@@ -7,6 +7,10 @@
     margin: 0 0 15px 0;
 }
 
+.Error {
+    color: #EB2A00;
+}
+
 .Options {
     display: grid;
     grid-gap: 10px;

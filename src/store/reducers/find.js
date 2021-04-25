@@ -43,11 +43,26 @@ const initialState = {
 };
 
 const updateCriteria = (state, action) => {
-    return updateObject(state, {criteria: action.newCriteria});
+    let newCriteria = [...state.criteria];
+    newCriteria.splice(action.result.source.index, 1);
+    newCriteria.splice(action.result.destination.index, 0, action.result.draggableId);
+
+    return updateObject(state, {criteria: newCriteria});
 };
 
 const updateQuestions = (state, action) => {
-    return updateObject(state, {questions: action.newQuestions});
+    let updatedQuestion = {...state.questions[action.questionIndex]};
+    updatedQuestion.selected = null;
+    updatedQuestion.options.forEach((option, index) => {
+        if (option === action.event.target.innerHTML) {
+            updatedQuestion.selected = index;
+        }
+    });
+
+    let updatedQuestions = [...state.questions];
+    updatedQuestions[action.questionIndex] = updatedQuestion;
+
+    return updateObject(state, {questions: updatedQuestions});
 };
 
 const reducer = (state = initialState, action) => {

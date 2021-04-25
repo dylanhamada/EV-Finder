@@ -9,26 +9,35 @@ import { scrollToTop } from '../../../shared/utility';
 import { updateQuestions } from '../../../store/actions/find';
 
 class Questionnaire extends Component {
+    state = {
+        incomplete: false
+    }
+
     componentDidMount () {
         scrollToTop();
     }
 
-    selectOptionHandler = (event, questionIdentifier) => {
-        let updatedQuestion = {...this.props.questions[questionIdentifier]};
-        updatedQuestion.selected = null;
-        updatedQuestion.options.forEach((option, index) => {
-            if (option === event.target.innerHTML) {
-                updatedQuestion.selected = index;
+    submitHandler () {
+        this.props.questions.forEach(question => {
+            this.setState({ incomplete: false });
+
+            if (question.selected === null) {
+                console.log("Incomplete");
+                this.setState({ incomplete: true });
             }
         });
 
-        let updatedQuestions = [...this.props.questions];
-        updatedQuestions[questionIdentifier] = updatedQuestion;
-        
-        this.props.onUpdateQuestions(updatedQuestions);
+        scrollToTop();
+    }
+
+    selectOptionHandler = (event, questionIndex) => {
+        event.persist();
+        this.props.onUpdateQuestions(event, questionIndex);
     }
 
     render () {
+        let error = this.state.incomplete ? <p className={styles.Error}>Please complete the questionnaire.</p> : null;
+
         const questions = this.props.questions.map((question, index) => (
             <Question 
                 key={'question-' + (index + 1)} 
@@ -36,16 +45,18 @@ class Questionnaire extends Component {
                 question={question.question} 
                 options={question.options} 
                 selected={question.selected}
+                incomplete = {this.state.incomplete}
                 click={(event) => this.selectOptionHandler(event, index)} 
             />
         ));
 
         return (
             <React.Fragment>
+                {error}
                 {questions}
                 <div className={styles.Links}>
                     <Link to={'/find/criteria'} className={styles.Link}>Previous</Link>
-                    <Link to={'/find/criteria'} className={styles.Link}>Submit</Link>
+                    <span className={styles.Link} onClick={() => this.submitHandler()}>Submit</span>
                 </div>
             </React.Fragment>
         );
@@ -60,7 +71,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onUpdateQuestions: (questions) => dispatch(updateQuestions(questions))
+        onUpdateQuestions: (event, questionIndex) => dispatch(updateQuestions(event, questionIndex))
     };
 };
 

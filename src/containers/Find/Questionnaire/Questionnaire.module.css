@@ -1,3 +1,9 @@
+.Error {
+    color: #EB2A00;
+    font-size: 14px;
+    margin: 0 0 30px 0;
+}
+
 .Links {
     display: flex;
     justify-content: space-between;
@@ -6,6 +12,7 @@
 
 .Link {
     color: #444;
+    cursor: pointer;
     font-family: 'IBMPlexSans-SemiBold';
     font-size: 14px;
     text-decoration: none;

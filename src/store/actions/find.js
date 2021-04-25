@@ -1,15 +1,16 @@
 import * as actionTypes from './actionTypes';
 
-export const updateCriteria = (criteria) => {
+export const updateCriteria = (result) => {
     return {
         type: actionTypes.UPDATE_CRITERIA,
-        newCriteria: criteria
+        result: result
     };
 };
 
-export const updateQuestions = (questions) => {
+export const updateQuestions = (event, questionIndex) => {
     return {
         type: actionTypes.UPDATE_QUESTIONS,
-        newQuestions: questions
+        event: event,
+        questionIndex: questionIndex
     };
 };

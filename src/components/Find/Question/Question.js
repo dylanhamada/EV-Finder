@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Question.module.css';
 
 const Question = props => {
-    const questions = props.options.map((option, index) => {
+    const options = props.options.map((option, index) => {
         const selected = index === props.selected ? styles.Selected : '';
 
         return (
@@ -17,11 +17,15 @@ const Question = props => {
         );
     });
 
+    let questionStyle = (props.incomplete && (props.selected === null)) 
+        ? `${styles.Text} ${styles.Error}` 
+        : `${styles.Text}`;
+
     return (
         <div className={styles.Question}>
-            <p className={styles.Text}>{props.number}. {props.question}</p>
+            <p className={questionStyle}>{props.number}. {props.question}</p>
             <div className={styles.Options}>
-                {questions}
+                {options}
             </div>
         </div>
     );
