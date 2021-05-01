@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import styles from './Questionnaire.module.css';
 import Question from './Question/Question';
@@ -7,25 +7,30 @@ import Question from './Question/Question';
 import { scrollToTop } from '../../../shared/utility';
 
 const Questionnaire = props => {
+    const history = useHistory();
+    const [isComplete, setComplete] = useState(false);
+    
     useEffect(() => {
         scrollToTop();
     }, []);
 
-    const [incomplete, setIncomplete] = useState(false);
+    useEffect(() => {
+        if (isComplete) {
+            history.push('/find/result');
+        }
+    }, [isComplete]);
 
     const submitHandler = () => {
-        props.questions.forEach(question => {
-            setIncomplete(false);
+        let complete = true;
 
-            if (question.selected === null) {
-                setIncomplete(true);
-            }
+        props.questions.forEach(question => {
+            (question.selected !== null && complete) ? complete = true : complete = false;
         });
 
-        scrollToTop();
+        setComplete(complete);
     };
 
-    let error = incomplete ? <p className={styles.Error}>Please complete the questionnaire.</p> : null;
+    // let error = incomplete ? <p className={styles.Error}>Please complete the questionnaire.</p> : null;
 
     const questions = props.questions.map((question, index) => (
         <Question 
@@ -34,14 +39,14 @@ const Questionnaire = props => {
             question={question.question} 
             options={question.options} 
             selected={question.selected}
-            incomplete = {incomplete}
+            // incomplete = {incomplete}
             click={(event) => props.dispatchQuestions(event, index)} 
         />
     ));
 
     return (
         <React.Fragment>
-            {error}
+            {/* {error} */}
             {questions}
             <div className={styles.Links}>
                 <Link to={'/find/criteria'} className={styles.Link}>Previous</Link>

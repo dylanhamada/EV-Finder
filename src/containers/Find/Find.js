@@ -6,6 +6,7 @@ import styles from './Find.module.css';
 import Intro from '../../components/Find/Intro/Intro';
 import Criteria from '../../components/Find/Criteria/Criteria';
 import Questionnaire from '../../components/Find/Questionnaire/Questionnaire';
+import Result from '../../components/Find/Result/Result';
 
 import { updateCriteria, updateQuestions } from '../../store/actions/find';
 
@@ -38,6 +39,9 @@ const Find = props => {
                         questions={findState.questions}
                         dispatchQuestions={dispatchQuestions}
                     />
+                </Route>
+                <Route path='/find/result' exact>
+                    <Result />
                 </Route>
             </Switch>
         </div>
