@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore, combineReducers } from "redux";
 
-import './index.css';
-import App from './App';
-import findReducer from './store/reducers/find';
-import * as serviceWorker from './serviceWorker';
+import "./index.css";
+import App from "./App";
+import findReducer from "./store/reducers/find";
+import * as serviceWorker from "./serviceWorker";
 
 const rootReducer = combineReducers({
-  find: findReducer
+  find: findReducer,
 });
 
 const store = createStore(
@@ -26,7 +26,7 @@ ReactDOM.render(
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
