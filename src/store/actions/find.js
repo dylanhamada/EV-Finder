@@ -14,3 +14,9 @@ export const updateQuestions = (event, questionIndex) => {
     questionIndex: questionIndex,
   };
 };
+
+export const updateScore = () => {
+  return {
+    type: actionTypes.UPDATE_SCORE,
+  };
+};

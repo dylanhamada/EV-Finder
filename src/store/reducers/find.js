@@ -1,64 +1,9 @@
 import * as actionTypes from "../actions/actionTypes";
+import state from "./findState";
 import { updateObject } from "../../shared/utility";
+import { score } from "../../shared/score";
 
-const initialState = {
-  criteria: [
-    "Price",
-    "Looks",
-    "Range",
-    "Charging Time",
-    "Horsepower",
-    "Seating",
-    "Luxury",
-    "Cargo Capacity",
-  ],
-  questions: [
-    {
-      question: "What's your budget?",
-      options: ["$0 - $40,000", "$40,000 - $60,000", "$60,000 - $80,000"],
-      selected: null,
-    },
-    {
-      question: "What will this vehicle be used for?",
-      options: ["Daily commute", "Weekend trips", "Joyrides"],
-      selected: null,
-    },
-    {
-      question: "How far do you drive on a daily basis?",
-      options: ["0 - 20 miles", "20 - 100 miles", "100+ miles"],
-      selected: null,
-    },
-    {
-      question: "Who are you driving for?",
-      options: ["Just me", "Me and one passenger", "A family of four or more"],
-      selected: null,
-    },
-    {
-      question: "What body style do you prefer?",
-      options: ["Sedan", "Hatchback", "SUV/Crossover"],
-      selected: null,
-    },
-    {
-      question: "How important is cargo space?",
-      options: ["Very", "Not very"],
-      selected: null,
-    },
-    {
-      question: "Which best describes your style?",
-      options: ["Practical", "Luxurious", "Quirky", "A mix of everything"],
-      selected: null,
-    },
-  ],
-};
-
-// figure out logic for just one vehicle
-// for drag and drop, possibly use a reducer
-// iterate through criteria property
-// assign each element a number according to its importance
-// search the vehicle drag and drop object for the matching key
-// multiply the criteria value with the vehicle criteria score
-// maintain current score
-// at end, push that score into vehicle object
+const initialState = state;
 
 const updateCriteria = (state, action) => {
   let newCriteria = [...state.criteria];
@@ -87,12 +32,20 @@ const updateQuestions = (state, action) => {
   return updateObject(state, { questions: updatedQuestions });
 };
 
+const updateScore = (state) => {
+  score(state);
+
+  return state;
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.UPDATE_CRITERIA:
       return updateCriteria(state, action);
     case actionTypes.UPDATE_QUESTIONS:
       return updateQuestions(state, action);
+    case actionTypes.UPDATE_SCORE:
+      return updateScore(state);
     default:
       return state;
   }

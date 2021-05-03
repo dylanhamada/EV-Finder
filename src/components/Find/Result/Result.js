@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 
 const Result = (props) => {
-  useEffect(() => {}, []);
+  useEffect(() => {
+    props.dispatchScore();
+  }, [props]);
 
   return <div></div>;
 };

@@ -8,7 +8,11 @@ import Criteria from "../../components/Find/Criteria/Criteria";
 import Questionnaire from "../../components/Find/Questionnaire/Questionnaire";
 import Result from "../../components/Find/Result/Result";
 
-import { updateCriteria, updateQuestions } from "../../store/actions/find";
+import {
+  updateCriteria,
+  updateQuestions,
+  updateScore,
+} from "../../store/actions/find";
 
 const Find = (props) => {
   const findState = useSelector((state) => state.find);
@@ -20,6 +24,10 @@ const Find = (props) => {
 
   const dispatchQuestions = (event, questionIndex) => {
     dispatch(updateQuestions(event, questionIndex));
+  };
+
+  const dispatchScore = () => {
+    dispatch(updateScore());
   };
 
   return (
@@ -41,7 +49,7 @@ const Find = (props) => {
           />
         </Route>
         <Route path="/find/result" exact>
-          <Result />
+          <Result dispatchScore={dispatchScore} />
         </Route>
       </Switch>
     </div>
