@@ -1,7 +1,7 @@
 import * as actionTypes from "../actions/actionTypes";
-import state from "./findState";
+import state from "./state/find";
+import totalScore from "../../logic/score";
 import { updateObject } from "../../shared/utility";
-import { score } from "../../shared/score";
 
 const initialState = state;
 
@@ -33,7 +33,7 @@ const updateQuestions = (state, action) => {
 };
 
 const updateScore = (state) => {
-  score(state);
+  totalScore(state);
 
   return state;
 };
