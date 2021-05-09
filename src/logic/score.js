@@ -1,10 +1,9 @@
 import vehicleInfo from "../shared/vehicleInfo";
 
 const criteriaScore = (vehicleCriteria, stateCriteria) => {
-  const criteriaRank = [...stateCriteria];
   let score = 0;
   // iterate over criteria object in state
-  criteriaRank.forEach((criterion, index) => {
+  stateCriteria.forEach((criterion, index) => {
     // multiply (criterion score * criteria ranking)
     // add this score to a criteria score placeholder
     score += vehicleCriteria[criterion] * (8 - index);
@@ -13,7 +12,17 @@ const criteriaScore = (vehicleCriteria, stateCriteria) => {
   return score / 360;
 };
 
-const questionnaireScore = () => {};
+const questionnaireScore = (vehicleQuestions, stateQuestions) => {
+  let score = 0;
+  // iterate over questions object in state
+  stateQuestions.forEach((question, index) => {
+    // find the value of index in the vehicleQuestions.questions array
+    // add that value to score
+    score += vehicleQuestions[index][question.selected];
+  });
+  // divide score by 80 and return
+  return score / 70;
+};
 
 const totalScore = (state) => {
   // clone the score array in state
@@ -28,10 +37,17 @@ const totalScore = (state) => {
       state.criteria
     );
     // for each vehicle, calculate questionnaire score
-    vehicleScore.questionnaire = questionnaireScore();
+    vehicleScore.questionnaire = questionnaireScore(
+      vehicle.questionnaire.questions,
+      state.questions
+    );
+    // find the average of criteria and questionnaire scores and set total
+    vehicleScore.total =
+      (vehicleScore.criteria + vehicleScore.questionnaire) / 2;
     newScore[index] = vehicleScore;
   });
-  // for each vehicle, calculate total score
+
+  return newScore;
 };
 
 export default totalScore;

@@ -33,9 +33,9 @@ const updateQuestions = (state, action) => {
 };
 
 const updateScore = (state) => {
-  totalScore(state);
+  let newScore = totalScore(state);
 
-  return state;
+  return updateObject(state, { scores: newScore });
 };
 
 const reducer = (state = initialState, action) => {

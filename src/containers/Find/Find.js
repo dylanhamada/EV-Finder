@@ -23,6 +23,7 @@ const Find = (props) => {
   };
 
   const dispatchQuestions = (event, questionIndex) => {
+    event.persist();
     dispatch(updateQuestions(event, questionIndex));
   };
 
@@ -49,7 +50,7 @@ const Find = (props) => {
           />
         </Route>
         <Route path="/find/result" exact>
-          <Result dispatchScore={dispatchScore} />
+          <Result scores={findState.scores} dispatchScore={dispatchScore} />
         </Route>
       </Switch>
     </div>
