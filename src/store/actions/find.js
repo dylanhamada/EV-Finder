@@ -20,3 +20,9 @@ export const updateScore = () => {
     type: actionTypes.UPDATE_SCORE,
   };
 };
+
+export const resetState = () => {
+  return {
+    type: actionTypes.RESET_STATE,
+  };
+};

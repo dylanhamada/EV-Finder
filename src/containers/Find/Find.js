@@ -12,15 +12,18 @@ import {
   updateCriteria,
   updateQuestions,
   updateScore,
+  resetState,
 } from "../../store/actions/find";
+import { scrollToTop } from "../../shared/utility";
 
 const Find = (props) => {
   const reduxState = useSelector((state) => state.find);
   const dispatch = useDispatch();
   const history = useHistory();
   const [state, setState] = useState({
-    questionnaireComplete: true,
+    questionnaireComplete: false,
     questionnaireError: null,
+    questionnaireTouched: false,
   });
 
   const dispatchCriteria = (result) => {
@@ -36,23 +39,39 @@ const Find = (props) => {
     dispatch(updateScore());
   };
 
-  const submitQuestionnaireHandler = () => {
-    let complete = true;
+  const getStartedHandler = () => {
+    console.log("Get Started clicked");
+    dispatch(resetState());
 
-    reduxState.questions.forEach((question) => {
-      question.selected !== null && state.questionnaireComplete
-        ? (complete = true)
-        : (complete = false);
+    setState({
+      questionnaireComplete: false,
+      questionnaireError: null,
+      questionnaireTouched: false,
     });
 
-    setState((state) => ({ ...state, questionnaireComplete: complete }));
+    history.push("/find/criteria");
+  };
+
+  const submitQuestionnaireHandler = () => {
+    let complete = reduxState.questions.every((question) => {
+      return question.selected !== null;
+    });
+
+    setState((state) => ({
+      ...state,
+      questionnaireComplete: complete,
+      questionnaireTouched: true,
+    }));
+
+    dispatchScore();
+    scrollToTop();
   };
 
   return (
     <div className={styles.Find}>
       <Switch>
         <Route path={props.match.url + "/"} exact>
-          <Intro />
+          <Intro click={getStartedHandler} />
         </Route>
         <Route path="/find/criteria" exact>
           <Criteria
@@ -66,6 +85,7 @@ const Find = (props) => {
             dispatchQuestions={dispatchQuestions}
             history={history}
             complete={state.questionnaireComplete}
+            touched={state.questionnaireTouched}
             submit={submitQuestionnaireHandler}
           />
         </Route>

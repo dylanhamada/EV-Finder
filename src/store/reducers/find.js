@@ -1,9 +1,9 @@
 import * as actionTypes from "../actions/actionTypes";
-import state from "./state/find";
+import findState from "../state/find";
 import totalScore from "../../logic/score";
 import { updateObject } from "../../shared/utility";
 
-const initialState = state;
+const initialState = findState;
 
 const updateCriteria = (state, action) => {
   let newCriteria = [...state.criteria];
@@ -38,6 +38,10 @@ const updateScore = (state) => {
   return updateObject(state, { scores: newScore });
 };
 
+const resetState = (state) => {
+  return updateObject(state, findState);
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.UPDATE_CRITERIA:
@@ -46,6 +50,8 @@ const reducer = (state = initialState, action) => {
       return updateQuestions(state, action);
     case actionTypes.UPDATE_SCORE:
       return updateScore(state);
+    case actionTypes.RESET_STATE:
+      return resetState(state);
     default:
       return state;
   }
