@@ -138,6 +138,7 @@ const state = {
       total: 0,
     },
   ],
+  topVehicle: null,
 };
 
 export default state;

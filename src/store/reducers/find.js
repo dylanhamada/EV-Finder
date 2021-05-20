@@ -1,6 +1,6 @@
 import * as actionTypes from "../actions/actionTypes";
 import findState from "../state/find";
-import totalScore from "../../logic/score";
+import { totalScore, topVehicle } from "../../logic/score";
 import { updateObject } from "../../shared/utility";
 
 const initialState = findState;
@@ -34,8 +34,9 @@ const updateQuestions = (state, action) => {
 
 const updateScore = (state) => {
   let newScore = totalScore(state);
+  let newVehicle = topVehicle(newScore);
 
-  return updateObject(state, { scores: newScore });
+  return updateObject(state, { scores: newScore, topVehicle: newVehicle });
 };
 
 const resetState = (state) => {

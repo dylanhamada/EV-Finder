@@ -40,7 +40,6 @@ const Find = (props) => {
   };
 
   const getStartedHandler = () => {
-    console.log("Get Started clicked");
     dispatch(resetState());
 
     setState({
@@ -65,6 +64,10 @@ const Find = (props) => {
 
     dispatchScore();
     scrollToTop();
+
+    if (complete) {
+      history.push("/find/result");
+    }
   };
 
   return (
@@ -83,14 +86,13 @@ const Find = (props) => {
           <Questionnaire
             questions={reduxState.questions}
             dispatchQuestions={dispatchQuestions}
-            history={history}
             complete={state.questionnaireComplete}
             touched={state.questionnaireTouched}
             submit={submitQuestionnaireHandler}
           />
         </Route>
         <Route path="/find/result" exact>
-          <Result scores={reduxState.scores} dispatchScore={dispatchScore} />
+          <Result result={reduxState.topVehicle} />
         </Route>
       </Switch>
     </div>

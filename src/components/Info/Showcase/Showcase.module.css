@@ -1,0 +1,23 @@
+.Showcase {
+  background-color: #00a9ef;
+  color: #eeeeee;
+  padding: 15px;
+}
+
+.Owner {
+  font-size: 14px;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
+.Title {
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-size: 24px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.Image {
+  width: 100%;
+  height: 100%;
+}

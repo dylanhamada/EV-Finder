@@ -20,7 +20,7 @@ const questionnaireScore = (vehicleQuestions, stateQuestions) => {
   return score / 70;
 };
 
-const totalScore = (state) => {
+export const totalScore = (state) => {
   const newScore = [...state.scores];
 
   vehicleInfo.forEach((vehicle, index) => {
@@ -45,4 +45,18 @@ const totalScore = (state) => {
   return newScore;
 };
 
-export default totalScore;
+export const topVehicle = (scores) => {
+  const topScore = scores.reduce((topVehicle, currentVehicle) => {
+    if (currentVehicle.total > topVehicle.total) {
+      return currentVehicle;
+    }
+
+    return topVehicle;
+  });
+
+  const topVehicle = vehicleInfo.find((vehicle) => {
+    return vehicle.specs.name === topScore.name;
+  });
+
+  return topVehicle;
+};

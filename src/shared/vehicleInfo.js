@@ -17,6 +17,8 @@ const vehicleInfo = [
       cargo: 28.5,
       dimensions: [193, 76.2, 65.5],
       weight: 5754,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364072/EV-Finder/audi_etron.png",
     },
     questionnaire: {
       criteria: {
@@ -58,6 +60,8 @@ const vehicleInfo = [
       cargo: 15.1,
       dimensions: [158.3, 69.9, 62.9],
       weight: 3276,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364072/EV-Finder/bmw_i3.png",
     },
     questionnaire: {
       criteria: {
@@ -99,6 +103,8 @@ const vehicleInfo = [
       cargo: 56.6,
       dimensions: [164, 69.5, 62.8],
       weight: 3563,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/chevrolet_bolt.png",
     },
     questionnaire: {
       criteria: {
@@ -140,6 +146,8 @@ const vehicleInfo = [
       cargo: 23,
       dimensions: [176, 71.7, 58.1],
       weight: 3371,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/hyundai_ioniq.png",
     },
     questionnaire: {
       criteria: {
@@ -181,6 +189,8 @@ const vehicleInfo = [
       cargo: 45.8,
       dimensions: [164.6, 70.9, 61.2],
       weight: 3715,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/hyundai_kona.png",
     },
     questionnaire: {
       criteria: {
@@ -222,6 +232,8 @@ const vehicleInfo = [
       cargo: 52,
       dimensions: [184.3, 74.6, 61.3],
       weight: 4784,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/jaguar_ipace.png",
     },
     questionnaire: {
       criteria: {
@@ -263,6 +275,8 @@ const vehicleInfo = [
       cargo: 53,
       dimensions: [171.5, 71.1, 61.4],
       weight: 3854,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/kia_niro.png",
     },
     questionnaire: {
       criteria: {
@@ -304,6 +318,8 @@ const vehicleInfo = [
       cargo: 30,
       dimensions: [176.4, 70.5, 61.6],
       weight: 3569,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/nissan_leaf.png",
     },
     questionnaire: {
       criteria: {
@@ -345,6 +361,8 @@ const vehicleInfo = [
       cargo: 30,
       dimensions: [176.4, 70.5, 61.6],
       weight: 3909,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/nissan_leafplus.png",
     },
     questionnaire: {
       criteria: {
@@ -386,6 +404,8 @@ const vehicleInfo = [
       cargo: 12.9,
       dimensions: [195.4, 77.5, 54.3],
       weight: 4777,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/porsche_taycan.png",
     },
     questionnaire: {
       criteria: {
@@ -427,6 +447,8 @@ const vehicleInfo = [
       cargo: 15,
       dimensions: [184.9, 72.8, 56.8],
       weight: 4072,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/tesla_model3.png",
     },
     questionnaire: {
       criteria: {
@@ -468,6 +490,8 @@ const vehicleInfo = [
       cargo: 26.3,
       dimensions: [196, 77.3, 56.9],
       weight: 4883,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/tesla_models.png",
     },
     questionnaire: {
       criteria: {
@@ -509,6 +533,8 @@ const vehicleInfo = [
       cargo: 81.2,
       dimensions: [198.3, 78.7, 66],
       weight: 5531,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/tesla_modelx.png",
     },
     questionnaire: {
       criteria: {
@@ -550,6 +576,8 @@ const vehicleInfo = [
       cargo: 68,
       dimensions: [187, 75.6, 63.9],
       weight: 4416,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/tesla_modely.png",
     },
     questionnaire: {
       criteria: {
@@ -591,6 +619,8 @@ const vehicleInfo = [
       cargo: 43.47,
       dimensions: [168.1, 70.8, 58.3],
       weight: 3560,
+      photo:
+        "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/volkswagen_egolf.png",
     },
     questionnaire: {
       criteria: {
