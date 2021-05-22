@@ -1,0 +1,19 @@
+.Specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  margin-top: 30px;
+  row-gap: 15px;
+}
+
+.Detail {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.Figure {
+  font-family: "IBMPlexSans-SemiBold";
+  font-size: 14px;
+  margin: 0;
+}
