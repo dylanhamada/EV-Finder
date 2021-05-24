@@ -10,6 +10,7 @@ const Reviews = (props) => {
       <a
         className={styles.Link}
         href={props.reviews[site]}
+        key={site}
         rel="noreferrer"
         target="_blank"
       >

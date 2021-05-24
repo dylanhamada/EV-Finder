@@ -1,0 +1,14 @@
+.Links {
+  display: grid;
+  row-gap: 15px;
+  margin-top: 30px;
+}
+
+.Link {
+  color: #444;
+  font-family: "IBMPlexSans-SemiBold";
+  font-size: 14px;
+  margin: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}

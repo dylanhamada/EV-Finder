@@ -6,6 +6,7 @@ import Showcase from "../../Info/Showcase/Showcase";
 import Blurb from "../../Info/Blurb/Blurb";
 import Specs from "../../Info/Specs/Specs";
 import Reviews from "../../Info/Reviews/Reviews";
+import Links from "../../Info/Links/Links";
 
 const Result = (props) => {
   let result = (
@@ -26,6 +27,7 @@ const Result = (props) => {
         <Blurb text={props.result.specs.blurb} />
         <Specs specs={props.result.specs} />
         <Reviews reviews={props.result.specs.reviews} />
+        <Links restart={props.click} />
       </React.Fragment>
     );
   }
