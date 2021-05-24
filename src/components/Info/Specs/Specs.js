@@ -20,7 +20,7 @@ const Specs = (props) => {
 
   const details = order.map((detail) => {
     return (
-      <div>
+      <div key={detail}>
         <p className={styles.Detail}>{detail}</p>
         <p className={styles.Figure}>{props.specs[detail]}</p>
       </div>

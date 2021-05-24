@@ -19,6 +19,12 @@ const vehicleInfo = [
       weight: "5754 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364072/EV-Finder/audi_etron.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/audi/e-tron-2020",
+        edmunds: "https://www.edmunds.com/audi/e-tron-sportback",
+        motortrend:
+          "https://www.motortrend.com/news/2020-audi-e-tron-sportback-first-look-review/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -62,6 +68,11 @@ const vehicleInfo = [
       weight: "3276 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364072/EV-Finder/bmw_i3.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/bmw/i3-2020",
+        edmunds: "https://www.edmunds.com/bmw/i3/2020/",
+        "motor trend": "https://www.motortrend.com/cars/bmw/i3/2020/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -105,6 +116,13 @@ const vehicleInfo = [
       weight: "3563 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/chevrolet_bolt.png",
+      reviews: {
+        "car and driver":
+          "https://www.caranddriver.com/reviews/a32294199/2020-chevy-bolt-ev-drive/",
+        edmunds: "https://www.edmunds.com/chevrolet/bolt-ev/2020/",
+        "motor trend":
+          "https://www.motortrend.com/cars/chevrolet/bolt-ev/2020/2020-chevrolet-bolt-first-test-review/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -148,6 +166,13 @@ const vehicleInfo = [
       weight: "3371 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/hyundai_ioniq.png",
+      reviews: {
+        "car and driver":
+          "https://www.caranddriver.com/hyundai/ioniq-electric-2020",
+        edmunds: "https://www.edmunds.com/hyundai/ioniq-plug-in-hybrid/",
+        "motor trend":
+          "https://www.motortrend.com/cars/hyundai/ioniq-electric/2020/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -191,6 +216,13 @@ const vehicleInfo = [
       weight: "3715 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/hyundai_kona.png",
+      reviews: {
+        "car and driver":
+          "https://www.caranddriver.com/hyundai/kona-electric-2020",
+        edmunds: "https://www.edmunds.com/hyundai/kona-electric/2020/",
+        "motor trend":
+          "https://www.motortrend.com/cars/hyundai/kona-electric/2020/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -234,6 +266,11 @@ const vehicleInfo = [
       weight: "4784 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/jaguar_ipace.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/jaguar/i-pace-2020",
+        edmunds: "https://www.edmunds.com/jaguar/i-pace/",
+        "motor trend": "https://www.motortrend.com/cars/jaguar/i-pace/2020/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -277,6 +314,11 @@ const vehicleInfo = [
       weight: "3854 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/kia_niro.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/kia/niro-ev",
+        edmunds: "https://www.edmunds.com/kia/niro-ev/",
+        "motor trend": "https://www.motortrend.com/cars/kia/niro-ev/2020/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -320,6 +362,11 @@ const vehicleInfo = [
       weight: "3569 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364073/EV-Finder/nissan_leaf.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/nissan/leaf-2020",
+        edmunds: "https://www.edmunds.com/nissan/leaf/2020/",
+        "motor trend": "https://www.motortrend.com/cars/nissan/leaf/2020/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -363,6 +410,11 @@ const vehicleInfo = [
       weight: "3909 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/nissan_leafplus.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/nissan/leaf-2020",
+        edmunds: "https://www.edmunds.com/nissan/leaf/2020/",
+        "motor trend": "https://www.motortrend.com/cars/nissan/leaf/2020",
+      },
     },
     questionnaire: {
       criteria: {
@@ -406,6 +458,12 @@ const vehicleInfo = [
       weight: "4777 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/porsche_taycan.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/porsche/taycan-2020",
+        edmunds: "https://www.edmunds.com/porsche/taycan/2020/",
+        "motor trend":
+          "https://www.motortrend.com/cars/porsche/taycan/2020/2020-porsche-taycan-turbo-s-electric-car-review/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -449,6 +507,11 @@ const vehicleInfo = [
       weight: "4072 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/tesla_model3.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/tesla/model-3-2020",
+        edmunds: "https://www.edmunds.com/tesla/model-3/2020/",
+        "motor trend": "https://www.motortrend.com/cars/tesla/model-3/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -492,6 +555,11 @@ const vehicleInfo = [
       weight: "4883 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/tesla_models.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/tesla/model-s-2020",
+        edmunds: "https://www.edmunds.com/tesla/model-s/2020/",
+        "motor trend": "https://www.motortrend.com/cars/tesla/model-s/2020/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -535,6 +603,11 @@ const vehicleInfo = [
       weight: "5531 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/tesla_modelx.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/tesla/model-x-2020",
+        edmunds: "https://www.edmunds.com/tesla/model-x/2020/",
+        "motor trend": "https://www.motortrend.com/cars/tesla/model-x/2020/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -578,6 +651,12 @@ const vehicleInfo = [
       weight: "4416 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/tesla_modely.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/tesla/model-y-2020",
+        edmunds: "https://www.edmunds.com/tesla/model-y/2020/",
+        "motor trend":
+          "https://www.motortrend.com/cars/tesla/model-y/2020/2020-tesla-model-y-pros-cons-review/",
+      },
     },
     questionnaire: {
       criteria: {
@@ -621,6 +700,12 @@ const vehicleInfo = [
       weight: "3560 lbs",
       photo:
         "https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364074/EV-Finder/volkswagen_egolf.png",
+      reviews: {
+        "car and driver": "https://www.caranddriver.com/volkswagen/e-golf",
+        edmunds: "https://www.edmunds.com/volkswagen/e-golf/",
+        "motor trend":
+          "https://www.motortrend.com/cars/volkswagen/e-golf/2019/",
+      },
     },
     questionnaire: {
       criteria: {

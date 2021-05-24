@@ -92,7 +92,7 @@ const Find = (props) => {
           />
         </Route>
         <Route path="/find/result" exact>
-          <Result result={reduxState.topVehicle} />
+          <Result click={getStartedHandler} result={reduxState.topVehicle} />
         </Route>
       </Switch>
     </div>
