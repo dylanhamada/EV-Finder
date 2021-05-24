@@ -5,6 +5,7 @@ import styles from "./Result.module.css";
 import Showcase from "../../Info/Showcase/Showcase";
 import Blurb from "../../Info/Blurb/Blurb";
 import Specs from "../../Info/Specs/Specs";
+import Reviews from "../../Info/Reviews/Reviews";
 
 const Result = (props) => {
   let result = (
@@ -24,6 +25,7 @@ const Result = (props) => {
         <Showcase vehicle={props.result.specs} result />
         <Blurb text={props.result.specs.blurb} />
         <Specs specs={props.result.specs} />
+        <Reviews reviews={props.result.specs.reviews} />
       </React.Fragment>
     );
   }

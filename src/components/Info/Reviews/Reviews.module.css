@@ -1,0 +1,13 @@
+.Reviews {
+  display: grid;
+  row-gap: 15px;
+  margin-top: 30px;
+}
+
+.Link {
+  color: #444;
+  font-family: "IBMPlexSans-SemiBold";
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
