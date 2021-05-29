@@ -9,9 +9,9 @@ const firebaseConfig = {
   projectId: "ev-finder-3b5dd",
   storageBucket: "ev-finder-3b5dd.appspot.com",
   messagingSenderId: "1004964500597",
-  appId: "1:1004964500597:web:2369be412fd30d322f943c"
+  appId: "1:1004964500597:web:2369be412fd30d322f943c",
 };
 
-const fire = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-export default fire;
+export const auth = firebase.auth();
