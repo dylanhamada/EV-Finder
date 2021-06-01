@@ -4,17 +4,21 @@ import { updateObject } from "../../shared/utility";
 
 const initialState = authState;
 
-const authGoogle = (state, action) => {
+const authGoogle = (state) => {
   return updateObject(state, { error: null, loading: true });
 };
 
-const authTwitter = (state, action) => {
+const authTwitter = (state) => {
+  return updateObject(state, { error: null, loading: true });
+};
+
+const authGithub = (state) => {
   return updateObject(state, { error: null, loading: true });
 };
 
 const authResult = (state, action) => {
   return updateObject(state, {
-    // result: action.result,
+    result: action.result,
     error: null,
     loading: false,
   });
@@ -30,9 +34,11 @@ const authFail = (state, action) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.AUTH_GOOGLE:
-      return authGoogle(state, action);
+      return authGoogle(state);
     case actionTypes.AUTH_TWITTER:
-      return authTwitter(state, action);
+      return authTwitter(state);
+    case actionTypes.AUTH_GITHUB:
+      return authGithub(state);
     case actionTypes.AUTH_RESULT:
       return authResult(state, action);
     case actionTypes.AUTH_FAIL:

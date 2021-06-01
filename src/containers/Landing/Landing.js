@@ -6,13 +6,14 @@ import styles from "./Landing.module.css";
 import {
   authGoogle,
   authTwitter,
-  googleRedirectResult,
+  authGithub,
+  authRedirect,
 } from "../../store/actions/auth.js";
 
 const Landing = (props) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(googleRedirectResult());
+    dispatch(authRedirect());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -25,6 +26,7 @@ const Landing = (props) => {
       </p>
       <p onClick={() => dispatch(authGoogle())}>Sign in with Google</p>
       <p onClick={() => dispatch(authTwitter())}>Sign in with Twitter</p>
+      <p onClick={() => dispatch(authGithub())}>Sign in with GitHub</p>
     </div>
   );
 };

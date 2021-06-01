@@ -1,6 +1,11 @@
 import * as actionTypes from "./actionTypes";
 
-import { auth, googleProvider, twitterProvider } from "../../shared/fire";
+import {
+  auth,
+  googleProvider,
+  twitterProvider,
+  githubProvider,
+} from "../../shared/fire";
 
 export const authGoogle = () => {
   auth.signInWithRedirect(googleProvider);
@@ -18,11 +23,18 @@ export const authTwitter = () => {
   };
 };
 
+export const authGithub = () => {
+  auth.signInWithRedirect(githubProvider);
+
+  return {
+    type: actionTypes.AUTH_GITHUB,
+  };
+};
+
 export const authResult = (result) => {
-  console.log(result);
   return {
     type: actionTypes.AUTH_RESULT,
-    // result: result,
+    result: result,
   };
 };
 
@@ -33,7 +45,7 @@ export const authFail = (error) => {
   };
 };
 
-export const googleRedirectResult = () => {
+export const authRedirect = () => {
   return (dispatch) => {
     auth
       .getRedirectResult()
