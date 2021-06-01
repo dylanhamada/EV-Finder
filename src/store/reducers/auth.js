@@ -25,8 +25,8 @@ const authFail = (state, action) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.AUTH_GOOGLE:
-      return authGoogle(state, action);
+    // case actionTypes.AUTH_GOOGLE:
+    //   return authGoogle(state, action);
     case actionTypes.AUTH_GOOGLE_RESULT:
       return authGoogleResult(state, action);
     case actionTypes.AUTH_FAIL:

@@ -1,9 +1,8 @@
 import * as actionTypes from "./actionTypes";
 
-import { auth } from "../../shared/fire";
+import { auth, provider } from "../../shared/fire";
 
 export const authGoogle = () => {
-  const provider = new auth.GoogleAuthProvider();
   auth.signInWithRedirect(provider);
 
   return {
