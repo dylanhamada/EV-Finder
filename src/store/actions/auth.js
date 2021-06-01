@@ -1,19 +1,28 @@
 import * as actionTypes from "./actionTypes";
 
-import { auth, provider } from "../../shared/fire";
+import { auth, googleProvider, twitterProvider } from "../../shared/fire";
 
 export const authGoogle = () => {
-  auth.signInWithRedirect(provider);
+  auth.signInWithRedirect(googleProvider);
 
   return {
     type: actionTypes.AUTH_GOOGLE,
   };
 };
 
-export const authGoogleResult = (result) => {
+export const authTwitter = () => {
+  auth.signInWithRedirect(twitterProvider);
+
   return {
-    type: actionTypes.AUTH_GOOGLE_RESULT,
-    result: result,
+    type: actionTypes.AUTH_TWITTER,
+  };
+};
+
+export const authResult = (result) => {
+  console.log(result);
+  return {
+    type: actionTypes.AUTH_RESULT,
+    // result: result,
   };
 };
 
@@ -30,7 +39,7 @@ export const googleRedirectResult = () => {
       .getRedirectResult()
       .then((result) => {
         if (result) {
-          dispatch(authGoogleResult(result));
+          dispatch(authResult(result));
         }
       })
       .catch((error) => {

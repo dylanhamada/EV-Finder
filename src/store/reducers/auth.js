@@ -8,9 +8,13 @@ const authGoogle = (state, action) => {
   return updateObject(state, { error: null, loading: true });
 };
 
-const authGoogleResult = (state, action) => {
+const authTwitter = (state, action) => {
+  return updateObject(state, { error: null, loading: true });
+};
+
+const authResult = (state, action) => {
   return updateObject(state, {
-    result: action.result,
+    // result: action.result,
     error: null,
     loading: false,
   });
@@ -25,10 +29,12 @@ const authFail = (state, action) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    // case actionTypes.AUTH_GOOGLE:
-    //   return authGoogle(state, action);
-    case actionTypes.AUTH_GOOGLE_RESULT:
-      return authGoogleResult(state, action);
+    case actionTypes.AUTH_GOOGLE:
+      return authGoogle(state, action);
+    case actionTypes.AUTH_TWITTER:
+      return authTwitter(state, action);
+    case actionTypes.AUTH_RESULT:
+      return authResult(state, action);
     case actionTypes.AUTH_FAIL:
       return authFail(state, action);
     default:

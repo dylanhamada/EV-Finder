@@ -3,7 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 
 import styles from "./Landing.module.css";
 
-import { authGoogle, googleRedirectResult } from "../../store/actions/auth.js";
+import {
+  authGoogle,
+  authTwitter,
+  googleRedirectResult,
+} from "../../store/actions/auth.js";
 
 const Landing = (props) => {
   const dispatch = useDispatch();
@@ -20,6 +24,7 @@ const Landing = (props) => {
         with EV Finder.
       </p>
       <p onClick={() => dispatch(authGoogle())}>Sign in with Google</p>
+      <p onClick={() => dispatch(authTwitter())}>Sign in with Twitter</p>
     </div>
   );
 };
