@@ -9,6 +9,7 @@ import {
   authGithub,
   authRedirect,
 } from "../../store/actions/auth.js";
+import { vehicleImageRandomizer } from "../../shared/utility";
 
 import googleIcon from "../../assets/images/google-icon.svg";
 import githubIcon from "../../assets/images/github-icon.svg";
@@ -16,6 +17,8 @@ import twitterIcon from "../../assets/images/twitter-icon.svg";
 
 const Landing = (props) => {
   const dispatch = useDispatch();
+  const randomVehicle = vehicleImageRandomizer();
+
   useEffect(() => {
     dispatch(authRedirect());
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -25,8 +28,8 @@ const Landing = (props) => {
     <div className={styles.Landing}>
       <img
         className={styles.VehicleImage}
-        src="https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364072/EV-Finder/audi_etron.png"
-        alt="EV"
+        src={randomVehicle.photo}
+        alt={randomVehicle.name}
       />
       <h1 className={styles.Title}>Find your EV. Today.</h1>
       <p className={styles.Blurb}>
