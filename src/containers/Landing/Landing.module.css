@@ -1,4 +1,62 @@
 .Landing {
   background-color: #00a9ef;
-  padding: 30px;
+  box-sizing: border-box;
+  color: #eee;
+  height: 100vh;
+  padding: 60px 30px 30px 30px;
+}
+
+.VehicleImage {
+  width: 100%;
+}
+
+.Title {
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-size: 36px;
+  margin: 15px 0 15px 0;
+  text-transform: uppercase;
+}
+
+.Blurb {
+  font-size: 14px;
+  margin: 0 0 30px 0;
+}
+
+.Button {
+  align-items: center;
+  border-radius: 2px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 30%);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  height: 45px;
+  margin: 15px auto;
+  padding: 0 15px;
+  width: 75%;
+}
+
+.ButtonText {
+  font-family: "IBMPlexSans-SemiBold";
+  font-size: 14px;
+}
+
+.GoogleButton {
+  background-color: #eee;
+  color: rgba(0, 0, 0, 60%);
+}
+
+.TwitterButton {
+  background-color: #1da1f2;
+  color: #eee;
+}
+
+.GithubButton {
+  background-color: #333;
+  color: #eee;
+}
+
+.Guest {
+  font-family: "IBMPlexSans-SemiBold";
+  font-size: 14px;
+  text-align: center;
 }

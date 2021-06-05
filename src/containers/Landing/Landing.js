@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import styles from "./Landing.module.css";
 
@@ -10,6 +10,10 @@ import {
   authRedirect,
 } from "../../store/actions/auth.js";
 
+import googleIcon from "../../assets/images/google-icon.svg";
+import githubIcon from "../../assets/images/github-icon.svg";
+import twitterIcon from "../../assets/images/twitter-icon.svg";
+
 const Landing = (props) => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,14 +23,38 @@ const Landing = (props) => {
 
   return (
     <div className={styles.Landing}>
-      <h1>Find your EV. Today.</h1>
-      <p>
+      <img
+        className={styles.VehicleImage}
+        src="https://res.cloudinary.com/dphmoqr9f/image/upload/v1619364072/EV-Finder/audi_etron.png"
+        alt="EV"
+      />
+      <h1 className={styles.Title}>Find your EV. Today.</h1>
+      <p className={styles.Blurb}>
         Explore the world of electric vehicles and find one that's right for you
         with EV Finder.
       </p>
-      <p onClick={() => dispatch(authGoogle())}>Sign in with Google</p>
-      <p onClick={() => dispatch(authTwitter())}>Sign in with Twitter</p>
-      <p onClick={() => dispatch(authGithub())}>Sign in with GitHub</p>
+      <div
+        className={`${styles.Button} ${styles.GoogleButton}`}
+        onClick={() => dispatch(authGoogle())}
+      >
+        <img alt="Google Icon" height="20" src={googleIcon} />
+        <span className={styles.ButtonText}>Sign in with Google</span>
+      </div>
+      <div
+        className={`${styles.Button} ${styles.TwitterButton}`}
+        onClick={() => dispatch(authTwitter())}
+      >
+        <img alt="Twitter Icon" height="20" src={twitterIcon} />
+        <span className={styles.ButtonText}>Sign in with Twitter</span>
+      </div>
+      <div
+        className={`${styles.Button} ${styles.GithubButton}`}
+        onClick={() => dispatch(authGithub())}
+      >
+        <img alt="GitHub Icon" height="20" src={githubIcon} />
+        <span className={styles.ButtonText}>Sign in with GitHub</span>
+      </div>
+      <p className={styles.Guest}>Continue as Guest</p>
     </div>
   );
 };
