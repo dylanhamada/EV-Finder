@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 
 import styles from "./Landing.module.css";
@@ -17,11 +17,6 @@ import twitterIcon from "../../assets/images/twitter-icon.svg";
 const Landing = (props) => {
   const dispatch = useDispatch();
   const randomVehicle = vehicleImageRandomizer();
-
-  // useEffect(() => {
-  //   dispatch(authRedirect());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
 
   return (
     <div className={styles.Landing}>

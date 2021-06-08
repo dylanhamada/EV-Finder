@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { withRouter, Route, Switch } from "react-router-dom";
 
 import { auth } from "./shared/fire";
@@ -14,6 +14,7 @@ import Find from "./containers/Find/Find";
 
 const App = (props) => {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     const unlisten = auth.onAuthStateChanged((user) => {
@@ -27,18 +28,26 @@ const App = (props) => {
     return () => {
       unlisten();
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  return (
-    <div className={styles.App}>
-      <Landing />
-      {/* <NavMenu />
-      <Switch>
-        <Route path="/" exact component={Dashboard} />
-        <Route path="/find" component={Find} />
-      </Switch> */}
-    </div>
-  );
+  useEffect(() => console.log("Render App"));
+
+  let home = <Landing />;
+
+  if (user.name !== null) {
+    home = (
+      <React.Fragment>
+        <NavMenu />
+        <Switch>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/find" component={Find} />
+        </Switch>
+      </React.Fragment>
+    );
+  }
+
+  return <div className={styles.App}>{home}</div>;
 };
 
 export default withRouter(App);
