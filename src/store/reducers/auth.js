@@ -16,9 +16,25 @@ const authGithub = (state) => {
   return updateObject(state, { error: null, loading: true });
 };
 
-const authResult = (state, action) => {
+const authLogin = (state, action) => {
+  const newUser = {
+    name: action.user.displayName,
+    photoURL: action.user.photoURL,
+  };
+
   return updateObject(state, {
-    result: action.result,
+    user: newUser,
+    error: null,
+    loading: false,
+  });
+};
+
+const authLogout = (state, action) => {
+  return updateObject(state, {
+    user: {
+      name: null,
+      photoURL: null,
+    },
     error: null,
     loading: false,
   });
@@ -39,8 +55,10 @@ const reducer = (state = initialState, action) => {
       return authTwitter(state);
     case actionTypes.AUTH_GITHUB:
       return authGithub(state);
-    case actionTypes.AUTH_RESULT:
-      return authResult(state, action);
+    case actionTypes.AUTH_LOGIN:
+      return authLogin(state, action);
+    case actionTypes.AUTH_LOGOUT:
+      return authLogout(state, action);
     case actionTypes.AUTH_FAIL:
       return authFail(state, action);
     default:

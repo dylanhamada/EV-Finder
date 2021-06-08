@@ -31,10 +31,16 @@ export const authGithub = () => {
   };
 };
 
-export const authResult = (result) => {
+export const authLogin = (user) => {
   return {
-    type: actionTypes.AUTH_RESULT,
-    result: result,
+    type: actionTypes.AUTH_LOGIN,
+    user: user,
+  };
+};
+
+export const authLogout = () => {
+  return {
+    type: actionTypes.AUTH_LOGOUT,
   };
 };
 
@@ -42,20 +48,5 @@ export const authFail = (error) => {
   return {
     type: actionTypes.AUTH_FAIL,
     error: error,
-  };
-};
-
-export const authRedirect = () => {
-  return (dispatch) => {
-    auth
-      .getRedirectResult()
-      .then((result) => {
-        if (result) {
-          dispatch(authResult(result));
-        }
-      })
-      .catch((error) => {
-        dispatch(authFail(error));
-      });
   };
 };

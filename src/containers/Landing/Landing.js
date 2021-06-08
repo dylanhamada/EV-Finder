@@ -7,7 +7,6 @@ import {
   authGoogle,
   authTwitter,
   authGithub,
-  authRedirect,
 } from "../../store/actions/auth.js";
 import { vehicleImageRandomizer } from "../../shared/utility";
 
@@ -19,10 +18,10 @@ const Landing = (props) => {
   const dispatch = useDispatch();
   const randomVehicle = vehicleImageRandomizer();
 
-  useEffect(() => {
-    dispatch(authRedirect());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   dispatch(authRedirect());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <div className={styles.Landing}>

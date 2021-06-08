@@ -1,5 +1,8 @@
 const state = {
-  result: null,
+  user: {
+    name: null,
+    photoURL: null,
+  },
   error: null,
   loading: false,
 };
