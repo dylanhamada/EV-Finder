@@ -14,7 +14,8 @@ import Find from "./containers/Find/Find";
 
 const App = (props) => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.auth.user);
+  const authState = useSelector((state) => state.auth);
+  let home = null;
 
   useEffect(() => {
     const unlisten = auth.onAuthStateChanged((user) => {
@@ -31,20 +32,18 @@ const App = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => console.log("Render App"));
-
-  let home = <Landing />;
-
-  if (user.name !== null) {
-    home = (
-      <React.Fragment>
-        <NavMenu />
-        <Switch>
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/find" component={Find} />
-        </Switch>
-      </React.Fragment>
-    );
+  if (!authState.loading) {
+    authState.user.name === null
+      ? (home = <Landing />)
+      : (home = (
+          <React.Fragment>
+            <NavMenu />
+            <Switch>
+              <Route path="/" exact component={Dashboard} />
+              <Route path="/find" component={Find} />
+            </Switch>
+          </React.Fragment>
+        ));
   }
 
   return <div className={styles.App}>{home}</div>;

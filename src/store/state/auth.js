@@ -5,7 +5,7 @@ const state = {
     userId: null,
   },
   error: null,
-  loading: false,
+  loading: true,
 };
 
 export default state;
