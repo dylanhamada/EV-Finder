@@ -4,22 +4,11 @@ import { updateObject } from "../../shared/utility";
 
 const initialState = authState;
 
-const authGoogle = (state) => {
-  return updateObject(state, { error: null, loading: true });
-};
-
-const authTwitter = (state) => {
-  return updateObject(state, { error: null, loading: true });
-};
-
-const authGithub = (state) => {
-  return updateObject(state, { error: null, loading: true });
-};
-
 const authLogin = (state, action) => {
   const newUser = {
     name: action.user.displayName,
     photoURL: action.user.photoURL,
+    userId: action.user.uid,
   };
 
   return updateObject(state, {
@@ -29,11 +18,12 @@ const authLogin = (state, action) => {
   });
 };
 
-const authLogout = (state, action) => {
+const authLogout = (state) => {
   return updateObject(state, {
     user: {
       name: null,
       photoURL: null,
+      userId: null,
     },
     error: null,
     loading: false,
@@ -49,16 +39,10 @@ const authFail = (state, action) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.AUTH_GOOGLE:
-      return authGoogle(state);
-    case actionTypes.AUTH_TWITTER:
-      return authTwitter(state);
-    case actionTypes.AUTH_GITHUB:
-      return authGithub(state);
     case actionTypes.AUTH_LOGIN:
       return authLogin(state, action);
     case actionTypes.AUTH_LOGOUT:
-      return authLogout(state, action);
+      return authLogout(state);
     case actionTypes.AUTH_FAIL:
       return authFail(state, action);
     default:

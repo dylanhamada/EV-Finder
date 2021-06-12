@@ -1,13 +1,13 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
 
 import styles from "./Landing.module.css";
 
 import {
-  authGoogle,
-  authTwitter,
-  authGithub,
-} from "../../store/actions/auth.js";
+  auth,
+  googleProvider,
+  twitterProvider,
+  githubProvider,
+} from "../../shared/fire";
 import { vehicleImageRandomizer } from "../../shared/utility";
 
 import googleIcon from "../../assets/images/google-icon.svg";
@@ -15,8 +15,11 @@ import githubIcon from "../../assets/images/github-icon.svg";
 import twitterIcon from "../../assets/images/twitter-icon.svg";
 
 const Landing = (props) => {
-  const dispatch = useDispatch();
   const randomVehicle = vehicleImageRandomizer();
+
+  useEffect(() => {
+    console.log("Render Landing");
+  });
 
   return (
     <div className={styles.Landing}>
@@ -32,21 +35,21 @@ const Landing = (props) => {
       </p>
       <div
         className={`${styles.Button} ${styles.GoogleButton}`}
-        onClick={() => dispatch(authGoogle())}
+        onClick={() => auth.signInWithRedirect(googleProvider)}
       >
         <img alt="Google Icon" height="20" src={googleIcon} />
         <span className={styles.ButtonText}>Sign in with Google</span>
       </div>
       <div
         className={`${styles.Button} ${styles.TwitterButton}`}
-        onClick={() => dispatch(authTwitter())}
+        onClick={() => auth.signInWithRedirect(twitterProvider)}
       >
         <img alt="Twitter Icon" height="20" src={twitterIcon} />
         <span className={styles.ButtonText}>Sign in with Twitter</span>
       </div>
       <div
         className={`${styles.Button} ${styles.GithubButton}`}
-        onClick={() => dispatch(authGithub())}
+        onClick={() => auth.signInWithRedirect(githubProvider)}
       >
         <img alt="GitHub Icon" height="20" src={githubIcon} />
         <span className={styles.ButtonText}>Sign in with GitHub</span>
