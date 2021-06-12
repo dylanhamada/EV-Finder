@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import styles from "./Landing.module.css";
 
@@ -16,10 +16,6 @@ import twitterIcon from "../../assets/images/twitter-icon.svg";
 
 const Landing = (props) => {
   const randomVehicle = vehicleImageRandomizer();
-
-  useEffect(() => {
-    console.log("Render Landing");
-  });
 
   return (
     <div className={styles.Landing}>

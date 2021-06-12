@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import styles from "./NavMenu.module.css";
@@ -8,8 +9,8 @@ import MenuToggle from "../../components/UI/MenuToggle/MenuToggle";
 import User from "../../components/User/User";
 
 const NavMenu = (props) => {
+  const userInfo = useSelector((state) => state.auth.user);
   const [state, setState] = useState({
-    userName: "Dylan Hamada",
     menuOpen: false,
   });
 
@@ -35,7 +36,7 @@ const NavMenu = (props) => {
       <MenuToggle menuToggle={toggleHandler} />
       <nav className={menuClasses.join(" ")}>
         <CloseButton menuToggle={toggleHandler} />
-        <User userName={state.userName} />
+        <User userName={userInfo.name} userPhoto={userInfo.photoURL} />
         <ul className={styles.NavList}>
           <Link className={styles.Link} to="/find">
             <li className={styles.NavListItem} onClick={linkClickHandler}>

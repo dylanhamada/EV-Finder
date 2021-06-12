@@ -32,6 +32,11 @@ const authLogout = (state) => {
 
 const authFail = (state, action) => {
   return updateObject(state, {
+    user: {
+      name: null,
+      photoURL: null,
+      userId: null,
+    },
     error: action.error,
     loading: false,
   });
