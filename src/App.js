@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { withRouter, Route, Switch } from "react-router-dom";
 
 import { auth } from "./shared/fire";
-import { authLogin, authLogout } from "./store/actions/auth";
+import { authLogin, authFinished } from "./store/actions/auth";
 
 import styles from "./App.module.css";
 
@@ -20,9 +20,10 @@ const App = (props) => {
   useEffect(() => {
     const unlisten = auth.onAuthStateChanged((user) => {
       if (user) {
+        dispatch(authFinished());
         dispatch(authLogin(user));
       } else {
-        dispatch(authLogout());
+        dispatch(authFinished());
       }
     });
 
@@ -33,9 +34,10 @@ const App = (props) => {
   }, []);
 
   if (!authState.loading) {
-    authState.user.name === null
-      ? (home = <Landing />)
-      : (home = (
+    switch (authState.authenticated) {
+      case true:
+      case false:
+        home = (
           <React.Fragment>
             <NavMenu />
             <Switch>
@@ -43,7 +45,14 @@ const App = (props) => {
               <Route path="/find" component={Find} />
             </Switch>
           </React.Fragment>
-        ));
+        );
+        break;
+      case null:
+        home = <Landing />;
+        break;
+      default:
+        home = null;
+    }
   }
 
   return <div className={styles.App}>{home}</div>;

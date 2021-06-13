@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+
+import { auth } from "../../shared/fire";
+import { authLogout, authFinished } from "../../store/actions/auth";
 
 import styles from "./NavMenu.module.css";
 
@@ -9,6 +12,7 @@ import MenuToggle from "../../components/UI/MenuToggle/MenuToggle";
 import User from "../../components/User/User";
 
 const NavMenu = (props) => {
+  const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.auth.user);
   const [state, setState] = useState({
     menuOpen: false,
@@ -24,6 +28,19 @@ const NavMenu = (props) => {
     setState({
       menuOpen: false,
     });
+  };
+
+  const signOutHandler = () => {
+    auth
+      .signOut()
+      .then(() => {
+        linkClickHandler();
+        dispatch(authFinished());
+        dispatch(authLogout());
+      })
+      .catch((error) => {
+        console.log("error");
+      });
   };
 
   let menuClasses = [styles.NavMenu, styles.Close];
@@ -46,7 +63,9 @@ const NavMenu = (props) => {
           <li className={styles.NavListItem}>Browse</li>
           <li className={styles.NavListItem}>Compare</li>
           <li className={styles.NavListItem}>Favorites</li>
-          <li className={styles.NavListItem}>Log Out</li>
+          <li className={styles.NavListItem} onClick={signOutHandler}>
+            Sign Out
+          </li>
         </ul>
       </nav>
     </React.Fragment>

@@ -4,6 +4,12 @@ import { updateObject } from "../../shared/utility";
 
 const initialState = authState;
 
+const authFinished = (state, action) => {
+  return updateObject(state, {
+    loading: false,
+  });
+};
+
 const authLogin = (state, action) => {
   const newUser = {
     name: action.user.displayName,
@@ -14,7 +20,7 @@ const authLogin = (state, action) => {
   return updateObject(state, {
     user: newUser,
     error: null,
-    loading: false,
+    authenticated: true,
   });
 };
 
@@ -26,7 +32,7 @@ const authLogout = (state) => {
       userId: null,
     },
     error: null,
-    loading: false,
+    authenticated: false,
   });
 };
 
@@ -38,12 +44,14 @@ const authFail = (state, action) => {
       userId: null,
     },
     error: action.error,
-    loading: false,
+    authenticated: false,
   });
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.AUTH_FINISHED:
+      return authFinished(state);
     case actionTypes.AUTH_LOGIN:
       return authLogin(state, action);
     case actionTypes.AUTH_LOGOUT:

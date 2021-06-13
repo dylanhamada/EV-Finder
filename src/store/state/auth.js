@@ -6,6 +6,7 @@ const state = {
   },
   error: null,
   loading: true,
+  authenticated: null,
 };
 
 export default state;

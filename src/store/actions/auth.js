@@ -1,5 +1,11 @@
 import * as actionTypes from "./actionTypes";
 
+export const authFinished = () => {
+  return {
+    type: actionTypes.AUTH_FINISHED,
+  };
+};
+
 export const authLogin = (user) => {
   return {
     type: actionTypes.AUTH_LOGIN,
