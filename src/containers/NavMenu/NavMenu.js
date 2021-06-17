@@ -49,7 +49,7 @@ const NavMenu = (props) => {
   };
 
   let menuClasses = [styles.NavMenu, styles.Close];
-  let userSection = null;
+  let userProfile = null;
   let authButton = null;
 
   if (state.menuOpen) {
@@ -57,7 +57,7 @@ const NavMenu = (props) => {
   }
 
   if (userInfo.name !== null) {
-    userSection = (
+    userProfile = (
       <User userName={userInfo.name} userPhoto={userInfo.photoURL} />
     );
     authButton = (
@@ -78,7 +78,7 @@ const NavMenu = (props) => {
       <MenuToggle menuToggle={toggleHandler} />
       <nav className={menuClasses.join(" ")}>
         <CloseButton menuToggle={toggleHandler} />
-        {userSection}
+        {userProfile}
         <ul className={styles.NavList}>
           <Link className={styles.Link} to="/find">
             <li className={styles.NavListItem} onClick={linkClickHandler}>

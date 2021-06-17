@@ -1,17 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import styles from "./Dashboard.module.css";
 import User from "../../components/User/User";
 
 const Dashboard = (props) => {
-  const [state, setState] = useState({
-    userName: "Dylan Hamada",
-  });
+  const userInfo = useSelector((state) => state.auth.user);
+
+  let userProfile = null;
+
+  if (userInfo.name !== null) {
+    userProfile = (
+      <User userName={userInfo.name} userPhoto={userInfo.photoURL} />
+    );
+  }
 
   return (
     <div className={styles.Dashboard}>
-      <User userName={state.userName} />
+      {userProfile}
       <ul className={styles.NavList}>
         <Link className={styles.Link} to="/find">
           <li className={styles.NavListItem}>

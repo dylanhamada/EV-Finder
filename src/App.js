@@ -32,10 +32,6 @@ const App = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    console.log("App render");
-  });
-
   let home = null;
 
   if (!authState.loading) {
