@@ -19,6 +19,12 @@ export const authLogout = () => {
   };
 };
 
+export const authReset = () => {
+  return {
+    type: actionTypes.AUTH_RESET,
+  };
+};
+
 export const authFail = (error) => {
   return {
     type: actionTypes.AUTH_FAIL,

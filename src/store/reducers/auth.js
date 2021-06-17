@@ -36,6 +36,12 @@ const authLogout = (state) => {
   });
 };
 
+const authReset = (state) => {
+  return updateObject(state, {
+    authenticated: null,
+  });
+};
+
 const authFail = (state, action) => {
   return updateObject(state, {
     user: {
@@ -56,6 +62,8 @@ const reducer = (state = initialState, action) => {
       return authLogin(state, action);
     case actionTypes.AUTH_LOGOUT:
       return authLogout(state);
+    case actionTypes.AUTH_RESET:
+      return authReset(state);
     case actionTypes.AUTH_FAIL:
       return authFail(state, action);
     default:

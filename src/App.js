@@ -15,7 +15,6 @@ import Find from "./containers/Find/Find";
 const App = (props) => {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
-  let home = null;
 
   useEffect(() => {
     const unlisten = auth.onAuthStateChanged((user) => {
@@ -32,6 +31,12 @@ const App = (props) => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    console.log("App render");
+  });
+
+  let home = null;
 
   if (!authState.loading) {
     switch (authState.authenticated) {

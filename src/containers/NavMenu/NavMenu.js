@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { auth } from "../../shared/fire";
-import { authLogout, authFinished } from "../../store/actions/auth";
+import { authLogout, authFinished, authReset } from "../../store/actions/auth";
 
 import styles from "./NavMenu.module.css";
 
@@ -30,6 +30,11 @@ const NavMenu = (props) => {
     });
   };
 
+  const signInHandler = () => {
+    linkClickHandler();
+    dispatch(authReset());
+  };
+
   const signOutHandler = () => {
     auth
       .signOut()
@@ -44,8 +49,28 @@ const NavMenu = (props) => {
   };
 
   let menuClasses = [styles.NavMenu, styles.Close];
+  let userSection = null;
+  let authButton = null;
+
   if (state.menuOpen) {
     menuClasses = [styles.NavMenu, styles.Open];
+  }
+
+  if (userInfo.name !== null) {
+    userSection = (
+      <User userName={userInfo.name} userPhoto={userInfo.photoURL} />
+    );
+    authButton = (
+      <li className={styles.NavListItem} onClick={signOutHandler}>
+        Sign Out
+      </li>
+    );
+  } else {
+    authButton = (
+      <li className={styles.NavListItem} onClick={signInHandler}>
+        Sign In
+      </li>
+    );
   }
 
   return (
@@ -53,7 +78,7 @@ const NavMenu = (props) => {
       <MenuToggle menuToggle={toggleHandler} />
       <nav className={menuClasses.join(" ")}>
         <CloseButton menuToggle={toggleHandler} />
-        <User userName={userInfo.name} userPhoto={userInfo.photoURL} />
+        {userSection}
         <ul className={styles.NavList}>
           <Link className={styles.Link} to="/find">
             <li className={styles.NavListItem} onClick={linkClickHandler}>
@@ -63,9 +88,7 @@ const NavMenu = (props) => {
           <li className={styles.NavListItem}>Browse</li>
           <li className={styles.NavListItem}>Compare</li>
           <li className={styles.NavListItem}>Favorites</li>
-          <li className={styles.NavListItem} onClick={signOutHandler}>
-            Sign Out
-          </li>
+          {authButton}
         </ul>
       </nav>
     </React.Fragment>
