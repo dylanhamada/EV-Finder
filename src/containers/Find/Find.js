@@ -17,7 +17,8 @@ import {
 import { scrollToTop } from "../../shared/utility";
 
 const Find = (props) => {
-  const reduxState = useSelector((state) => state.find);
+  const findState = useSelector((state) => state.find);
+  const authState = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
   const history = useHistory();
   const [state, setState] = useState({
@@ -52,7 +53,7 @@ const Find = (props) => {
   };
 
   const submitQuestionnaireHandler = () => {
-    let complete = reduxState.questions.every((question) => {
+    let complete = findState.questions.every((question) => {
       return question.selected !== null;
     });
 
@@ -78,13 +79,13 @@ const Find = (props) => {
         </Route>
         <Route path="/find/criteria" exact>
           <Criteria
-            criteria={reduxState.criteria}
+            criteria={findState.criteria}
             dispatchCriteria={dispatchCriteria}
           />
         </Route>
         <Route path="/find/questionnaire" exact>
           <Questionnaire
-            questions={reduxState.questions}
+            questions={findState.questions}
             dispatchQuestions={dispatchQuestions}
             complete={state.questionnaireComplete}
             touched={state.questionnaireTouched}
@@ -92,7 +93,11 @@ const Find = (props) => {
           />
         </Route>
         <Route path="/find/result" exact>
-          <Result click={getStartedHandler} result={reduxState.topVehicle} />
+          <Result
+            click={getStartedHandler}
+            result={findState.topVehicle}
+            user={authState}
+          />
         </Route>
       </Switch>
     </div>

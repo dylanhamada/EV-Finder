@@ -4,10 +4,21 @@
   padding: 15px;
 }
 
-.Owner {
+.User {
+  align-items: center;
+  column-gap: 15px;
+  display: flex;
   font-size: 14px;
-  margin: 0 0 5px 0;
+  margin: 0 0 15px 0;
   text-transform: uppercase;
+}
+
+.Photo {
+  background-color: #444444;
+  border-radius: 50%;
+  display: block;
+  height: 45px;
+  width: 45px;
 }
 
 .Title {

@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
+import styles from "./NavMenu.module.css";
 import { auth } from "../../shared/fire";
 import { authLogout, authFinished, authReset } from "../../store/actions/auth";
-
-import styles from "./NavMenu.module.css";
 
 import CloseButton from "../../components/UI/CloseButton/CloseButton";
 import MenuToggle from "../../components/UI/MenuToggle/MenuToggle";

@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter, Route, Switch } from "react-router-dom";
 
+import styles from "./App.module.css";
 import { auth } from "./shared/fire";
 import { authLogin, authFinished } from "./store/actions/auth";
-
-import styles from "./App.module.css";
 
 import Landing from "./containers/Landing/Landing";
 import NavMenu from "./containers/NavMenu/NavMenu";
