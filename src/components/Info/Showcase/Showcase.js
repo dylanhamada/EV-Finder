@@ -20,6 +20,8 @@ const Showcase = (props) => {
         <span>{firstName}'s EV</span>
       </div>
     );
+
+    favorite = <span className={styles.Favorite}>Favorite</span>;
   }
 
   return (
@@ -33,6 +35,7 @@ const Showcase = (props) => {
         src={props.vehicle.photo}
         alt={`${props.vehicle.manufacturer} ${props.vehicle.name}`}
       />
+      <div className={styles.Buttons}>{favorite}</div>
     </div>
   );
 };
