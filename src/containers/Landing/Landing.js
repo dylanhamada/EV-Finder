@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import styles from "./Landing.module.css";
 
@@ -17,8 +18,14 @@ import githubIcon from "../../assets/images/github-icon.svg";
 import twitterIcon from "../../assets/images/twitter-icon.svg";
 
 const Landing = (props) => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const randomVehicle = vehicleImageRandomizer();
+
+  const authGuest = () => {
+    dispatch(authLogout());
+    history.push("/");
+  };
 
   return (
     <div className={styles.Landing}>
@@ -53,7 +60,7 @@ const Landing = (props) => {
         <img alt="GitHub Icon" height="20" src={githubIcon} />
         <span className={styles.ButtonText}>Sign in with GitHub</span>
       </div>
-      <p className={styles.Guest} onClick={() => dispatch(authLogout())}>
+      <p className={styles.Guest} onClick={() => authGuest()}>
         Continue as Guest
       </p>
     </div>

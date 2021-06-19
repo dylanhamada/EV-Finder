@@ -3,11 +3,17 @@ import React from "react";
 import styles from "./Showcase.module.css";
 
 const Showcase = (props) => {
-  let user = null;
+  let favorite = null;
+  let user = (
+    <div className={styles.User}>
+      <span>Your EV</span>
+    </div>
+  );
 
   if (props.user.name !== null) {
     const regex = /(\w*)/;
     const firstName = props.user.name.match(regex)[0];
+
     user = (
       <div className={styles.User}>
         <img alt="User" className={styles.Photo} src={props.user.photoURL} />
