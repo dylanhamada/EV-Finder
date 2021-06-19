@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import styles from "./Landing.module.css";
 
@@ -8,6 +9,7 @@ import {
   twitterProvider,
   githubProvider,
 } from "../../shared/fire";
+import { authLogout } from "../../store/actions/auth";
 import { vehicleImageRandomizer } from "../../shared/utility";
 
 import googleIcon from "../../assets/images/google-icon.svg";
@@ -15,6 +17,7 @@ import githubIcon from "../../assets/images/github-icon.svg";
 import twitterIcon from "../../assets/images/twitter-icon.svg";
 
 const Landing = (props) => {
+  const dispatch = useDispatch();
   const randomVehicle = vehicleImageRandomizer();
 
   return (
@@ -50,7 +53,9 @@ const Landing = (props) => {
         <img alt="GitHub Icon" height="20" src={githubIcon} />
         <span className={styles.ButtonText}>Sign in with GitHub</span>
       </div>
-      <p className={styles.Guest}>Continue as Guest</p>
+      <p className={styles.Guest} onClick={() => dispatch(authLogout())}>
+        Continue as Guest
+      </p>
     </div>
   );
 };
