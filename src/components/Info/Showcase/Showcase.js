@@ -9,6 +9,11 @@ const Showcase = (props) => {
       <span>Your EV</span>
     </div>
   );
+  let title = (
+    <h3 className={styles.Title}>
+      {props.vehicle.manufacturer} {props.vehicle.name}
+    </h3>
+  );
 
   if (props.user.name !== null) {
     const regex = /(\w*)/;
@@ -24,12 +29,18 @@ const Showcase = (props) => {
     favorite = <span className={styles.Favorite}>Favorite</span>;
   }
 
-  return (
-    <div className={styles.Showcase}>
-      {user}
+  if (props.result) {
+    title = (
       <h3 className={styles.Title}>
         Meet the 2020 {props.vehicle.manufacturer} {props.vehicle.name}
       </h3>
+    );
+  }
+
+  return (
+    <div className={styles.Showcase}>
+      {user}
+      {title}
       <img
         className={styles.Image}
         src={props.vehicle.photo}
