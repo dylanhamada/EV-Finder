@@ -5,6 +5,7 @@ import { withRouter, Route, Switch } from "react-router-dom";
 import styles from "./App.module.css";
 import { auth } from "./shared/fire";
 import { authLogin, authFinished } from "./store/actions/auth";
+import { userInit } from "./store/actions/user";
 
 import Landing from "./containers/Landing/Landing";
 import NavMenu from "./containers/NavMenu/NavMenu";
@@ -20,6 +21,7 @@ const App = (props) => {
       if (user) {
         dispatch(authFinished());
         dispatch(authLogin(user));
+        dispatch(userInit(user));
       } else {
         dispatch(authFinished());
       }

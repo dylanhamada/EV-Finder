@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import styles from "./NavMenu.module.css";
 import { auth } from "../../shared/fire";
 import { authLogout, authFinished, authReset } from "../../store/actions/auth";
+import { userUnload } from "../../store/actions/user";
 
 import CloseButton from "../../components/UI/CloseButton/CloseButton";
 import MenuToggle from "../../components/UI/MenuToggle/MenuToggle";
@@ -41,6 +42,7 @@ const NavMenu = (props) => {
         linkClickHandler();
         dispatch(authFinished());
         dispatch(authLogout());
+        dispatch(userUnload());
       })
       .catch((error) => {
         console.log("error");
