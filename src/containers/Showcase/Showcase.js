@@ -1,8 +1,13 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Showcase.module.css";
+import { userAddFavorite } from "../../store/actions/user";
 
 const Showcase = (props) => {
+  const dispatch = useDispatch();
+  const authState = useSelector((state) => state.auth);
+
   let favorite = null;
   let user = (
     <div className={styles.User}>
@@ -26,7 +31,16 @@ const Showcase = (props) => {
       </div>
     );
 
-    favorite = <span className={styles.Favorite}>Favorite</span>;
+    favorite = (
+      <span
+        className={styles.Favorite}
+        onClick={() =>
+          dispatch(userAddFavorite(authState.user.userId, props.vehicle.name))
+        }
+      >
+        Favorite
+      </span>
+    );
   }
 
   if (props.result) {

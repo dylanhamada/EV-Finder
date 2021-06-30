@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./Result.module.css";
 
-import Showcase from "../../Info/Showcase/Showcase";
+import Showcase from "../../../containers/Showcase/Showcase";
 import Blurb from "../../Info/Blurb/Blurb";
 import Specs from "../../Info/Specs/Specs";
 import Reviews from "../../Info/Reviews/Reviews";

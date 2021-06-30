@@ -1,4 +1,5 @@
 import * as actionTypes from "./actionTypes";
+import firebase from "firebase/app";
 
 import { db } from "../../shared/fire";
 
@@ -35,6 +36,31 @@ export const userInit = (user) => {
       })
       .catch((error) => {
         console.log("Error getting document");
+      });
+  };
+};
+
+export const addFavorite = (vehicle) => {
+  return {
+    type: actionTypes.ADD_FAVORITE,
+    vehicle: vehicle,
+  };
+};
+
+export const userAddFavorite = (user, vehicle) => {
+  return (dispatch) => {
+    const userRef = db.collection("users").doc(user);
+    console.log(user.uid);
+
+    userRef
+      .update({
+        favorites: firebase.firestore.FieldValue.arrayUnion(vehicle),
+      })
+      .then(() => {
+        dispatch(addFavorite(vehicle));
+      })
+      .catch((error) => {
+        console.log("Error writing document: ", error);
       });
   };
 };
