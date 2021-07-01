@@ -13,11 +13,13 @@ const userUnload = (state) => {
 };
 
 const addFavorite = (state, action) => {
-  const newFavorites = {
-    favorites: [...state.favorites, action.vehicle],
-  };
+  const currentFavorites = [...state.favorites];
 
-  return updateObject(state, newFavorites);
+  if (currentFavorites.includes(action.vehicle) === false) {
+    return updateObject(state, [...state.favorites, action.vehicle]);
+  }
+
+  return state;
 };
 
 const reducer = (state = initialState, action) => {
