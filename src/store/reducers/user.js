@@ -12,11 +12,15 @@ const userUnload = (state) => {
   return initialState;
 };
 
-const addFavorite = (state, action) => {
+const userFavorite = (state, action) => {
   const currentFavorites = [...state.favorites];
 
   if (currentFavorites.includes(action.vehicle) === false) {
-    return updateObject(state, [...state.favorites, action.vehicle]);
+    const newFavorites = {
+      favorites: [...state.favorites, action.vehicle],
+    };
+
+    return updateObject(state, newFavorites);
   }
 
   return state;
@@ -28,8 +32,8 @@ const reducer = (state = initialState, action) => {
       return userLoad(state, action);
     case actionTypes.USER_UNLOAD:
       return userUnload();
-    case actionTypes.ADD_FAVORITE:
-      return addFavorite(state, action);
+    case actionTypes.USER_FAVORITE:
+      return userFavorite(state, action);
     default:
       return state;
   }

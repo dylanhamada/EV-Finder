@@ -1,0 +1,14 @@
+.User {
+  align-items: center;
+  column-gap: 15px;
+  display: flex;
+  margin: 0 0 15px 0;
+}
+
+.Photo {
+  background-color: #444444;
+  border-radius: 50%;
+  display: block;
+  height: 45px;
+  width: 45px;
+}

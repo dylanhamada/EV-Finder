@@ -4,62 +4,38 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./Showcase.module.css";
 import { userAddFavorite } from "../../store/actions/user";
 
+import User from "../../components/Showcase/User/User";
+import Title from "../../components/Showcase/Title/Title";
+import Image from "../../components/Showcase/Image/Image";
+import Button from "../../components/Showcase/Button/Button";
+
 const Showcase = (props) => {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
 
   let favorite = null;
-  let user = (
-    <div className={styles.User}>
-      <span>Your EV</span>
-    </div>
-  );
-  let title = (
-    <h3 className={styles.Title}>
-      {props.vehicle.manufacturer} {props.vehicle.name}
-    </h3>
-  );
+  let user = null;
+  let title = <Title vehicle={props.vehicle} />;
 
-  if (props.user.name !== null) {
-    const regex = /(\w*)/;
-    const firstName = props.user.name.match(regex)[0];
-
-    user = (
-      <div className={styles.User}>
-        <img alt="User" className={styles.Photo} src={props.user.photoURL} />
-        <span>{firstName}'s EV</span>
-      </div>
-    );
-
-    favorite = (
-      <span
-        className={styles.Favorite}
-        onClick={() =>
-          dispatch(userAddFavorite(authState.user.userId, props.vehicle.name))
-        }
-      >
-        Favorite
-      </span>
-    );
-  }
+  const addFavorite = () => {
+    dispatch(userAddFavorite(authState.user.userId, props.vehicle.name));
+  };
 
   if (props.result) {
-    title = (
-      <h3 className={styles.Title}>
-        Meet the 2020 {props.vehicle.manufacturer} {props.vehicle.name}
-      </h3>
-    );
+    user = <User />;
+    title = <Title vehicle={props.vehicle} result />;
+
+    if (props.user.name !== null) {
+      user = <User user={props.user} />;
+      favorite = <Button buttonType="favorite" click={addFavorite} />;
+    }
   }
 
   return (
     <div className={styles.Showcase}>
       {user}
       {title}
-      <img
-        className={styles.Image}
-        src={props.vehicle.photo}
-        alt={`${props.vehicle.manufacturer} ${props.vehicle.name}`}
-      />
+      <Image vehicle={props.vehicle} />
       <div className={styles.Buttons}>{favorite}</div>
     </div>
   );

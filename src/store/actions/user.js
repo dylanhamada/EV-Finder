@@ -40,9 +40,9 @@ export const userInit = (user) => {
   };
 };
 
-export const addFavorite = (vehicle) => {
+export const userFavorite = (vehicle) => {
   return {
-    type: actionTypes.ADD_FAVORITE,
+    type: actionTypes.USER_FAVORITE,
     vehicle: vehicle,
   };
 };
@@ -57,7 +57,7 @@ export const userAddFavorite = (user, vehicle) => {
         favorites: firebase.firestore.FieldValue.arrayUnion(vehicle),
       })
       .then(() => {
-        dispatch(addFavorite(vehicle));
+        dispatch(userFavorite(vehicle));
       })
       .catch((error) => {
         console.log("Error writing document: ", error);
