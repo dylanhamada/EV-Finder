@@ -26,6 +26,19 @@ const userFavorite = (state, action) => {
   return state;
 };
 
+const userUnfavorite = (state, action) => {
+  const currentFavorites = [...state.favorites];
+
+  if (currentFavorites.includes(action.vehicle) === true) {
+    const ind = currentFavorites.indexOf(action.vehicle);
+    currentFavorites.splice(ind, 1);
+
+    return updateObject(state, { favorites: currentFavorites });
+  }
+
+  return state;
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.USER_LOAD:
@@ -34,6 +47,8 @@ const reducer = (state = initialState, action) => {
       return userUnload();
     case actionTypes.USER_FAVORITE:
       return userFavorite(state, action);
+    case actionTypes.USER_UNFAVORITE:
+      return userUnfavorite(state, action);
     default:
       return state;
   }

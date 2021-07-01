@@ -50,7 +50,6 @@ export const userFavorite = (vehicle) => {
 export const userAddFavorite = (user, vehicle) => {
   return (dispatch) => {
     const userRef = db.collection("users").doc(user);
-    console.log(user.uid);
 
     userRef
       .update({
@@ -58,6 +57,30 @@ export const userAddFavorite = (user, vehicle) => {
       })
       .then(() => {
         dispatch(userFavorite(vehicle));
+      })
+      .catch((error) => {
+        console.log("Error writing document: ", error);
+      });
+  };
+};
+
+export const userUnfavorite = (vehicle) => {
+  return {
+    type: actionTypes.USER_UNFAVORITE,
+    vehicle: vehicle,
+  };
+};
+
+export const userRemoveFavorite = (user, vehicle) => {
+  return (dispatch) => {
+    const userRef = db.collection("users").doc(user);
+
+    userRef
+      .update({
+        favorites: firebase.firestore.FieldValue.arrayRemove(vehicle),
+      })
+      .then(() => {
+        dispatch(userUnfavorite(vehicle));
       })
       .catch((error) => {
         console.log("Error writing document: ", error);

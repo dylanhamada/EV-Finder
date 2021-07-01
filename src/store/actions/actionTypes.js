@@ -12,3 +12,4 @@ export const AUTH_FAIL = "AUTH_FAIL";
 export const USER_LOAD = "USER_LOAD";
 export const USER_UNLOAD = "USER_UNLOAD";
 export const USER_FAVORITE = "USER_FAVORITE";
+export const USER_UNFAVORITE = "USER_UNFAVORITE";

@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Showcase.module.css";
-import { userAddFavorite } from "../../store/actions/user";
+import { userAddFavorite, userRemoveFavorite } from "../../store/actions/user";
 
 import User from "../../components/Showcase/User/User";
 import Title from "../../components/Showcase/Title/Title";
@@ -12,6 +12,7 @@ import Button from "../../components/Showcase/Button/Button";
 const Showcase = (props) => {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
+  const userState = useSelector((state) => state.user);
 
   let favorite = null;
   let user = null;
@@ -21,13 +22,23 @@ const Showcase = (props) => {
     dispatch(userAddFavorite(authState.user.userId, props.vehicle.name));
   };
 
+  const removeFavorite = () => {
+    dispatch(userRemoveFavorite(authState.user.userId, props.vehicle.name));
+  };
+
   if (props.result) {
     user = <User />;
     title = <Title vehicle={props.vehicle} result />;
 
     if (props.user.name !== null) {
+      const userFavorites = [...userState.favorites];
+
       user = <User user={props.user} />;
       favorite = <Button buttonType="favorite" click={addFavorite} />;
+
+      if (userFavorites.includes(props.vehicle.name) === true) {
+        favorite = <Button buttonType="unfavorite" click={removeFavorite} />;
+      }
     }
   }
 

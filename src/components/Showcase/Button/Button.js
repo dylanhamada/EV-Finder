@@ -13,6 +13,13 @@ const Button = (props) => {
         </span>
       );
       break;
+    case "unfavorite":
+      button = (
+        <span className={styles.Favorite} onClick={() => props.click()}>
+          Unfavorite
+        </span>
+      );
+      break;
     default:
       button = null;
   }
