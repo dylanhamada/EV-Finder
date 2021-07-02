@@ -11,6 +11,7 @@ import Landing from "./containers/Landing/Landing";
 import NavMenu from "./containers/NavMenu/NavMenu";
 import Dashboard from "./containers/Dashboard/Dashboard";
 import Find from "./containers/Find/Find";
+import Browse from "./containers/Browse/Browse";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -45,6 +46,7 @@ const App = (props) => {
             <Switch>
               <Route path="/" exact component={Dashboard} />
               <Route path="/find" component={Find} />
+              <Route path="/browse" component={Browse} />
             </Switch>
           </React.Fragment>
         );
