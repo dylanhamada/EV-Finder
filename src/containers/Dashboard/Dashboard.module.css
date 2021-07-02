@@ -1,40 +1,35 @@
-.Dashboard {
-    background-color: #eee;
-    box-sizing: border-box;
-    color: #444;
-    padding: 100px 30px 30px 30px;
-}
-
 .NavList {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .NavListItem {
-    cursor: pointer;
-    margin-bottom: 30px;
+  cursor: pointer;
+  margin-bottom: 30px;
 }
 
-.NavListItem:hover, .NavListItem:active, .NavListItem:focus {
-    color: #00a9ef;
+.NavListItem:hover,
+.NavListItem:active,
+.NavListItem:focus {
+  color: #00a9ef;
 }
 
 .NavListItemLink {
-    font-family: "IBMPlexSans-Bold", sans-serif;
-    font-size: 24px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .NavListItemDescription {
-    font-family: 'IBMPlexSans-Regular';
-    font-size: 14px;
-    margin: 0;
-    text-transform: none;
+  font-family: "IBMPlexSans-Regular";
+  font-size: 14px;
+  margin: 0;
+  text-transform: none;
 }
 
 .Link {
-    color: #444;
-    text-decoration: none;
+  color: #444;
+  text-decoration: none;
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import styles from "./Dashboard.module.css";
+import Container from "../../hoc/Container/Container";
 import User from "../../components/User/User";
 
 const Dashboard = (props) => {
@@ -17,7 +18,7 @@ const Dashboard = (props) => {
   }
 
   return (
-    <div className={styles.Dashboard}>
+    <Container>
       {userProfile}
       <ul className={styles.NavList}>
         <Link className={styles.Link} to="/find">
@@ -47,7 +48,7 @@ const Dashboard = (props) => {
           </p>
         </li>
       </ul>
-    </div>
+    </Container>
   );
 };
 

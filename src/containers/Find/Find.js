@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import styles from "./Find.module.css";
+import Container from "../../hoc/Container/Container";
 import Intro from "../../components/Find/Intro/Intro";
 import Criteria from "../../components/Find/Criteria/Criteria";
 import Questionnaire from "../../components/Find/Questionnaire/Questionnaire";
@@ -72,7 +72,7 @@ const Find = (props) => {
   };
 
   return (
-    <div className={styles.Find}>
+    <Container>
       <Switch>
         <Route path={props.match.url + "/"} exact>
           <Intro click={getStartedHandler} />
@@ -100,7 +100,7 @@ const Find = (props) => {
           />
         </Route>
       </Switch>
-    </div>
+    </Container>
   );
 };
 

@@ -1,9 +1,9 @@
 import React from "react";
 
-import styles from "./Browse.module.css";
+import Container from "../../hoc/Container/Container";
 
 const Browse = (props) => {
-  return <div className={styles.Browse}></div>;
+  return <Container></Container>;
 };
 
 export default Browse;
