@@ -1,13 +1,13 @@
 import React from "react";
 
-import Container from "../../hoc/Container/Container";
+import styles from "./Browse.module.css";
 import Scrollable from "../../components/Browse/Scrollable/Scrollable";
 
 const Browse = (props) => {
   return (
-    <Container>
+    <div className={styles.Browse}>
       <Scrollable />
-    </Container>
+    </div>
   );
 };
 

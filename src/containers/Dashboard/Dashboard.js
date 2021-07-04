@@ -29,12 +29,14 @@ const Dashboard = (props) => {
             </p>
           </li>
         </Link>
-        <li className={styles.NavListItem}>
-          <h3 className={styles.NavListItemLink}>Browse</h3>
-          <p className={styles.NavListItemDescription}>
-            Browse all of 2020's electric vehicles.
-          </p>
-        </li>
+        <Link className={styles.Link} to="/browse">
+          <li className={styles.NavListItem}>
+            <h3 className={styles.NavListItemLink}>Browse</h3>
+            <p className={styles.NavListItemDescription}>
+              Browse all of 2020's electric vehicles.
+            </p>
+          </li>
+        </Link>
         <li className={styles.NavListItem}>
           <h3 className={styles.NavListItemLink}>Compare</h3>
           <p className={styles.NavListItemDescription}>
