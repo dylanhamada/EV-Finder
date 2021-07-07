@@ -1,9 +1,10 @@
 import React from "react";
 
 import styles from "./Card.module.css";
+import Showcase from "../../../containers/Showcase/Showcase";
 
 const Card = (props) => {
-  let card = <div className={styles.Card}>Card</div>;
+  let card = <div className={styles.Card}></div>;
 
   switch (props.end) {
     case "first":
