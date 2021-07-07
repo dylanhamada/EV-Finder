@@ -3,3 +3,11 @@
   height: 300px;
   width: calc(100vw - 60px);
 }
+
+.CardFirst {
+  margin-left: 30px;
+}
+
+.CardLast {
+  margin-right: 30px;
+}

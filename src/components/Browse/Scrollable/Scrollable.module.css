@@ -1,5 +1,10 @@
 .Scrollable {
   display: grid;
-  grid-auto-flow: column;
   overflow-x: scroll;
+}
+
+.ScrollableContainer {
+  column-gap: 30px;
+  display: grid;
+  grid-auto-flow: column;
 }
