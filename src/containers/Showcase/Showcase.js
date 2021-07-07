@@ -30,15 +30,18 @@ const Showcase = (props) => {
     user = <User />;
     title = <Title vehicle={props.vehicle} result />;
 
-    if (props.user.name !== null) {
-      const userFavorites = [...userState.favorites];
+    if (authState.user.name !== null) {
+      user = <User user={authState.user} />;
+    }
+  }
 
-      user = <User user={props.user} />;
-      favorite = <Button buttonType="favorite" click={addFavorite} />;
+  if (authState.user.name !== null) {
+    const userFavorites = [...userState.favorites];
 
-      if (userFavorites.includes(props.vehicle.name) === true) {
-        favorite = <Button buttonType="unfavorite" click={removeFavorite} />;
-      }
+    favorite = <Button buttonType="favorite" click={addFavorite} />;
+
+    if (userFavorites.includes(props.vehicle.name) === true) {
+      favorite = <Button buttonType="unfavorite" click={removeFavorite} />;
     }
   }
 
