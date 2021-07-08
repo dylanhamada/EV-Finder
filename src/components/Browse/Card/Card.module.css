@@ -1,6 +1,4 @@
 .Card {
-  background-color: red;
-  height: 300px;
   width: calc(100vw - 60px);
 }
 

@@ -4,18 +4,26 @@ import styles from "./Card.module.css";
 import Showcase from "../../../containers/Showcase/Showcase";
 
 const Card = (props) => {
-  let card = <div className={styles.Card}></div>;
+  let cardStyle;
 
   switch (props.end) {
     case "first":
-      card = <div className={`${styles.Card} ${styles.CardFirst}`}>Card</div>;
+      cardStyle = `${styles.Card} ${styles.CardFirst}`;
+      console.log(cardStyle);
       break;
     case "last":
-      card = <div className={`${styles.Card} ${styles.CardLast}`}>Card</div>;
+      cardStyle = `${styles.Card} ${styles.CardLast}`;
+      console.log(cardStyle);
       break;
     default:
-      card = <div className={styles.Card}>Card</div>;
+      cardStyle = `${styles.Card}`;
   }
+
+  let card = (
+    <div className={cardStyle}>
+      <Showcase vehicle={props.vehicle} />
+    </div>
+  );
 
   return card;
 };
