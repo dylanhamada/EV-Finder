@@ -14,6 +14,7 @@ const Showcase = (props) => {
   const authState = useSelector((state) => state.auth);
   const userState = useSelector((state) => state.user);
 
+  let details = null;
   let favorite = null;
   let user = null;
   let title = <Title vehicle={props.vehicle} />;
@@ -35,6 +36,10 @@ const Showcase = (props) => {
     }
   }
 
+  if (props.card) {
+    details = <Button buttonType="details" vehicle={props.vehicle.id} />;
+  }
+
   if (authState.user.name !== null) {
     const userFavorites = [...userState.favorites];
 
@@ -50,7 +55,10 @@ const Showcase = (props) => {
       {user}
       {title}
       <Image vehicle={props.vehicle} />
-      <div className={styles.Buttons}>{favorite}</div>
+      <div className={styles.Buttons}>
+        {details}
+        {favorite}
+      </div>
     </div>
   );
 };

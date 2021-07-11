@@ -21,7 +21,7 @@ const Card = (props) => {
 
   let card = (
     <div className={cardStyle}>
-      <Showcase vehicle={props.vehicle} />
+      <Showcase card vehicle={props.vehicle} />
       <Specs snapshot={snapshot} specs={props.vehicle} />
     </div>
   );

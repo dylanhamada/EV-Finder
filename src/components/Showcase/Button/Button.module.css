@@ -1,3 +1,10 @@
+.Details {
+  color: white;
+  grid-column: 1;
+  text-align: left;
+  text-decoration: none;
+}
+
 .Favorite {
   grid-column: 2;
   text-align: right;
