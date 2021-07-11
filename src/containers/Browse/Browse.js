@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 
 import styles from "./Browse.module.css";
 import Scrollable from "../../components/Browse/Scrollable/Scrollable";
+import Details from "../../components/Browse/Details/Details";
 
 const Browse = (props) => {
   const browseState = useSelector((state) => state.browse);
@@ -13,6 +14,9 @@ const Browse = (props) => {
       <Switch>
         <Route path="/browse" exact>
           <Scrollable vehicles={browseState} />
+        </Route>
+        <Route path={`/browse/:vehicle`}>
+          <Details />
         </Route>
       </Switch>
     </div>
