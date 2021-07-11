@@ -2,6 +2,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "E-Tron",
+      id: "e-tron",
       manufacturer: "Audi",
       blurb:
         "Sporting classy looks, a refined riding experience, and adequate range for its segment, the 2020 Audi E-Tron makes family outings a next-level affair.",
@@ -51,6 +52,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "i3",
+      id: "i3",
       manufacturer: "BMW",
       blurb:
         "The BMW i3 is unique, quirky, and perfect for zipping around the city, bringing with it the trademark BMW prestige and quality.",
@@ -99,6 +101,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Bolt",
+      id: "bolt",
       manufacturer: "Chevrolet",
       blurb:
         "The practical driver's electric vehicle, the Chevrolet Bolt is all about value, boasting industry-leading range, ride comfort, and interior spaciousness",
@@ -149,6 +152,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Ioniq",
+      id: "ioniq",
       manufacturer: "Hyundai",
       blurb:
         "As Hyundai's main entry into the electric vehicle contest, the Ioniq gives its competitors a run for their money, with stellar fuel economy, driving ergonomics, and added features.",
@@ -199,6 +203,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Kona",
+      id: "kona",
       manufacturer: "Hyundai",
       blurb:
         "If future-facing is your cup of tea, the Hyundai Kona Electric's unique styling makes it a clear choice, especially when also considering its leading range, power, and handling",
@@ -249,6 +254,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "I-Pace",
+      id: "i-pace",
       manufacturer: "Jaguar",
       blurb:
         "Nothing else drives like a Jaguar, and with the British carmaker's first entry into the electric vehicle market, this sporty, luxurious SUV is sure to turn heads and tear up the streets.",
@@ -297,6 +303,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Niro",
+      id: "niro",
       manufacturer: "KIA",
       blurb:
         "Modern KIAs are hard to beat for value, and the Niro EV is no exception, with its mind-boggling range, industry-leading safety features, and planted and responsive handling.",
@@ -345,6 +352,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Leaf",
+      id: "leaf",
       manufacturer: "Nissan",
       blurb:
         "The grandma of all electric vehicles, the Nissan Leaf is still going strong, built with the simplicity and common sense all new EVs can only hope to emulate.",
@@ -393,6 +401,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Leaf Plus",
+      id: "leaf-plus",
       manufacturer: "Nissan",
       blurb:
         "With a torquier engine and greater range than its very capable little brother, the Nissan Leaf Plus quietly gets you where you need to go, and back again.",
@@ -441,6 +450,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Taycan",
+      id: "taycan",
       manufacturer: "Porsche",
       blurb:
         "The Porsche Taycan marks the Italian sports car manufacturer's bold entry into the electric vehicle market, and with a roaring 522 horsepower and the classic Porsche refinement, the Taycan is sure to give its competitors a run for their money.",
@@ -490,6 +500,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Model 3",
+      id: "model-3",
       manufacturer: "Tesla",
       blurb:
         "The standard to which all other mid-price electric vehicles are compared, the Tesla Model 3 leads in virtually every category, from range and power to comfort and technology.",
@@ -538,6 +549,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Model S",
+      id: "model-s",
       manufacturer: "Tesla",
       blurb:
         "The Tesla Model S is the bar to which every aspiring premium electric vehicle must compare itself, boasting a whopping 391 mile range on a single charge, 483 horses of quiet power, and the refinement we've all come to expect from the EV pioneer.",
@@ -586,6 +598,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Model X",
+      id: "model-x",
       manufacturer: "Tesla",
       blurb:
         "With its gull-wing doors and sleek, imposing appearance, the Tesla Model X brings the SUV form factor into a whole new, electric generation.",
@@ -634,6 +647,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "Model Y",
+      id: "model-y",
       manufacturer: "Tesla",
       blurb:
         "The Tesla Model Y, not to be outdone by its older sibling the Model X, trades power for comfort and practicality, maintaining Tesla's unique look while at the same time squeezing in class-leading range and comfort into a more attractive value proposition.",
@@ -683,6 +697,7 @@ const vehicleInfo = [
   {
     specs: {
       name: "E-Golf",
+      id: "e-golf",
       manufacturer: "Volkswagen",
       blurb:
         "The German manufacturer's first foray into the electric vehicle market, the E-Golf offers all the styling and performance cues we've come to expect from a modern Golf, but in a vastly more eco-friendly variant.",

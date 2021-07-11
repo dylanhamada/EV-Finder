@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./Specs.module.css";
 
 const Specs = (props) => {
-  const order = [
+  let order = [
     "price",
     "range",
     "body type",
@@ -17,6 +17,10 @@ const Specs = (props) => {
     "dimensions",
     "weight",
   ];
+
+  if (props.snapshot) {
+    order = props.snapshot;
+  }
 
   const details = order.map((detail) => {
     return (

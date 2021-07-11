@@ -2,18 +2,18 @@ import React from "react";
 
 import styles from "./Card.module.css";
 import Showcase from "../../../containers/Showcase/Showcase";
+import Specs from "../../Info/Specs/Specs";
 
 const Card = (props) => {
   let cardStyle;
+  let snapshot = ["price", "charging time", "range", "horsepower"];
 
   switch (props.end) {
     case "first":
       cardStyle = `${styles.Card} ${styles.CardFirst}`;
-      console.log(cardStyle);
       break;
     case "last":
       cardStyle = `${styles.Card} ${styles.CardLast}`;
-      console.log(cardStyle);
       break;
     default:
       cardStyle = `${styles.Card}`;
@@ -22,6 +22,7 @@ const Card = (props) => {
   let card = (
     <div className={cardStyle}>
       <Showcase vehicle={props.vehicle} />
+      <Specs snapshot={snapshot} specs={props.vehicle} />
     </div>
   );
 
