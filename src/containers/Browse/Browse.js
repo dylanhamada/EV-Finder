@@ -15,7 +15,7 @@ const Browse = (props) => {
         <Route path="/browse" exact>
           <Scrollable vehicles={browseState} />
         </Route>
-        <Route path={`/browse/:vehicle`}>
+        <Route path={`/browse/:vehiclePath`}>
           <Details />
         </Route>
       </Switch>
