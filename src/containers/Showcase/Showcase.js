@@ -40,7 +40,7 @@ const Showcase = (props) => {
     details = <Button buttonType="details" vehicle={props.vehicle.id} />;
   }
 
-  if (authState.user.name !== null) {
+  if (authState.user.name !== null && userState.favorites !== null) {
     const userFavorites = [...userState.favorites];
 
     favorite = <Button buttonType="favorite" click={addFavorite} />;

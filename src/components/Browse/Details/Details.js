@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import styles from "./Details.module.css";
 import Showcase from "../../../containers/Showcase/Showcase";
@@ -11,8 +11,6 @@ import vehicleInfo from "../../../shared/vehicleInfo";
 
 const Details = (props) => {
   let { vehiclePath } = useParams();
-  let history = useHistory();
-  console.log(history);
   const currentVehicle = vehicleInfo.find(
     (vehicle) => vehicle.specs.id === vehiclePath
   ).specs;
