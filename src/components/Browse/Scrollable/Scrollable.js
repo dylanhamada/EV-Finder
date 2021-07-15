@@ -16,9 +16,19 @@ const Scrollable = (props) => {
   });
 
   return (
-    <div className={styles.Scrollable}>
-      <div className={styles.ScrollableContainer}>{vehicleCards}</div>
-    </div>
+    <React.Fragment>
+      <div className={styles.Scrollable}>
+        <div className={styles.ScrollableContainer}>{vehicleCards}</div>
+      </div>
+      <div className={styles.Buttons}>
+        <span className={styles.Button} onClick={() => props.openFilterSort()}>
+          Filter
+        </span>
+        <span className={styles.Button} onClick={() => props.openFilterSort()}>
+          Sort
+        </span>
+      </div>
+    </React.Fragment>
   );
 };
 

@@ -1,0 +1,20 @@
+.FilterSort {
+  background-color: #00a9ef;
+  box-sizing: border-box;
+  color: #eee;
+  height: 100vh;
+  padding: 30px;
+  position: fixed;
+  transition: transform 0.3s ease-out;
+  top: 0;
+  width: 100vw;
+  z-index: 5;
+}
+
+.Close {
+  transform: translateX(-100%);
+}
+
+.Open {
+  transform: translateX(0);
+}
