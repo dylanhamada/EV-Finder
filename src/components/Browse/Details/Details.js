@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import styles from "./Details.module.css";
 import Showcase from "../../../containers/Showcase/Showcase";
@@ -11,6 +11,7 @@ import vehicleInfo from "../../../shared/vehicleInfo";
 
 const Details = (props) => {
   let { vehiclePath } = useParams();
+  let history = useHistory();
   const currentVehicle = vehicleInfo.find(
     (vehicle) => vehicle.specs.id === vehiclePath
   ).specs;
@@ -21,9 +22,9 @@ const Details = (props) => {
       <Blurb text={currentVehicle.blurb} />
       <Specs specs={currentVehicle} />
       <Reviews reviews={currentVehicle.reviews} />
-      <Link to="/browse" className={styles.Link}>
-        <p className={styles.Back}>Back</p>
-      </Link>
+      <p className={styles.Back} onClick={() => history.goBack()}>
+        Back
+      </p>
     </div>
   );
 };

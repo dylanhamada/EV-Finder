@@ -2,14 +2,11 @@
   margin: 0 30px;
 }
 
-.Link {
-  text-decoration: none;
-}
-
 .Back {
   color: #444;
   font-family: "IBMPlexSans-SemiBold", sans-serif;
   font-size: 14px;
   margin: 30px 0 0 0;
+  text-decoration: none;
   text-transform: uppercase;
 }
