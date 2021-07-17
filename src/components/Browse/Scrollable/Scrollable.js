@@ -21,10 +21,16 @@ const Scrollable = (props) => {
         <div className={styles.ScrollableContainer}>{vehicleCards}</div>
       </div>
       <div className={styles.Buttons}>
-        <span className={styles.Button} onClick={() => props.openFilterSort()}>
+        <span
+          className={styles.Button}
+          onClick={() => props.openFilterSort("filter")}
+        >
           Filter
         </span>
-        <span className={styles.Button} onClick={() => props.openFilterSort()}>
+        <span
+          className={styles.Button}
+          onClick={() => props.openFilterSort("sort")}
+        >
           Sort
         </span>
       </div>
