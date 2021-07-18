@@ -18,3 +18,22 @@
 .Open {
   transform: translateX(0);
 }
+
+.Label {
+  display: block;
+  font-family: "IBMPlexSans-Semibold", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.InputGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  width: auto;
+}
