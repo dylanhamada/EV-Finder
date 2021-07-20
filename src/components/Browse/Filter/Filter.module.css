@@ -1,0 +1,39 @@
+.Label {
+  display: block;
+  font-family: "IBMPlexSans-Semibold", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.InputGroup {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  margin: 15px 0 30px 0;
+}
+
+.InputText {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 14px;
+  height: 45px;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.Select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  box-sizing: border-box;
+  display: block;
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 14px;
+  height: 45px;
+  margin: 15px 0 30px 0;
+  padding: 0 15px;
+  width: 100%;
+}

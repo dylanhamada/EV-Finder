@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import styles from "./Browse.module.css";
 import Scrollable from "../../components/Browse/Scrollable/Scrollable";
 import Details from "../../components/Browse/Details/Details";
-import FilterSort from "../FilterSort/FilterSort";
+import FilterSort from "../../components/Browse/FilterSort/FilterSort";
 
 const Browse = (props) => {
   const browseState = useSelector((state) => state.browse);
