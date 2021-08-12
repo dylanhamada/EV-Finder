@@ -22,9 +22,9 @@ const Browse = (props) => {
   };
 
   const menuCloseHandler = () => {
-    setState(() => ({
+    setState((prevState) => ({
+      ...prevState,
       menuOpen: false,
-      menuType: null,
     }));
   };
 

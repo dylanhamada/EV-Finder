@@ -22,9 +22,6 @@ const Filter = (props) => {
       <label className={styles.Label}>
         Body Type
         <select className={styles.Select}>
-          <option disabled hidden selected value="">
-            Select One
-          </option>
           <option value="Sedan">Sedan</option>
           <option value="Hatchback">Hatchback</option>
           <option value="SUV">SUV</option>
@@ -34,9 +31,6 @@ const Filter = (props) => {
       <label className={styles.Label}>
         Manufacturer
         <select className={styles.Select}>
-          <option disabled hidden selected value="">
-            Select One
-          </option>
           <option value="Audi">Audi</option>
           <option value="BMW">BMW</option>
           <option value="Chevrolet">Chevrolet</option>
@@ -49,6 +43,17 @@ const Filter = (props) => {
           <option value="Volkswagen">Volkswagen</option>
         </select>
       </label>
+      <div className={styles.ButtonGroup}>
+        <button className={`${styles.Button} ${styles.ButtonLeft}`}>
+          Reset
+        </button>
+        <button
+          type="submit"
+          className={`${styles.Button} ${styles.ButtonRight}`}
+        >
+          Submit
+        </button>
+      </div>
     </form>
   );
 };
