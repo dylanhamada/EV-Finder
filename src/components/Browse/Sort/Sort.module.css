@@ -18,3 +18,32 @@
   padding: 0 15px;
   width: 100%;
 }
+
+.ButtonGroup {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  margin: 50px 0 0 0;
+}
+
+.Button {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  color: white;
+  font-family: "IBMPlexSans-Semibold", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.ButtonLeft {
+  text-align: left;
+}
+
+.ButtonRight {
+  text-align: right;
+}

@@ -1,27 +1,54 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import styles from "./Filter.module.css";
 
 const Filter = (props) => {
+  const priceInputStart = useRef(null);
+  const priceInputEnd = useRef(null);
+  const rangeInputStart = useRef(null);
+  const rangeInputEnd = useRef(null);
+  const bodyTypeInput = useRef(null);
+  const manufacturerInput = useRef(null);
+
   return (
     <form>
       <label className={styles.Label}>
         Price
         <div className={styles.InputGroup}>
-          <input type="text" className={styles.InputText} placeholder="From" />
-          <input type="text" className={styles.InputText} placeholder="To" />
+          <input
+            type="number"
+            ref={priceInputStart}
+            className={styles.InputText}
+            placeholder="From"
+          />
+          <input
+            type="number"
+            ref={priceInputEnd}
+            className={styles.InputText}
+            placeholder="To"
+          />
         </div>
       </label>
       <label className={styles.Label}>
         Range
         <div className={styles.InputGroup}>
-          <input type="text" className={styles.InputText} placeholder="From" />
-          <input type="text" className={styles.InputText} placeholder="To" />
+          <input
+            type="number"
+            ref={rangeInputStart}
+            className={styles.InputText}
+            placeholder="From"
+          />
+          <input
+            type="number"
+            ref={rangeInputEnd}
+            className={styles.InputText}
+            placeholder="To"
+          />
         </div>
       </label>
       <label className={styles.Label}>
         Body Type
-        <select className={styles.Select}>
+        <select ref={bodyTypeInput} className={styles.Select}>
           <option value="Sedan">Sedan</option>
           <option value="Hatchback">Hatchback</option>
           <option value="SUV">SUV</option>
@@ -30,7 +57,7 @@ const Filter = (props) => {
       </label>
       <label className={styles.Label}>
         Manufacturer
-        <select className={styles.Select}>
+        <select ref={manufacturerInput} className={styles.Select}>
           <option value="Audi">Audi</option>
           <option value="BMW">BMW</option>
           <option value="Chevrolet">Chevrolet</option>
