@@ -24,6 +24,11 @@
   width: 100%;
 }
 
+.InputTextError {
+  background-color: #eb2a00;
+  color: #eee;
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;

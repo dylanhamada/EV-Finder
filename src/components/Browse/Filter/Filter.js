@@ -10,22 +10,46 @@ const Filter = (props) => {
   const bodyTypeInput = useRef(null);
   const manufacturerInput = useRef(null);
 
+  const validateForm = (...inputs) => {
+    const inputNums = inputs.map((input) => Number(input));
+
+    for (let i = 0; i <= inputNums.length; i++) {
+      if (inputNums[i] < 0) {
+        return false;
+      }
+    }
+
+    if (inputNums[1] < inputNums[0] || inputNums[3] < inputNums[2]) {
+      return false;
+    }
+
+    return true;
+  };
+
+  const submitForm = (event) => {
+    event.preventDefault();
+
+    // make an array of the inputs
+    // send array to validation function
+    // validation function validates each input, changes style if error (red bg)
+  };
+
   return (
-    <form>
+    <form onSubmit={submitForm}>
       <label className={styles.Label}>
         Price
         <div className={styles.InputGroup}>
           <input
-            type="number"
-            ref={priceInputStart}
             className={styles.InputText}
             placeholder="From"
+            ref={priceInputStart}
+            type="number"
           />
           <input
-            type="number"
-            ref={priceInputEnd}
             className={styles.InputText}
             placeholder="To"
+            ref={priceInputEnd}
+            type="number"
           />
         </div>
       </label>
