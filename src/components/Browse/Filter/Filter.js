@@ -3,35 +3,57 @@ import React, { useRef } from "react";
 import styles from "./Filter.module.css";
 
 const Filter = (props) => {
-  const priceInputStart = useRef(null);
-  const priceInputEnd = useRef(null);
-  const rangeInputStart = useRef(null);
-  const rangeInputEnd = useRef(null);
-  const bodyTypeInput = useRef(null);
-  const manufacturerInput = useRef(null);
+  const inputPriceStart = useRef(null);
+  const inputPriceEnd = useRef(null);
+  const inputRangeStart = useRef(null);
+  const inputRangeEnd = useRef(null);
+  const inputBodyType = useRef(null);
+  const inputManufacturer = useRef(null);
+  let inputStyle = `${styles.InputText}`;
+  let inputErrorStyle = `${styles.InputText} ${styles.InputTextError}`;
 
-  const validateForm = (...inputs) => {
-    const inputNums = inputs.map((input) => Number(input));
+  const inputChangeHandler = (event) => {
+    event.target.className = inputStyle;
+  };
+
+  const validateForm = () => {
+    const textInputs = [
+      inputPriceStart,
+      inputPriceEnd,
+      inputRangeStart,
+      inputRangeEnd,
+    ];
+    const inputNums = textInputs.map((input) => Number(input.current.value));
+    let valid = true;
 
     for (let i = 0; i <= inputNums.length; i++) {
       if (inputNums[i] < 0) {
-        return false;
+        textInputs[i].current.className = inputErrorStyle;
+        valid = false;
       }
     }
 
-    if (inputNums[1] < inputNums[0] || inputNums[3] < inputNums[2]) {
-      return false;
+    for (let i = 1; i <= inputNums.length; i += 2) {
+      if (inputNums[i] < inputNums[i - 1]) {
+        textInputs[i].current.className = inputErrorStyle;
+        valid = false;
+      }
     }
 
-    return true;
+    return valid ? inputNums : false;
   };
 
   const submitForm = (event) => {
     event.preventDefault();
 
-    // make an array of the inputs
-    // send array to validation function
-    // validation function validates each input, changes style if error (red bg)
+    const validatedInputs = validateForm();
+    if (validatedInputs) {
+      validatedInputs.push(
+        inputBodyType.current.value,
+        inputManufacturer.current.value
+      );
+    }
+    // dispatch filter action
   };
 
   return (
@@ -40,15 +62,19 @@ const Filter = (props) => {
         Price
         <div className={styles.InputGroup}>
           <input
-            className={styles.InputText}
+            className={inputStyle}
+            onChange={inputChangeHandler}
             placeholder="From"
-            ref={priceInputStart}
+            ref={inputPriceStart}
+            step="0.01"
             type="number"
           />
           <input
-            className={styles.InputText}
+            className={inputStyle}
+            onChange={inputChangeHandler}
             placeholder="To"
-            ref={priceInputEnd}
+            ref={inputPriceEnd}
+            step="0.01"
             type="number"
           />
         </div>
@@ -57,22 +83,27 @@ const Filter = (props) => {
         Range
         <div className={styles.InputGroup}>
           <input
-            type="number"
-            ref={rangeInputStart}
-            className={styles.InputText}
+            className={inputStyle}
+            onChange={inputChangeHandler}
             placeholder="From"
+            ref={inputRangeStart}
+            step="0.01"
+            type="number"
           />
           <input
-            type="number"
-            ref={rangeInputEnd}
-            className={styles.InputText}
+            className={inputStyle}
+            onChange={inputChangeHandler}
             placeholder="To"
+            ref={inputRangeEnd}
+            step="0.01"
+            type="number"
           />
         </div>
       </label>
       <label className={styles.Label}>
         Body Type
-        <select ref={bodyTypeInput} className={styles.Select}>
+        <select className={styles.Select} ref={inputBodyType}>
+          <option value="All">All</option>
           <option value="Sedan">Sedan</option>
           <option value="Hatchback">Hatchback</option>
           <option value="SUV">SUV</option>
@@ -81,7 +112,8 @@ const Filter = (props) => {
       </label>
       <label className={styles.Label}>
         Manufacturer
-        <select ref={manufacturerInput} className={styles.Select}>
+        <select className={styles.Select} ref={inputManufacturer}>
+          <option value="All">All</option>
           <option value="Audi">Audi</option>
           <option value="BMW">BMW</option>
           <option value="Chevrolet">Chevrolet</option>
