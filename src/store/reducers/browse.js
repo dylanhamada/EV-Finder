@@ -1,11 +1,18 @@
-// import * as actionTypes from "../actions/actionTypes";
+import * as actionTypes from "../actions/actionTypes";
 import browseState from "../state/browse";
 // import { updateObject } from "../../shared/utility";
 
 const initialState = browseState;
 
+const browseFilter = (state, action) => {};
+
 const reducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case actionTypes.BROWSE_FILTER:
+      return browseFilter(state, action);
+    default:
+      return state;
+  }
 };
 
 export default reducer;
