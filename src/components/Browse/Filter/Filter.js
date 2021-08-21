@@ -54,6 +54,7 @@ const Filter = (props) => {
       );
     }
     // dispatch filter action
+    props.dispatchFilter(validatedInputs);
   };
 
   return (

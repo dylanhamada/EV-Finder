@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 
 import styles from "./Browse.module.css";
@@ -7,12 +7,19 @@ import Scrollable from "../../components/Browse/Scrollable/Scrollable";
 import Details from "../../components/Browse/Details/Details";
 import FilterSort from "../../components/Browse/FilterSort/FilterSort";
 
+import { browseFilter } from "../../store/actions/browse";
+
 const Browse = (props) => {
+  const dispatch = useDispatch();
   const browseState = useSelector((state) => state.browse);
   const [state, setState] = useState({
     menuOpen: false,
     menuType: null,
   });
+
+  const dispatchFilter = (filters) => {
+    dispatch(browseFilter(filters));
+  };
 
   const menuOpenHandler = (type) => {
     setState(() => ({
@@ -42,6 +49,7 @@ const Browse = (props) => {
         menuOpen={state.menuOpen}
         menuType={state.menuType}
         closeFilterSort={menuCloseHandler}
+        dispatchFilter={dispatchFilter}
       />
     </div>
   );
