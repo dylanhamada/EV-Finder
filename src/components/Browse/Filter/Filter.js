@@ -34,7 +34,9 @@ const Filter = (props) => {
     }
 
     for (let i = 1; i <= inputNums.length; i += 2) {
-      if (inputNums[i] < inputNums[i - 1]) {
+      if (inputNums[i] === 0) {
+        inputNums[i] = 1000000;
+      } else if (inputNums[i] < inputNums[i - 1]) {
         textInputs[i].current.className = inputErrorStyle;
         valid = false;
       }
@@ -53,7 +55,7 @@ const Filter = (props) => {
         inputManufacturer.current.value
       );
     }
-    // dispatch filter action
+
     props.dispatchFilter(validatedInputs);
   };
 
