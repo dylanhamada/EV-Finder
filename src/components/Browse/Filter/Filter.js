@@ -57,6 +57,8 @@ const Filter = (props) => {
     }
 
     props.dispatchFilter(validatedInputs);
+
+    props.closeFilter();
   };
 
   return (

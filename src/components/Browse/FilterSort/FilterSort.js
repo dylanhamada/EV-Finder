@@ -15,7 +15,12 @@ const FilterSort = (props) => {
 
   switch (props.menuType) {
     case "filter":
-      form = <Filter dispatchFilter={props.dispatchFilter} />;
+      form = (
+        <Filter
+          dispatchFilter={props.dispatchFilter}
+          closeFilter={props.closeFilterSort}
+        />
+      );
       break;
     case "sort":
       form = <Sort />;
