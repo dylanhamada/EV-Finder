@@ -61,6 +61,19 @@ const Filter = (props) => {
     props.closeFilter();
   };
 
+  const resetForm = (event) => {
+    event.preventDefault();
+
+    inputPriceStart.current.value = "";
+    inputPriceEnd.current.value = "";
+    inputRangeStart.current.value = "";
+    inputRangeEnd.current.value = "";
+    inputBodyType.current.value = "All";
+    inputManufacturer.current.value = "All";
+
+    submitForm(event);
+  };
+
   return (
     <form onSubmit={submitForm}>
       <label className={styles.Label}>
@@ -132,7 +145,10 @@ const Filter = (props) => {
         </select>
       </label>
       <div className={styles.ButtonGroup}>
-        <button className={`${styles.Button} ${styles.ButtonLeft}`}>
+        <button
+          className={`${styles.Button} ${styles.ButtonLeft}`}
+          onClick={resetForm}
+        >
           Reset
         </button>
         <button
