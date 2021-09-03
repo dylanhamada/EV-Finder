@@ -44,10 +44,16 @@ const browseFilter = (action) => {
   return newState;
 };
 
+const browseSort = (state, action) => {
+  let newState = [...state];
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.BROWSE_FILTER:
       return browseFilter(action);
+    case actionTypes.BROWSE_SORT:
+      return browseSort(state, action);
     default:
       return state;
   }

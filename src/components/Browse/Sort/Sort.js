@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import styles from "./Sort.module.css";
 
-const Sort = (props) => {
+const Sort = () => {
   const sortInput = useRef(null);
   const orderInput = useRef(null);
 

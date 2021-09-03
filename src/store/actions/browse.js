@@ -7,8 +7,9 @@ export const browseFilter = (filters) => {
   };
 };
 
-export const browseSort = () => {
+export const browseSort = (order) => {
   return {
     type: actionTypes.BROWSE_SORT,
+    order: order,
   };
 };

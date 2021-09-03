@@ -1,78 +1,63 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import styles from "./Filter.module.css";
 
 const Filter = (props) => {
-  const inputPriceStart = useRef(null);
-  const inputPriceEnd = useRef(null);
-  const inputRangeStart = useRef(null);
-  const inputRangeEnd = useRef(null);
-  const inputBodyType = useRef(null);
-  const inputManufacturer = useRef(null);
+  const [inputState, setInputState] = useState({
+    priceStart: "",
+    priceEnd: "",
+    rangeStart: "",
+    rangeEnd: "",
+    bodyType: "All",
+    manufacturer: "All",
+  });
   let inputStyle = `${styles.InputText}`;
   let inputErrorStyle = `${styles.InputText} ${styles.InputTextError}`;
 
   const inputChangeHandler = (event) => {
     event.target.className = inputStyle;
+
+    setInputState({
+      ...inputState,
+      [event.target.name]: event.target.value,
+    });
   };
 
   const validateForm = () => {
-    const textInputs = [
-      inputPriceStart,
-      inputPriceEnd,
-      inputRangeStart,
-      inputRangeEnd,
-    ];
-    const inputNums = textInputs.map((input) => Number(input.current.value));
+    const filterInput = { ...inputState };
     let valid = true;
 
-    for (let i = 0; i <= inputNums.length; i++) {
-      if (inputNums[i] < 0) {
-        textInputs[i].current.className = inputErrorStyle;
-        valid = false;
+    for (const input in filterInput) {
+      if (input !== "bodyType" && input !== "manufacturer") {
+        filterInput[input] = Number(filterInput[input]);
       }
     }
 
-    for (let i = 1; i <= inputNums.length; i += 2) {
-      if (inputNums[i] === 0) {
-        inputNums[i] = 1000000;
-      } else if (inputNums[i] < inputNums[i - 1]) {
-        textInputs[i].current.className = inputErrorStyle;
-        valid = false;
-      }
-    }
-
-    return valid ? inputNums : false;
+    console.log(filterInput);
   };
 
   const submitForm = (event) => {
     event.preventDefault();
 
-    const validatedInputs = validateForm();
-    if (validatedInputs) {
-      validatedInputs.push(
-        inputBodyType.current.value,
-        inputManufacturer.current.value
-      );
-    }
+    validateForm();
 
-    props.dispatchFilter(validatedInputs);
+    // props.dispatchFilter(validatedInputs);
 
-    props.closeFilter();
+    // props.closeFilter();
   };
 
-  const resetForm = (event) => {
-    event.preventDefault();
+  // const resetForm = (event) => {
+  //   event.preventDefault();
 
-    inputPriceStart.current.value = "";
-    inputPriceEnd.current.value = "";
-    inputRangeStart.current.value = "";
-    inputRangeEnd.current.value = "";
-    inputBodyType.current.value = "All";
-    inputManufacturer.current.value = "All";
+  //   inputPriceStart.current.value = "";
+  //   inputPriceEnd.current.value = "";
+  //   inputRangeStart.current.value = "";
+  //   inputRangeEnd.current.value = "";
+  //   inputBodyType.current.value = "All";
+  //   inputManufacturer.current.value = "All";
 
-    submitForm(event);
-  };
+  //   submitForm(event);
+  // };
 
   return (
     <form onSubmit={submitForm}>
@@ -81,19 +66,21 @@ const Filter = (props) => {
         <div className={styles.InputGroup}>
           <input
             className={inputStyle}
+            name="priceStart"
             onChange={inputChangeHandler}
             placeholder="From"
-            ref={inputPriceStart}
             step="0.01"
             type="number"
+            value={inputState.priceStart}
           />
           <input
             className={inputStyle}
+            name="priceEnd"
             onChange={inputChangeHandler}
             placeholder="To"
-            ref={inputPriceEnd}
             step="0.01"
             type="number"
+            value={inputState.priceEnd}
           />
         </div>
       </label>
@@ -102,25 +89,32 @@ const Filter = (props) => {
         <div className={styles.InputGroup}>
           <input
             className={inputStyle}
+            name="rangeStart"
             onChange={inputChangeHandler}
             placeholder="From"
-            ref={inputRangeStart}
             step="0.01"
             type="number"
+            value={inputState.rangeStart}
           />
           <input
             className={inputStyle}
+            name="rangeEnd"
             onChange={inputChangeHandler}
             placeholder="To"
-            ref={inputRangeEnd}
             step="0.01"
             type="number"
+            value={inputState.rangeEnd}
           />
         </div>
       </label>
       <label className={styles.Label}>
         Body Type
-        <select className={styles.Select} ref={inputBodyType}>
+        <select
+          className={styles.Select}
+          name="bodyType"
+          onChange={inputChangeHandler}
+          value={inputState.bodyType}
+        >
           <option value="All">All</option>
           <option value="Sedan">Sedan</option>
           <option value="Hatchback">Hatchback</option>
@@ -130,7 +124,12 @@ const Filter = (props) => {
       </label>
       <label className={styles.Label}>
         Manufacturer
-        <select className={styles.Select} ref={inputManufacturer}>
+        <select
+          className={styles.Select}
+          name="manufacturer"
+          onChange={inputChangeHandler}
+          value={inputState.manufacturer}
+        >
           <option value="All">All</option>
           <option value="Audi">Audi</option>
           <option value="BMW">BMW</option>
@@ -145,10 +144,7 @@ const Filter = (props) => {
         </select>
       </label>
       <div className={styles.ButtonGroup}>
-        <button
-          className={`${styles.Button} ${styles.ButtonLeft}`}
-          onClick={resetForm}
-        >
+        <button className={`${styles.Button} ${styles.ButtonLeft}`}>
           Reset
         </button>
         <button
