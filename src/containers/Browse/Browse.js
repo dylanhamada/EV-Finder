@@ -39,7 +39,10 @@ const Browse = (props) => {
     <div className={styles.Browse}>
       <Switch>
         <Route path="/browse" exact>
-          <Scrollable vehicles={browseState} openFilterSort={menuOpenHandler} />
+          <Scrollable
+            vehicles={browseState.vehicles}
+            openFilterSort={menuOpenHandler}
+          />
         </Route>
         <Route path={`/browse/:vehiclePath`}>
           <Details />
