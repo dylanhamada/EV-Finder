@@ -1,39 +1,52 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 import styles from "./Filter.module.css";
 
 const Filter = (props) => {
-  const [inputState, setInputState] = useState({
-    priceStart: "",
-    priceEnd: "",
-    rangeStart: "",
-    rangeEnd: "",
-    bodyType: "All",
-    manufacturer: "All",
-  });
+  const priceStartRef = useRef(null);
+  const priceEndRef = useRef(null);
+  const rangeStartRef = useRef(null);
+  const rangeEndRef = useRef(null);
+  const bodyTypeRef = useRef(null);
+  const manufacturerRef = useRef(null);
   let inputStyle = `${styles.InputText}`;
   let inputErrorStyle = `${styles.InputText} ${styles.InputTextError}`;
 
+  useEffect(() => {
+    priceStartRef.current.value = props.filterState.priceStart;
+    priceEndRef.current.value = props.filterState.priceEnd;
+    rangeStartRef.current.value = props.filterState.rangeStart;
+    rangeEndRef.current.value = props.filterState.rangeEnd;
+    bodyTypeRef.current.value = props.filterState.bodyType;
+    manufacturerRef.current.value = props.filterState.manufacturer;
+  }, [props.filterState]);
+
   const inputChangeHandler = (event) => {
     event.target.className = inputStyle;
-
-    setInputState({
-      ...inputState,
-      [event.target.name]: event.target.value,
-    });
   };
 
   const validateForm = () => {
-    const filterInput = { ...inputState };
+    const textInputs = [priceStartRef, priceEndRef, rangeStartRef, rangeEndRef];
+    const inputNums = textInputs.map((input) => Number(input.current.value));
     let valid = true;
 
-    for (const input in filterInput) {
-      if (input !== "bodyType" && input !== "manufacturer") {
-        filterInput[input] = Number(filterInput[input]);
+    for (let i = 0; i <= inputNums.length; i++) {
+      if (inputNums[i] < 0) {
+        textInputs[i].current.className = inputErrorStyle;
+        valid = false;
       }
     }
 
-    console.log(filterInput);
+    for (let i = 1; i <= inputNums.length; i += 2) {
+      if (inputNums[i] === 0) {
+        inputNums[i] = 1000000;
+      } else if (inputNums[i] < inputNums[i - 1]) {
+        textInputs[i].current.className = inputErrorStyle;
+        valid = false;
+      }
+    }
+
+    return valid ? inputNums : false;
   };
 
   const submitForm = (event) => {
@@ -69,18 +82,18 @@ const Filter = (props) => {
             name="priceStart"
             onChange={inputChangeHandler}
             placeholder="From"
+            ref={priceStartRef}
             step="0.01"
             type="number"
-            value={inputState.priceStart}
           />
           <input
             className={inputStyle}
             name="priceEnd"
             onChange={inputChangeHandler}
             placeholder="To"
+            ref={priceEndRef}
             step="0.01"
             type="number"
-            value={inputState.priceEnd}
           />
         </div>
       </label>
@@ -92,18 +105,18 @@ const Filter = (props) => {
             name="rangeStart"
             onChange={inputChangeHandler}
             placeholder="From"
+            ref={rangeStartRef}
             step="0.01"
             type="number"
-            value={inputState.rangeStart}
           />
           <input
             className={inputStyle}
             name="rangeEnd"
             onChange={inputChangeHandler}
             placeholder="To"
+            ref={rangeEndRef}
             step="0.01"
             type="number"
-            value={inputState.rangeEnd}
           />
         </div>
       </label>
@@ -113,7 +126,7 @@ const Filter = (props) => {
           className={styles.Select}
           name="bodyType"
           onChange={inputChangeHandler}
-          value={inputState.bodyType}
+          ref={bodyTypeRef}
         >
           <option value="All">All</option>
           <option value="Sedan">Sedan</option>
@@ -128,7 +141,7 @@ const Filter = (props) => {
           className={styles.Select}
           name="manufacturer"
           onChange={inputChangeHandler}
-          value={inputState.manufacturer}
+          ref={manufacturerRef}
         >
           <option value="All">All</option>
           <option value="Audi">Audi</option>

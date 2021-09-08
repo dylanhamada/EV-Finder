@@ -53,6 +53,7 @@ const Browse = (props) => {
         menuType={state.menuType}
         closeFilterSort={menuCloseHandler}
         dispatchFilter={dispatchFilter}
+        filterState={browseState.filter}
       />
     </div>
   );

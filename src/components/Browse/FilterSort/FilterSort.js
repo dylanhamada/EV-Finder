@@ -17,8 +17,9 @@ const FilterSort = (props) => {
     case "filter":
       form = (
         <Filter
-          dispatchFilter={props.dispatchFilter}
           closeFilter={props.closeFilterSort}
+          dispatchFilter={props.dispatchFilter}
+          filterState={props.filterState}
         />
       );
       break;
