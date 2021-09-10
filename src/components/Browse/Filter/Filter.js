@@ -13,12 +13,16 @@ const Filter = (props) => {
   let inputErrorStyle = `${styles.InputText} ${styles.InputTextError}`;
 
   useEffect(() => {
-    priceStartRef.current.value = props.filterState.priceStart;
-    priceEndRef.current.value = props.filterState.priceEnd;
-    rangeStartRef.current.value = props.filterState.rangeStart;
-    rangeEndRef.current.value = props.filterState.rangeEnd;
-    bodyTypeRef.current.value = props.filterState.bodyType;
-    manufacturerRef.current.value = props.filterState.manufacturer;
+    priceStartRef.current.value =
+      props.filterState[0] === 0 ? "" : props.filterState[0];
+    priceEndRef.current.value =
+      props.filterState[1] === 1000000 ? "" : props.filterState[1];
+    rangeStartRef.current.value =
+      props.filterState[2] === 0 ? "" : props.filterState[2];
+    rangeEndRef.current.value =
+      props.filterState[3] === 1000000 ? "" : props.filterState[3];
+    bodyTypeRef.current.value = props.filterState[4];
+    manufacturerRef.current.value = props.filterState[5];
   }, [props.filterState]);
 
   const inputChangeHandler = (event) => {
@@ -52,11 +56,20 @@ const Filter = (props) => {
   const submitForm = (event) => {
     event.preventDefault();
 
-    validateForm();
+    const validatedInputs = validateForm();
 
-    // props.dispatchFilter(validatedInputs);
+    console.log(validatedInputs);
 
-    // props.closeFilter();
+    if (validatedInputs) {
+      validatedInputs.push(
+        bodyTypeRef.current.value,
+        manufacturerRef.current.value
+      );
+
+      props.dispatchFilter(validatedInputs);
+
+      props.closeFilter();
+    }
   };
 
   // const resetForm = (event) => {
@@ -122,12 +135,7 @@ const Filter = (props) => {
       </label>
       <label className={styles.Label}>
         Body Type
-        <select
-          className={styles.Select}
-          name="bodyType"
-          onChange={inputChangeHandler}
-          ref={bodyTypeRef}
-        >
+        <select className={styles.Select} name="bodyType" ref={bodyTypeRef}>
           <option value="All">All</option>
           <option value="Sedan">Sedan</option>
           <option value="Hatchback">Hatchback</option>
@@ -140,7 +148,6 @@ const Filter = (props) => {
         <select
           className={styles.Select}
           name="manufacturer"
-          onChange={inputChangeHandler}
           ref={manufacturerRef}
         >
           <option value="All">All</option>
