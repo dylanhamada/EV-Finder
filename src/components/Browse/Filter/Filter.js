@@ -58,8 +58,6 @@ const Filter = (props) => {
 
     const validatedInputs = validateForm();
 
-    console.log(validatedInputs);
-
     if (validatedInputs) {
       validatedInputs.push(
         bodyTypeRef.current.value,
@@ -72,18 +70,18 @@ const Filter = (props) => {
     }
   };
 
-  // const resetForm = (event) => {
-  //   event.preventDefault();
+  const resetForm = (event) => {
+    event.preventDefault();
 
-  //   inputPriceStart.current.value = "";
-  //   inputPriceEnd.current.value = "";
-  //   inputRangeStart.current.value = "";
-  //   inputRangeEnd.current.value = "";
-  //   inputBodyType.current.value = "All";
-  //   inputManufacturer.current.value = "All";
+    priceStartRef.current.value = "";
+    priceEndRef.current.value = "";
+    rangeStartRef.current.value = "";
+    rangeEndRef.current.value = "";
+    bodyTypeRef.current.value = "All";
+    manufacturerRef.current.value = "All";
 
-  //   submitForm(event);
-  // };
+    submitForm(event);
+  };
 
   return (
     <form onSubmit={submitForm}>
@@ -164,7 +162,10 @@ const Filter = (props) => {
         </select>
       </label>
       <div className={styles.ButtonGroup}>
-        <button className={`${styles.Button} ${styles.ButtonLeft}`}>
+        <button
+          className={`${styles.Button} ${styles.ButtonLeft}`}
+          onClick={resetForm}
+        >
           Reset
         </button>
         <button
