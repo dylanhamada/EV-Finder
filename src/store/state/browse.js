@@ -4,7 +4,7 @@ const vehicles = vehicleInfo.map((vehicle) => vehicle.specs);
 
 const state = {
   filter: ["", "", "", "", "All", "All"],
-  sort: {},
+  sort: ["Name", "Ascending"],
   vehicles: [...vehicles],
 };
 

@@ -1,28 +1,43 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import styles from "./Sort.module.css";
 
-const Sort = () => {
+const Sort = (props) => {
   const sortInput = useRef(null);
   const orderInput = useRef(null);
 
+  useEffect(() => {
+    sortInput.current.value = props.sortState[0];
+    orderInput.current.value = props.sortState[1];
+  }, [props.sortState]);
+
+  const submitForm = (event) => {
+    event.preventDefault();
+
+    const selectInputs = [sortInput.current.value, orderInput.current.value];
+
+    props.dispatchSort(selectInputs);
+
+    props.closeSort();
+  };
+
   return (
-    <form>
+    <form onSubmit={submitForm}>
       <label className={styles.Label}>
         Sort by
         <select ref={sortInput} className={styles.Select}>
-          <option value="name">Name</option>
-          <option value="price">Price</option>
-          <option value="range">Range</option>
-          <option value="charging time">Charging Time</option>
-          <option value="horsepower">Horsepower</option>
+          <option value="Name">Name</option>
+          <option value="Price">Price</option>
+          <option value="Range">Range</option>
+          <option value="Charging Time">Charging Time</option>
+          <option value="Horsepower">Horsepower</option>
         </select>
       </label>
       <label className={styles.Label}>
         Order
         <select ref={orderInput} className={styles.Select}>
-          <option value="ascending">Ascending</option>
-          <option value="descending">Descending</option>
+          <option value="Ascending">Ascending</option>
+          <option value="Descending">Descending</option>
         </select>
       </label>
       <div className={styles.ButtonGroup}>

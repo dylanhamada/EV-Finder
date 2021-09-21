@@ -19,12 +19,19 @@ const FilterSort = (props) => {
         <Filter
           closeFilter={props.closeFilterSort}
           dispatchFilter={props.dispatchFilter}
+          dispatchSort={props.dispatchSort}
           filterState={props.filterState}
         />
       );
       break;
     case "sort":
-      form = <Sort />;
+      form = (
+        <Sort
+          closeSort={props.closeFilterSort}
+          dispatchSort={props.dispatchSort}
+          sortState={props.sortState}
+        />
+      );
       break;
     default:
       form = null;

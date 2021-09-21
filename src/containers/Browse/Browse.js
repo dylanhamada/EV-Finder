@@ -7,7 +7,7 @@ import Scrollable from "../../components/Browse/Scrollable/Scrollable";
 import Details from "../../components/Browse/Details/Details";
 import FilterSort from "../../components/Browse/FilterSort/FilterSort";
 
-import { browseFilter } from "../../store/actions/browse";
+import { browseFilter, browseSort } from "../../store/actions/browse";
 
 const Browse = (props) => {
   const dispatch = useDispatch();
@@ -19,6 +19,10 @@ const Browse = (props) => {
 
   const dispatchFilter = (filters) => {
     dispatch(browseFilter(filters));
+  };
+
+  const dispatchSort = (order) => {
+    dispatch(browseSort(order));
   };
 
   const menuOpenHandler = (type) => {
@@ -53,7 +57,9 @@ const Browse = (props) => {
         menuType={state.menuType}
         closeFilterSort={menuCloseHandler}
         dispatchFilter={dispatchFilter}
+        dispatchSort={dispatchSort}
         filterState={browseState.filter}
+        sortState={browseState.sort}
       />
     </div>
   );

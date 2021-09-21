@@ -1,10 +1,9 @@
 import * as actionTypes from "../actions/actionTypes";
 import browseState from "../state/browse";
-
-const initialState = browseState;
+import { sortName, sortPrice, sortRange } from "../../logic/sort";
 
 const browseFilter = (action) => {
-  let newState = { ...initialState };
+  let newState = { ...browseState };
 
   newState.filter = action.filters;
 
@@ -48,10 +47,35 @@ const browseFilter = (action) => {
 };
 
 const browseSort = (state, action) => {
-  // let newState = [...state];
+  const orderNum = action.order[1] === "Ascending" ? 1 : -1;
+  let newState = { ...state };
+
+  newState.sort = action.order;
+
+  switch (action.order[0]) {
+    case "Name":
+      newState.vehicles = sortName(newState.vehicles, orderNum);
+      break;
+    case "Price":
+      newState.vehicles = sortPrice(newState.vehicles, orderNum);
+      break;
+    case "Range":
+      newState.vehicles = sortRange(newState.vehicles, orderNum);
+      break;
+    case "Charging Time":
+      console.log(action.order);
+      break;
+    case "Horsepower":
+      console.log(action.order);
+      break;
+    default:
+      console.log(action.order);
+  }
+
+  return newState;
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = browseState, action) => {
   switch (action.type) {
     case actionTypes.BROWSE_FILTER:
       return browseFilter(action);
