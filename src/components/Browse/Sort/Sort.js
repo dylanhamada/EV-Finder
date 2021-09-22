@@ -16,9 +16,19 @@ const Sort = (props) => {
 
     const selectInputs = [sortInput.current.value, orderInput.current.value];
 
+    props.dispatchFilter(props.filterState);
     props.dispatchSort(selectInputs);
 
     props.closeSort();
+  };
+
+  const resetForm = (event) => {
+    event.preventDefault();
+
+    sortInput.current.value = "Name";
+    orderInput.current.value = "Ascending";
+
+    submitForm(event);
   };
 
   return (
@@ -41,7 +51,10 @@ const Sort = (props) => {
         </select>
       </label>
       <div className={styles.ButtonGroup}>
-        <button className={`${styles.Button} ${styles.ButtonLeft}`}>
+        <button
+          className={`${styles.Button} ${styles.ButtonLeft}`}
+          onClick={resetForm}
+        >
           Reset
         </button>
         <button

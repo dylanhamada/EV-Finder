@@ -65,6 +65,7 @@ const Filter = (props) => {
       );
 
       props.dispatchFilter(validatedInputs);
+      props.dispatchSort(props.sortState);
 
       props.closeFilter();
     }

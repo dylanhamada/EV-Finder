@@ -27,3 +27,19 @@ export const sortRange = (vehicles, order) => {
 
   return vehicles;
 };
+
+export const sortChargeTime = (vehicles, order) => {
+  vehicles.sort((vehicleA, vehicleB) => {
+    return order * (vehicleA.chargingTimeNum - vehicleB.chargingTimeNum);
+  });
+
+  return vehicles;
+};
+
+export const sortHorsepower = (vehicles, order) => {
+  vehicles.sort((vehicleA, vehicleB) => {
+    return order * (vehicleA.horsepowerNum - vehicleB.horsepowerNum);
+  });
+
+  return vehicles;
+};

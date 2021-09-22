@@ -21,6 +21,7 @@ const FilterSort = (props) => {
           dispatchFilter={props.dispatchFilter}
           dispatchSort={props.dispatchSort}
           filterState={props.filterState}
+          sortState={props.sortState}
         />
       );
       break;
@@ -28,7 +29,9 @@ const FilterSort = (props) => {
       form = (
         <Sort
           closeSort={props.closeFilterSort}
+          dispatchFilter={props.dispatchFilter}
           dispatchSort={props.dispatchSort}
+          filterState={props.filterState}
           sortState={props.sortState}
         />
       );
