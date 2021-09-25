@@ -91,7 +91,11 @@ const NavMenu = (props) => {
               Browse
             </li>
           </Link>
-          <li className={styles.NavListItem}>Compare</li>
+          <Link className={styles.Link} to="/compare">
+            <li className={styles.NavListItem} onClick={linkClickHandler}>
+              Compare
+            </li>
+          </Link>
           <li className={styles.NavListItem}>Favorites</li>
           {authButton}
         </ul>

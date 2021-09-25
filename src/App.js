@@ -12,6 +12,7 @@ import NavMenu from "./containers/NavMenu/NavMenu";
 import Dashboard from "./containers/Dashboard/Dashboard";
 import Find from "./containers/Find/Find";
 import Browse from "./containers/Browse/Browse";
+import Compare from "./containers/Compare/Compare";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -47,6 +48,7 @@ const App = (props) => {
               <Route path="/" exact component={Dashboard} />
               <Route path="/find" component={Find} />
               <Route path="/browse" component={Browse} />
+              <Route path="/compare" component={Compare} />
             </Switch>
           </React.Fragment>
         );
