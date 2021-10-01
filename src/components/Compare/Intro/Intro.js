@@ -9,7 +9,9 @@ const Intro = (props) => {
         Compare two vehicles side by side, with color-coded stats. Save your
         comparisons for future reference.
       </p>
-      <span className={styles.Link}>New Comparison</span>
+      <span className={styles.Link} onClick={props.click}>
+        New Comparison
+      </span>
     </React.Fragment>
   );
 };
