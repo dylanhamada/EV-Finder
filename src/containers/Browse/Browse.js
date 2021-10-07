@@ -19,8 +19,10 @@ const Browse = (props) => {
 
   useEffect(() => {
     return () => {
-      console.log("Browser component unmounted");
+      dispatchFilter([0, 1000000, 0, 1000000, "All", "All"]);
+      dispatchSort(["Name", "Ascending"]);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const dispatchFilter = (filters) => {
