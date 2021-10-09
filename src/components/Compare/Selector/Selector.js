@@ -5,7 +5,7 @@ import styles from "./Selector.module.css";
 
 const Selector = (props) => {
   const history = useHistory();
-  let which = props.which === "one" ? "One" : "Two";
+  let which = props.which === 1 ? "One" : "Two";
 
   const compareLinkHandler = () => history.push(`/browse`);
 

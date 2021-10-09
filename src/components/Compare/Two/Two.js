@@ -7,7 +7,7 @@ import Selector from "../Selector/Selector";
 const Two = (props) => {
   return (
     <div>
-      <Selector which="two" />
+      <Selector which={2} />
       <div className={styles.Links}>
         <span className={styles.Link} onClick={() => props.click("one")}>
           Previous
