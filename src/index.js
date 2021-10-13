@@ -11,6 +11,7 @@ import findReducer from "./store/reducers/find";
 import authReducer from "./store/reducers/auth";
 import userReducer from "./store/reducers/user";
 import browseReducer from "./store/reducers/browse";
+import compareReducer from "./store/reducers/compare";
 import * as serviceWorker from "./serviceWorker";
 
 const rootReducer = combineReducers({
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
   browse: browseReducer,
+  compare: compareReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

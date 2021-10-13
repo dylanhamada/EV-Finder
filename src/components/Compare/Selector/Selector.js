@@ -7,7 +7,10 @@ const Selector = (props) => {
   const history = useHistory();
   let which = props.which === 1 ? "One" : "Two";
 
-  const compareLinkHandler = () => history.push(`/browse`);
+  const compareLinkHandler = () => {
+    history.push(`/browse`);
+    props.vehicleNum(props.which);
+  };
 
   return (
     <div className={styles.Selector} onClick={() => compareLinkHandler()}>

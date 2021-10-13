@@ -7,9 +7,9 @@ import Selector from "../Selector/Selector";
 const One = (props) => {
   return (
     <div>
-      <Selector which={1} />
+      <Selector which={1} vehicleNum={props.num} />
       <div className={styles.Links}>
-        <span className={styles.Link} onClick={() => props.click("two")}>
+        <span className={styles.Link} onClick={() => props.nav("two")}>
           Next
         </span>
       </div>
