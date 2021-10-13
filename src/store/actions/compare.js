@@ -6,3 +6,10 @@ export const compareVehicleNum = (vehicleNum) => {
     vehicleNum: vehicleNum,
   };
 };
+
+export const compareVehicleName = (vehicleName) => {
+  return {
+    type: actionTypes.COMPARE_VEHICLENAME,
+    vehicleName: vehicleName,
+  };
+};

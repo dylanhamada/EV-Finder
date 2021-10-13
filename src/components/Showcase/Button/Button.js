@@ -14,6 +14,9 @@ const Button = (props) => {
         </Link>
       );
       break;
+    case "compare":
+      button = <span className={styles.Compare}>Compare</span>;
+      break;
     case "favorite":
       button = (
         <span className={styles.Favorite} onClick={() => props.click()}>

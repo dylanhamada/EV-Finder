@@ -18,7 +18,7 @@ const Details = (props) => {
 
   return (
     <div className={styles.Details}>
-      <Showcase vehicle={currentVehicle} />
+      <Showcase vehicle={currentVehicle} compare />
       <Blurb text={currentVehicle.blurb} />
       <Specs specs={currentVehicle} />
       <Reviews reviews={currentVehicle.reviews} />

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Showcase.module.css";
 import { userAddFavorite, userRemoveFavorite } from "../../store/actions/user";
+import { compareVehicleName } from "../../store/actions/compare";
 
 import User from "../../components/Showcase/User/User";
 import Title from "../../components/Showcase/Title/Title";
@@ -15,6 +16,7 @@ const Showcase = (props) => {
   const userState = useSelector((state) => state.user);
 
   let details = null;
+  let compare = null;
   let favorite = null;
   let user = null;
   let title = <Title vehicle={props.vehicle} />;
@@ -25,6 +27,10 @@ const Showcase = (props) => {
 
   const removeFavorite = () => {
     dispatch(userRemoveFavorite(authState.user.userId, props.vehicle.name));
+  };
+
+  const compareVehicle = () => {
+    dispatch(compareVehicleName(props.vehicle.name));
   };
 
   if (props.result) {
@@ -38,6 +44,10 @@ const Showcase = (props) => {
 
   if (props.card) {
     details = <Button buttonType="details" vehicle={props.vehicle.id} />;
+  }
+
+  if (props.compare) {
+    compare = <Button buttonType="compare" />;
   }
 
   if (authState.user.name !== null && userState.favorites !== null) {
@@ -57,6 +67,7 @@ const Showcase = (props) => {
       <Image vehicle={props.vehicle} />
       <div className={styles.Buttons}>
         {details}
+        {compare}
         {favorite}
       </div>
     </div>

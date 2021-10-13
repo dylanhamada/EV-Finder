@@ -5,6 +5,11 @@
   text-decoration: none;
 }
 
+.Compare {
+  grid-column: 1;
+  text-align: left;
+}
+
 .Favorite {
   grid-column: 2;
   text-align: right;
