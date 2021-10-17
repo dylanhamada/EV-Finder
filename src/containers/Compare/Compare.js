@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Container from "../../hoc/Container/Container";
 import Intro from "../../components/Compare/Intro/Intro";
-import One from "../../components/Compare/One/One";
-import Two from "../../components/Compare/Two/Two";
+import Select from "../../components/Compare/Select/Select";
 
 import { compareVehicleNum } from "../../store/actions/compare";
 
@@ -27,10 +26,18 @@ const Compare = (props) => {
           <Intro nav={navLinkHandler} />
         </Route>
         <Route path="/compare/one" exact>
-          <One nav={navLinkHandler} num={dispatchVehicleNum} />
+          <Select
+            nav={navLinkHandler}
+            vehicleNum={dispatchVehicleNum}
+            num={1}
+          />
         </Route>
         <Route path="/compare/two" exact>
-          <Two nav={navLinkHandler} num={dispatchVehicleNum} />
+          <Select
+            nav={navLinkHandler}
+            vehicleNum={dispatchVehicleNum}
+            num={2}
+          />
         </Route>
       </Switch>
     </Container>
