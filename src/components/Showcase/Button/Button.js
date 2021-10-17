@@ -15,7 +15,11 @@ const Button = (props) => {
       );
       break;
     case "compare":
-      button = <span className={styles.Compare}>Compare</span>;
+      button = (
+        <span className={styles.Compare} onClick={() => props.click()}>
+          Compare
+        </span>
+      );
       break;
     case "favorite":
       button = (

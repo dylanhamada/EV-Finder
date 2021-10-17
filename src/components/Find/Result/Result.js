@@ -23,7 +23,12 @@ const Result = (props) => {
   if (props.result !== null) {
     result = (
       <React.Fragment>
-        <Showcase vehicle={props.result.specs} user={props.user} result />
+        <Showcase
+          vehicle={props.result.specs}
+          user={props.user}
+          result
+          compare
+        />
         <Blurb text={props.result.specs.blurb} />
         <Specs specs={props.result.specs} />
         <Reviews reviews={props.result.specs.reviews} />

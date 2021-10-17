@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import styles from "./Showcase.module.css";
 import { userAddFavorite, userRemoveFavorite } from "../../store/actions/user";
@@ -12,14 +13,17 @@ import Button from "../../components/Showcase/Button/Button";
 
 const Showcase = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const authState = useSelector((state) => state.auth);
   const userState = useSelector((state) => state.user);
+  const compareState = useSelector((state) => state.compare);
 
   let details = null;
   let compare = null;
   let favorite = null;
   let user = null;
   let title = <Title vehicle={props.vehicle} />;
+  let compareNum = compareState[0] === 1 ? "one" : "two";
 
   const addFavorite = () => {
     dispatch(userAddFavorite(authState.user.userId, props.vehicle.name));
@@ -31,6 +35,8 @@ const Showcase = (props) => {
 
   const compareVehicle = () => {
     dispatch(compareVehicleName(props.vehicle.name));
+
+    history.push(`/compare/${compareNum}`);
   };
 
   if (props.result) {
@@ -47,7 +53,7 @@ const Showcase = (props) => {
   }
 
   if (props.compare) {
-    compare = <Button buttonType="compare" />;
+    compare = <Button buttonType="compare" click={compareVehicle} />;
   }
 
   if (authState.user.name !== null && userState.favorites !== null) {
