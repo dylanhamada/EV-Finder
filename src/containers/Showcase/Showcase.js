@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import styles from "./Showcase.module.css";
 import { userAddFavorite, userRemoveFavorite } from "../../store/actions/user";
-import { compareVehicleName } from "../../store/actions/compare";
+import { compareVehicleInfo } from "../../store/actions/compare";
 
 import User from "../../components/Showcase/User/User";
 import Title from "../../components/Showcase/Title/Title";
@@ -34,7 +34,13 @@ const Showcase = (props) => {
   };
 
   const compareVehicle = () => {
-    dispatch(compareVehicleName(props.vehicle.name));
+    let vehicle = {
+      name: props.vehicle.name,
+      manufacturer: props.vehicle.manufacturer,
+      photo: props.vehicle.photo,
+    };
+
+    dispatch(compareVehicleInfo(vehicle));
 
     history.push(`/compare/${compareNum}`);
   };
@@ -56,7 +62,11 @@ const Showcase = (props) => {
     compare = <Button buttonType="compare" click={compareVehicle} />;
   }
 
-  if (authState.user.name !== null && userState.favorites !== null) {
+  if (
+    authState.user.name !== null &&
+    userState.favorites !== null &&
+    !props.select
+  ) {
     const userFavorites = [...userState.favorites];
 
     favorite = <Button buttonType="favorite" click={addFavorite} />;

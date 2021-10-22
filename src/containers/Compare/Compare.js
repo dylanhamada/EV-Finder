@@ -30,6 +30,7 @@ const Compare = (props) => {
             nav={navLinkHandler}
             vehicleNum={dispatchVehicleNum}
             num={1}
+            vehicleInfo={compareState[1]}
           />
         </Route>
         <Route path="/compare/two" exact>
@@ -37,6 +38,7 @@ const Compare = (props) => {
             nav={navLinkHandler}
             vehicleNum={dispatchVehicleNum}
             num={2}
+            vehicleInfo={compareState[2]}
           />
         </Route>
       </Switch>

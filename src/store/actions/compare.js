@@ -7,9 +7,9 @@ export const compareVehicleNum = (vehicleNum) => {
   };
 };
 
-export const compareVehicleName = (vehicleName) => {
+export const compareVehicleInfo = (vehicle) => {
   return {
-    type: actionTypes.COMPARE_VEHICLENAME,
-    vehicleName: vehicleName,
+    type: actionTypes.COMPARE_VEHICLEINFO,
+    vehicle: vehicle,
   };
 };
