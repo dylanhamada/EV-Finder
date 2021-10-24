@@ -9,7 +9,7 @@ const Intro = (props) => {
         Compare two vehicles side by side, with color-coded stats. Save your
         comparisons for future reference. Saved comparisons will appear here.
       </p>
-      <span className={styles.Link} onClick={() => props.nav("one")}>
+      <span className={styles.Link} onClick={() => props.nav("one", true)}>
         New Comparison
       </span>
     </React.Fragment>

@@ -25,7 +25,6 @@ const compareClearVehicle = (state, action) => {
   let newState = [...state];
 
   newState[0] = action.vehicleNum;
-
   action.vehicleNum === 1 ? (newState[1] = null) : (newState[2] = null);
 
   return newState;

@@ -6,14 +6,22 @@ import Container from "../../hoc/Container/Container";
 import Intro from "../../components/Compare/Intro/Intro";
 import Select from "../../components/Compare/Select/Select";
 
-import { compareVehicleNum } from "../../store/actions/compare";
+import {
+  compareVehicleNum,
+  compareClearVehicle,
+} from "../../store/actions/compare";
 
 const Compare = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const compareState = useSelector((state) => state.compare);
 
-  const navLinkHandler = (page) => {
+  const navLinkHandler = (page, intro) => {
+    if (intro) {
+      dispatch(compareClearVehicle(1));
+      dispatch(compareClearVehicle(2));
+    }
+
     history.push(`/compare/${page}`);
   };
 
