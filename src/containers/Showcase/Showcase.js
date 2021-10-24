@@ -4,7 +4,10 @@ import { useHistory } from "react-router-dom";
 
 import styles from "./Showcase.module.css";
 import { userAddFavorite, userRemoveFavorite } from "../../store/actions/user";
-import { compareVehicleInfo } from "../../store/actions/compare";
+import {
+  compareVehicleInfo,
+  compareClearVehicle,
+} from "../../store/actions/compare";
 
 import User from "../../components/Showcase/User/User";
 import Title from "../../components/Showcase/Title/Title";
@@ -21,6 +24,7 @@ const Showcase = (props) => {
   let details = null;
   let compare = null;
   let favorite = null;
+  let clear = null;
   let user = null;
   let title = <Title vehicle={props.vehicle} />;
   let compareNum = compareState[0] === 1 ? "one" : "two";
@@ -45,6 +49,10 @@ const Showcase = (props) => {
     history.push(`/compare/${compareNum}`);
   };
 
+  const clearVehicle = () => {
+    dispatch(compareClearVehicle(props.vehicleNum));
+  };
+
   if (props.result) {
     user = <User />;
     title = <Title vehicle={props.vehicle} result />;
@@ -62,11 +70,7 @@ const Showcase = (props) => {
     compare = <Button buttonType="compare" click={compareVehicle} />;
   }
 
-  if (
-    authState.user.name !== null &&
-    userState.favorites !== null &&
-    !props.select
-  ) {
+  if (authState.user.name !== null && userState.favorites !== null) {
     const userFavorites = [...userState.favorites];
 
     favorite = <Button buttonType="favorite" click={addFavorite} />;
@@ -74,6 +78,12 @@ const Showcase = (props) => {
     if (userFavorites.includes(props.vehicle.name) === true) {
       favorite = <Button buttonType="unfavorite" click={removeFavorite} />;
     }
+  }
+
+  if (props.vehicleNum) {
+    favorite = null;
+
+    clear = <Button buttonType="clear" click={clearVehicle} />;
   }
 
   return (
@@ -84,6 +94,7 @@ const Showcase = (props) => {
       <div className={styles.Buttons}>
         {details}
         {compare}
+        {clear}
         {favorite}
       </div>
     </div>

@@ -13,3 +13,10 @@ export const compareVehicleInfo = (vehicle) => {
     vehicle: vehicle,
   };
 };
+
+export const compareClearVehicle = (vehicleNum) => {
+  return {
+    type: actionTypes.COMPARE_CLEARVEHICLE,
+    vehicleNum: vehicleNum,
+  };
+};

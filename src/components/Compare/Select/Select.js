@@ -19,7 +19,7 @@ const Select = (props) => {
     );
 
   if (props.vehicleInfo) {
-    selector = <Showcase vehicle={props.vehicleInfo} select />;
+    selector = <Showcase vehicle={props.vehicleInfo} vehicleNum={props.num} />;
   }
 
   return (

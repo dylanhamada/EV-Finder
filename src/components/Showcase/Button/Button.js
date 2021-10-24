@@ -21,6 +21,13 @@ const Button = (props) => {
         </span>
       );
       break;
+    case "clear":
+      button = (
+        <span className={styles.Clear} onClick={() => props.click()}>
+          Clear
+        </span>
+      );
+      break;
     case "favorite":
       button = (
         <span className={styles.Favorite} onClick={() => props.click()}>
