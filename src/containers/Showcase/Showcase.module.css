@@ -1,7 +1,12 @@
 .Showcase {
   background-color: #00a9ef;
+  box-sizing: border-box;
   color: #eeeeee;
+  display: flex;
+  flex-direction: column;
   font-size: 14px;
+  justify-content: space-between;
+  min-height: calc(100vw - 60px);
   padding: 15px;
   text-transform: uppercase;
 }
