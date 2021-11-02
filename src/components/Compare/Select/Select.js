@@ -13,7 +13,7 @@ const Select = (props) => {
 
   let compareBtn =
     props.num === 1 ? null : (
-      <span className={styles.Link} onClick={() => props.nav(navNext)}>
+      <span className={styles.Link} onClick={() => props.nav("result/one")}>
         Compare
       </span>
     );

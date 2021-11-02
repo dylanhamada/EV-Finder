@@ -38,13 +38,7 @@ const Showcase = (props) => {
   };
 
   const compareVehicle = () => {
-    let vehicle = {
-      name: props.vehicle.name,
-      manufacturer: props.vehicle.manufacturer,
-      photo: props.vehicle.photo,
-    };
-
-    dispatch(compareVehicleInfo(vehicle));
+    dispatch(compareVehicleInfo(props.vehicle));
 
     history.push(`/compare/${compareNum}`);
   };

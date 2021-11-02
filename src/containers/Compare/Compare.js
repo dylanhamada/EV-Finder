@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Container from "../../hoc/Container/Container";
 import Intro from "../../components/Compare/Intro/Intro";
 import Select from "../../components/Compare/Select/Select";
+import Result from "../../components/Compare/Result/Result";
 
 import {
   compareVehicleNum,
@@ -48,6 +49,12 @@ const Compare = (props) => {
             num={2}
             vehicleInfo={compareState[2]}
           />
+        </Route>
+        <Route path="/compare/result/one" exact>
+          <Result num={1} compareState={compareState} />
+        </Route>
+        <Route path="/compare/result/two" exact>
+          <Result num={2} compareState={compareState} />
         </Route>
       </Switch>
     </Container>
