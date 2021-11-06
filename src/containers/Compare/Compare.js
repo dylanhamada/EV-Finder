@@ -51,10 +51,10 @@ const Compare = (props) => {
           />
         </Route>
         <Route path="/compare/result/one" exact>
-          <Result num={1} compareState={compareState} />
+          <Result num={1} compareState={compareState} nav={navLinkHandler} />
         </Route>
         <Route path="/compare/result/two" exact>
-          <Result num={2} compareState={compareState} />
+          <Result num={2} compareState={compareState} nav={navLinkHandler} />
         </Route>
       </Switch>
     </Container>

@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
+import styles from "./Result.module.css";
 import Showcase from "../../../containers/Showcase/Showcase";
 import Specs from "../../Info/Specs/Specs";
 
@@ -48,6 +50,17 @@ const Result = (props) => {
         specs={props.compareState[props.compareState[0]]}
         comparison={specComparison}
       />
+      <div className={styles.Links}>
+        <Link
+          to={`/compare/result/${currentNum === 1 ? `two` : `one`}`}
+          className={styles.Link}
+        >
+          {currentNum === 1 ? `Next` : `Previous`}
+        </Link>
+        <span className={styles.Link} onClick={() => props.nav("", true)}>
+          Reset
+        </span>
+      </div>
     </React.Fragment>
   );
 };
