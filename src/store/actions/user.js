@@ -20,6 +20,7 @@ export const userInit = (user) => {
   return (dispatch) => {
     const initialState = {
       favorites: [],
+      comparisons: [],
     };
     const userRef = db.collection("users").doc(user.uid);
 
@@ -84,6 +85,54 @@ export const userRemoveFavorite = (user, vehicle) => {
       })
       .catch((error) => {
         console.log("Error writing document: ", error);
+      });
+  };
+};
+
+export const userCompare = (comparison) => {
+  return {
+    type: actionTypes.USER_COMPARE,
+    comparison: comparison,
+  };
+};
+
+export const userAddComparison = (user, comparison) => {
+  return (dispatch) => {
+    const userRef = db.collection("users").doc(user);
+
+    userRef
+      .update({
+        comparison: firebase.firestore.FieldValue.arrayUnion(comparison),
+      })
+      .then(() => {
+        dispatch(userCompare(comparison));
+      })
+      .catch((error) => {
+        console.log("Error writing document: " + error);
+      });
+  };
+};
+
+export const userUncompare = (comparison) => {
+  return {
+    type: actionTypes.USER_UNCOMPARE,
+    comparison: comparison,
+  };
+};
+
+export const userRemoveComparison = (user, comparison) => {
+  return (dispatch) => {
+    const userRef = db.collection("users").doc(user);
+
+    userRef
+      .update({
+        comparison: firebase.firestore.FieldValue.arrayRemove(comparison),
+      })
+      .then(() => {
+        dispatch(userUncompare(comparison));
+      })
+      .catch((error) => {
+        console.log("Error writing document: " + error);
       });
   };
 };

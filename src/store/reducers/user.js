@@ -39,6 +39,23 @@ const userUnfavorite = (state, action) => {
   return state;
 };
 
+const userCompare = (state, action) => {
+  const newComparisons = [...state.comparisons];
+
+  newComparisons.push(action.comparison);
+
+  updateObject(state, newComparisons);
+};
+
+const userUncompare = (state, action) => {
+  const newComparisons = [...state.comparisons];
+  const ind = newComparisons.indexOf(action.comparison);
+
+  newComparisons.splice(ind, 1);
+
+  return updateObject(state, newComparisons);
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.USER_LOAD:
@@ -49,6 +66,10 @@ const reducer = (state = initialState, action) => {
       return userFavorite(state, action);
     case actionTypes.USER_UNFAVORITE:
       return userUnfavorite(state, action);
+    case actionTypes.USER_COMPARE:
+      return userCompare(state, action);
+    case actionTypes.USER_UNCOMPARE:
+      return userUncompare(state, action);
     default:
       return state;
   }

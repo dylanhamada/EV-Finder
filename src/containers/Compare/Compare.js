@@ -11,11 +11,17 @@ import {
   compareVehicleNum,
   compareClearVehicle,
 } from "../../store/actions/compare";
+import {
+  userAddComparison,
+  userRemoveComparison,
+} from "../../store/actions/user.js";
 
 const Compare = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const authState = useSelector((state) => state.auth);
   const compareState = useSelector((state) => state.compare);
+  const userState = useSelector((state) => state.user);
 
   const navLinkHandler = (page, intro) => {
     if (intro) {
@@ -26,7 +32,19 @@ const Compare = (props) => {
     history.push(`/compare/${page}`);
   };
 
-  const dispatchVehicleNum = (num) => dispatch(compareVehicleNum(num));
+  const vehicleNum = (num) => dispatch(compareVehicleNum(num));
+
+  const addComparison = () => {
+    const newComparison = [compareState[1].name, compareState[2].name];
+
+    dispatch(userAddComparison(authState.user.userId, newComparison));
+  };
+
+  const removeComparison = () => {
+    const newComparison = [compareState[1].name, compareState[2].name];
+
+    dispatch(userRemoveComparison(authState.user.userId, newComparison));
+  };
 
   return (
     <Container>
@@ -37,7 +55,7 @@ const Compare = (props) => {
         <Route path="/compare/one" exact>
           <Select
             nav={navLinkHandler}
-            vehicleNum={dispatchVehicleNum}
+            vehicleNum={vehicleNum}
             num={1}
             vehicleInfo={compareState[1]}
           />
@@ -45,16 +63,30 @@ const Compare = (props) => {
         <Route path="/compare/two" exact>
           <Select
             nav={navLinkHandler}
-            vehicleNum={dispatchVehicleNum}
+            vehicleNum={vehicleNum}
             num={2}
             vehicleInfo={compareState[2]}
           />
         </Route>
         <Route path="/compare/result/one" exact>
-          <Result num={1} compareState={compareState} nav={navLinkHandler} />
+          <Result
+            num={1}
+            compareState={compareState}
+            nav={navLinkHandler}
+            addComparison={addComparison}
+            removeComparison={removeComparison}
+            userState={userState}
+          />
         </Route>
         <Route path="/compare/result/two" exact>
-          <Result num={2} compareState={compareState} nav={navLinkHandler} />
+          <Result
+            num={2}
+            compareState={compareState}
+            nav={navLinkHandler}
+            addComparison={addComparison}
+            removeComparison={removeComparison}
+            userState={userState}
+          />
         </Route>
       </Switch>
     </Container>

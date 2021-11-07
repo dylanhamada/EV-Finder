@@ -47,7 +47,7 @@ const Result = (props) => {
     <React.Fragment>
       <Showcase vehicle={props.compareState[props.num]} />
       <Specs
-        specs={props.compareState[props.compareState[0]]}
+        specs={props.compareState[currentNum]}
         comparison={specComparison}
       />
       <div className={styles.Links}>
