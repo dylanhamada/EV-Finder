@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/EV-Finder/static/css/main.fd70596c.chunk.css",
-    "main.js": "/EV-Finder/static/js/main.1d00f228.chunk.js",
-    "main.js.map": "/EV-Finder/static/js/main.1d00f228.chunk.js.map",
+    "main.js": "/EV-Finder/static/js/main.a96e4dcd.chunk.js",
+    "main.js.map": "/EV-Finder/static/js/main.a96e4dcd.chunk.js.map",
     "runtime-main.js": "/EV-Finder/static/js/runtime-main.e92fff39.js",
     "runtime-main.js.map": "/EV-Finder/static/js/runtime-main.e92fff39.js.map",
     "static/js/2.38091f3f.chunk.js": "/EV-Finder/static/js/2.38091f3f.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.e92fff39.js",
     "static/js/2.38091f3f.chunk.js",
     "static/css/main.fd70596c.chunk.css",
-    "static/js/main.1d00f228.chunk.js"
+    "static/js/main.a96e4dcd.chunk.js"
   ]
 }
