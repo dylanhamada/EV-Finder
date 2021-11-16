@@ -102,9 +102,11 @@ export const userAddComparison = (user, comparison) => {
 
     userRef
       .update({
-        comparison: firebase.firestore.FieldValue.arrayUnion(comparison),
+        comparisons: firebase.firestore.FieldValue.arrayUnion(comparison),
       })
       .then(() => {
+        console.log("dispatching userCompare");
+        console.log(comparison);
         dispatch(userCompare(comparison));
       })
       .catch((error) => {

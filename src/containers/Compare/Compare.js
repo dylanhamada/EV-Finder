@@ -35,7 +35,10 @@ const Compare = (props) => {
   const vehicleNum = (num) => dispatch(compareVehicleNum(num));
 
   const addComparison = () => {
-    const newComparison = [compareState[1].name, compareState[2].name];
+    const newComparison = {
+      1: { ...compareState[1] },
+      2: { ...compareState[2] },
+    };
 
     dispatch(userAddComparison(authState.user.userId, newComparison));
   };

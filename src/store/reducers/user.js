@@ -44,7 +44,7 @@ const userCompare = (state, action) => {
 
   newComparisons.push(action.comparison);
 
-  updateObject(state, newComparisons);
+  return updateObject(state, { comparisons: newComparisons });
 };
 
 const userUncompare = (state, action) => {
@@ -53,7 +53,7 @@ const userUncompare = (state, action) => {
 
   newComparisons.splice(ind, 1);
 
-  return updateObject(state, newComparisons);
+  return updateObject(state, { comparisons: newComparisons });
 };
 
 const reducer = (state = initialState, action) => {

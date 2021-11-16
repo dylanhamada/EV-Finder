@@ -24,6 +24,11 @@ const Result = (props) => {
   const otherNum = props.num === 1 ? 2 : 1;
   const currentVehicle = props.compareState[currentNum];
   const otherVehicle = props.compareState[otherNum];
+  const saveButton = (
+    <span className={styles.Link} onClick={() => props.addComparison()}>
+      Add Comparison
+    </span>
+  );
 
   const specComparison = order.map((spec) => {
     let specValue = null;
@@ -43,6 +48,24 @@ const Result = (props) => {
     return specValue;
   });
 
+  // iterate through props.userState.comparisons
+  // elements in props.userState.comparisons should contain two objects
+  // the first object is the first vehicle being compared, second object...
+  // ...is the second vehicle being compared
+  if (props.userState.comparisons) {
+    const savedComparisons = props.userState.comparisons;
+    const currentComparison = props.compareState;
+    let saved = false;
+
+    savedComparisons.forEach((comparison) => {
+      // for each object, check if the name property matches the name property...
+      // ...in equivalent object in props.compareState
+    });
+  }
+
+  // if both vehicles are not present in props.userState.comparisons...
+  // ...display the Save Comparisons button
+
   return (
     <React.Fragment>
       <Showcase vehicle={props.compareState[props.num]} />
@@ -61,6 +84,7 @@ const Result = (props) => {
           Reset
         </span>
       </div>
+      {saveButton}
     </React.Fragment>
   );
 };
