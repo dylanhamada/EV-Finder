@@ -43,10 +43,8 @@ const Compare = (props) => {
     dispatch(userAddComparison(authState.user.userId, newComparison));
   };
 
-  const removeComparison = () => {
-    const newComparison = [compareState[1].name, compareState[2].name];
-
-    dispatch(userRemoveComparison(authState.user.userId, newComparison));
+  const removeComparison = (comparison) => {
+    dispatch(userRemoveComparison(authState.user.userId, comparison));
   };
 
   return (

@@ -45,11 +45,12 @@ const Result = (props) => {
   });
 
   if (props.userState.comparisons) {
-    const savedComparisons = props.userState.comparisons;
+    const savedComparisons = [...props.userState.comparisons];
     const currentComparison = props.compareState;
     let saved = false;
+    let savedIndex = null;
 
-    savedComparisons.forEach((comparison) => {
+    savedComparisons.forEach((comparison, index) => {
       let vehicleOneSaved = false;
       let vehicleTwoSaved = false;
 
@@ -69,11 +70,21 @@ const Result = (props) => {
 
       if (vehicleOneSaved && vehicleTwoSaved) {
         saved = true;
+        savedIndex = index;
+
+        savedComparisons.splice(savedIndex, 1);
       }
     });
 
     if (saved) {
-      saveButton = <span className={styles.Link}>Remove Comparison</span>;
+      saveButton = (
+        <span
+          className={styles.Link}
+          onClick={() => props.removeComparison(savedComparisons)}
+        >
+          Remove Comparison
+        </span>
+      );
     } else {
       saveButton = (
         <span className={styles.Link} onClick={() => props.addComparison()}>

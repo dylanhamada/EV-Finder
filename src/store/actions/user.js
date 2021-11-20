@@ -105,8 +105,6 @@ export const userAddComparison = (user, comparison) => {
         comparisons: firebase.firestore.FieldValue.arrayUnion(comparison),
       })
       .then(() => {
-        console.log("dispatching userCompare");
-        console.log(comparison);
         dispatch(userCompare(comparison));
       })
       .catch((error) => {
@@ -128,7 +126,7 @@ export const userRemoveComparison = (user, comparison) => {
 
     userRef
       .update({
-        comparison: firebase.firestore.FieldValue.arrayRemove(comparison),
+        comparisons: comparison,
       })
       .then(() => {
         dispatch(userUncompare(comparison));

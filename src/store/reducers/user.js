@@ -48,10 +48,7 @@ const userCompare = (state, action) => {
 };
 
 const userUncompare = (state, action) => {
-  const newComparisons = [...state.comparisons];
-  const ind = newComparisons.indexOf(action.comparison);
-
-  newComparisons.splice(ind, 1);
+  const newComparisons = [...action.comparison];
 
   return updateObject(state, { comparisons: newComparisons });
 };
