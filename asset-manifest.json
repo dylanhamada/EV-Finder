@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/EV-Finder/static/css/main.fd70596c.chunk.css",
-    "main.js": "/EV-Finder/static/js/main.a96e4dcd.chunk.js",
-    "main.js.map": "/EV-Finder/static/js/main.a96e4dcd.chunk.js.map",
+    "main.js": "/EV-Finder/static/js/main.75b39aa9.chunk.js",
+    "main.js.map": "/EV-Finder/static/js/main.75b39aa9.chunk.js.map",
     "runtime-main.js": "/EV-Finder/static/js/runtime-main.e92fff39.js",
     "runtime-main.js.map": "/EV-Finder/static/js/runtime-main.e92fff39.js.map",
-    "static/js/2.38091f3f.chunk.js": "/EV-Finder/static/js/2.38091f3f.chunk.js",
-    "static/js/2.38091f3f.chunk.js.map": "/EV-Finder/static/js/2.38091f3f.chunk.js.map",
+    "static/js/2.e6ca605c.chunk.js": "/EV-Finder/static/js/2.e6ca605c.chunk.js",
+    "static/js/2.e6ca605c.chunk.js.map": "/EV-Finder/static/js/2.e6ca605c.chunk.js.map",
     "index.html": "/EV-Finder/index.html",
     "static/css/main.fd70596c.chunk.css.map": "/EV-Finder/static/css/main.fd70596c.chunk.css.map",
-    "static/js/2.38091f3f.chunk.js.LICENSE.txt": "/EV-Finder/static/js/2.38091f3f.chunk.js.LICENSE.txt",
+    "static/js/2.e6ca605c.chunk.js.LICENSE.txt": "/EV-Finder/static/js/2.e6ca605c.chunk.js.LICENSE.txt",
     "static/media/index.css": "/EV-Finder/static/media/IBMPlexSans-SemiBold.feed3faa.ttf",
     "static/media/CloseButton.module.css": "/EV-Finder/static/media/close-overlay-button.395f6327.svg",
     "static/media/github-icon.5f4c8c11.svg": "/EV-Finder/static/media/github-icon.5f4c8c11.svg",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.e92fff39.js",
-    "static/js/2.38091f3f.chunk.js",
+    "static/js/2.e6ca605c.chunk.js",
     "static/css/main.fd70596c.chunk.css",
-    "static/js/main.a96e4dcd.chunk.js"
+    "static/js/main.75b39aa9.chunk.js"
   ]
 }
