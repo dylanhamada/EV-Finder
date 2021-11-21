@@ -24,7 +24,7 @@ const Result = (props) => {
   const otherNum = props.num === 1 ? 2 : 1;
   const currentVehicle = props.compareState[currentNum];
   const otherVehicle = props.compareState[otherNum];
-  let saveButton = null;
+  let saveComparison = null;
 
   const specComparison = order.map((spec) => {
     let specValue = null;
@@ -77,19 +77,23 @@ const Result = (props) => {
     });
 
     if (saved) {
-      saveButton = (
-        <span
-          className={styles.Link}
-          onClick={() => props.removeComparison(savedComparisons)}
-        >
-          Remove Comparison
-        </span>
+      saveComparison = (
+        <div className={styles.LinksComparison}>
+          <span
+            className={styles.Link}
+            onClick={() => props.removeComparison(savedComparisons)}
+          >
+            Remove Comparison
+          </span>
+        </div>
       );
     } else {
-      saveButton = (
-        <span className={styles.Link} onClick={() => props.addComparison()}>
-          Save Comparison
-        </span>
+      saveComparison = (
+        <div className={styles.LinksComparison}>
+          <span className={styles.Link} onClick={() => props.addComparison()}>
+            Save Comparison
+          </span>
+        </div>
       );
     }
   }
@@ -112,7 +116,7 @@ const Result = (props) => {
           Reset
         </span>
       </div>
-      {saveButton}
+      {saveComparison}
     </React.Fragment>
   );
 };
