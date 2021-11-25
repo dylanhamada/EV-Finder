@@ -51,7 +51,7 @@ const Compare = (props) => {
     <Container>
       <Switch>
         <Route path={props.match.url + "/"} exact>
-          <Intro nav={navLinkHandler} />
+          <Intro nav={navLinkHandler} userState={userState} />
         </Route>
         <Route path="/compare/one" exact>
           <Select

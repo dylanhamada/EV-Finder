@@ -13,3 +13,16 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+
+.SavedComparisons {
+  margin: 30px 0 0 0;
+}
+
+.SavedComparison {
+  background-color: #dadada;
+  font-size: 14px;
+  height: 45px;
+  line-height: 45px;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
