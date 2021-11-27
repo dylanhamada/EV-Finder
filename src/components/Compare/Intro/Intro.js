@@ -3,19 +3,18 @@ import React from "react";
 import styles from "./Intro.module.css";
 
 const Intro = (props) => {
-  // [x] create new div for comparisons
-  // [x] copy styling from find questionnaire
-  // [x] map user comparisons array
-  // [x] create button for each array element
-  // // [x] pull vehicle names and render in button
-  // // button click dispatches an action to compare both vehicles
-  // // button click redirects to results/one
   let savedComparisons = null;
 
-  if (props.userState.comparisons.length > 0) {
-    let comparisons = props.userState.comparisons.map((comparison, index) => {
+  if (props.savedComparisons.length > 0) {
+    let comparisons = props.savedComparisons.map((comparison, index) => {
       return (
-        <div className={styles.SavedComparison} key={index}>
+        <div
+          className={styles.SavedComparison}
+          key={index}
+          onClick={() =>
+            props.loadSavedComparison(comparison[1], comparison[2])
+          }
+        >
           <p>
             {comparison[1].manufacturer} {comparison[1].name} vs{" "}
             {comparison[2].manufacturer} {comparison[2].name}

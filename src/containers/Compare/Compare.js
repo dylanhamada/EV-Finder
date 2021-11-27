@@ -10,6 +10,7 @@ import Result from "../../components/Compare/Result/Result";
 import {
   compareVehicleNum,
   compareClearVehicle,
+  compareBothVehicles,
 } from "../../store/actions/compare";
 import {
   userAddComparison,
@@ -47,11 +48,20 @@ const Compare = (props) => {
     dispatch(userRemoveComparison(authState.user.userId, comparison));
   };
 
+  const loadSavedComparison = (vehicleOne, vehicleTwo) => {
+    dispatch(compareBothVehicles(vehicleOne, vehicleTwo));
+    history.push(`/compare/result/one`);
+  };
+
   return (
     <Container>
       <Switch>
         <Route path={props.match.url + "/"} exact>
-          <Intro nav={navLinkHandler} userState={userState} />
+          <Intro
+            nav={navLinkHandler}
+            savedComparisons={userState.comparisons}
+            loadSavedComparison={loadSavedComparison}
+          />
         </Route>
         <Route path="/compare/one" exact>
           <Select

@@ -30,6 +30,16 @@ const compareClearVehicle = (state, action) => {
   return newState;
 };
 
+const compareBothVehicles = (state, action) => {
+  let newState = [...state];
+
+  newState[0] = 1;
+  newState[1] = action.vehicleOne;
+  newState[2] = action.vehicleTwo;
+
+  return newState;
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.COMPARE_VEHICLENUM:
@@ -38,6 +48,8 @@ const reducer = (state = initialState, action) => {
       return compareVehicleInfo(state, action);
     case actionTypes.COMPARE_CLEARVEHICLE:
       return compareClearVehicle(state, action);
+    case actionTypes.COMPARE_BOTHVEHICLES:
+      return compareBothVehicles(state, action);
     default:
       return state;
   }
