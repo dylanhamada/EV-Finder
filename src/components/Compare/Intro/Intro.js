@@ -3,9 +3,10 @@ import React from "react";
 import styles from "./Intro.module.css";
 
 const Intro = (props) => {
+  console.log(props.savedComparisons);
   let savedComparisons = null;
 
-  if (props.savedComparisons.length > 0) {
+  if (props.savedComparisons) {
     let comparisons = props.savedComparisons.map((comparison, index) => {
       return (
         <div
