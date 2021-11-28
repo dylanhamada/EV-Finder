@@ -3,7 +3,6 @@ import React from "react";
 import styles from "./Intro.module.css";
 
 const Intro = (props) => {
-  console.log(props.savedComparisons);
   let savedComparisons = null;
 
   if (props.savedComparisons) {

@@ -26,8 +26,8 @@ const Compare = (props) => {
 
   const navLinkHandler = (page, intro) => {
     if (intro) {
-      dispatch(compareClearVehicle(1));
       dispatch(compareClearVehicle(2));
+      dispatch(compareClearVehicle(1));
     }
 
     history.push(`/compare/${page}`);

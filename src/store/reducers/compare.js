@@ -14,9 +14,13 @@ const compareVehicleNum = (state, action) => {
 const compareVehicleInfo = (state, action) => {
   let newState = [...state];
 
-  newState[0] === 1
-    ? (newState[1] = action.vehicle)
-    : (newState[2] = action.vehicle);
+  if (newState[0] === 1) {
+    newState[1] = action.vehicle;
+    newState[0] = 2;
+  } else {
+    newState[2] = action.vehicle;
+    newState[0] = 1;
+  }
 
   return newState;
 };
