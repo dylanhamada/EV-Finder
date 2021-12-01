@@ -82,6 +82,7 @@ const Compare = (props) => {
         <Route path="/compare/result/one" exact>
           <Result
             num={1}
+            nav={navLinkHandler}
             compareState={compareState}
             nav={navLinkHandler}
             addComparison={addComparison}
@@ -92,6 +93,7 @@ const Compare = (props) => {
         <Route path="/compare/result/two" exact>
           <Result
             num={2}
+            nav={navLinkHandler}
             compareState={compareState}
             nav={navLinkHandler}
             addComparison={addComparison}
