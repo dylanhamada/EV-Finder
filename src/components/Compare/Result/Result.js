@@ -6,6 +6,7 @@ import Showcase from "../../../containers/Showcase/Showcase";
 import Specs from "../../Info/Specs/Specs";
 
 const Result = (props) => {
+  console.log(props);
   const order = [
     ["priceNum", "less"],
     ["rangeNum", "greater"],
@@ -22,29 +23,22 @@ const Result = (props) => {
   ];
   const currentNum = props.num;
   const otherNum = props.num === 1 ? 2 : 1;
-  const currentVehicle = props.compareState[currentNum];
-  const otherVehicle = props.compareState[otherNum];
+  let specComparison = null;
   let saveComparison = null;
+  let result = (
+    <React.Fragment>
+      <p className={styles.Text}>
+        Please start a new comparison to view two vehicles head-to-head.
+      </p>
+      <span className={styles.Link}>Click here for new comparison.</span>
+    </React.Fragment>
+  );
 
-  const specComparison = order.map((spec) => {
-    let specValue = null;
-
-    if (spec) {
-      const specName = spec[0];
-      const specConditional = spec[1];
-
-      if (specConditional === "less") {
-        specValue = currentVehicle[specName] < otherVehicle[specName];
-      }
-      if (specConditional === "greater") {
-        specValue = currentVehicle[specName] > otherVehicle[specName];
-      }
-    }
-
-    return specValue;
-  });
-
-  if (props.userState.comparisons) {
+  if (
+    props.userState.comparisons &&
+    props.compareState[1] &&
+    props.compareState[2]
+  ) {
     const savedComparisons = [...props.userState.comparisons];
     const currentComparison = props.compareState;
     let saved = false;
@@ -98,27 +92,51 @@ const Result = (props) => {
     }
   }
 
-  return (
-    <React.Fragment>
-      <Showcase vehicle={props.compareState[props.num]} />
-      <Specs
-        specs={props.compareState[currentNum]}
-        comparison={specComparison}
-      />
-      <div className={styles.Links}>
-        <Link
-          to={`/compare/result/${currentNum === 1 ? `two` : `one`}`}
-          className={styles.Link}
-        >
-          {currentNum === 1 ? `Next` : `Previous`}
-        </Link>
-        <span className={styles.Link} onClick={() => props.nav("", true)}>
-          Reset
-        </span>
-      </div>
-      {saveComparison}
-    </React.Fragment>
-  );
+  if (props.compareState[1] && props.compareState[2]) {
+    specComparison = order.map((spec) => {
+      const currentVehicle = props.compareState[currentNum];
+      const otherVehicle = props.compareState[otherNum];
+      let specValue = null;
+
+      if (spec) {
+        const specName = spec[0];
+        const specConditional = spec[1];
+
+        if (specConditional === "less") {
+          specValue = currentVehicle[specName] < otherVehicle[specName];
+        }
+        if (specConditional === "greater") {
+          specValue = currentVehicle[specName] > otherVehicle[specName];
+        }
+      }
+
+      return specValue;
+    });
+
+    result = (
+      <React.Fragment>
+        <Showcase vehicle={props.compareState[props.num]} />
+        <Specs
+          specs={props.compareState[currentNum]}
+          comparison={specComparison}
+        />
+        <div className={styles.Links}>
+          <Link
+            to={`/compare/result/${currentNum === 1 ? `two` : `one`}`}
+            className={styles.Link}
+          >
+            {currentNum === 1 ? `Next` : `Previous`}
+          </Link>
+          <span className={styles.Link} onClick={() => props.nav("", true)}>
+            Reset
+          </span>
+        </div>
+        {saveComparison}
+      </React.Fragment>
+    );
+  }
+
+  return result;
 };
 
 export default Result;
