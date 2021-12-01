@@ -1,11 +1,26 @@
+.Links {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 0 0;
+}
+
+.LinksComparison {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0 0 0;
+}
+
 .Link {
   color: #444;
-  display: block;
   font-family: "IBMPlexSans-SemiBold";
   font-size: 14px;
-  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.ErrorLink {
+  display: block;
+  text-align: center;
 }
 
 .Text {

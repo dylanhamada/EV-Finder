@@ -1,9 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import styles from "./Result.module.css";
 import Showcase from "../../../containers/Showcase/Showcase";
 import Specs from "../../Info/Specs/Specs";
+
+import { scrollToTop } from "../../../shared/utility";
 
 const Result = (props) => {
   const order = [
@@ -20,6 +22,7 @@ const Result = (props) => {
     null,
     null,
   ];
+  const { pathname } = useLocation();
   const currentNum = props.num;
   const otherNum = props.num === 1 ? 2 : 1;
   let specComparison = null;
@@ -29,11 +32,18 @@ const Result = (props) => {
       <p className={styles.Text}>
         Please start a new comparison to view two vehicles head-to-head.
       </p>
-      <span className={styles.Link} onClick={() => props.nav("one", true)}>
+      <span
+        className={`${styles.Link} ${styles.ErrorLink}`}
+        onClick={() => props.nav("one", true)}
+      >
         Click here for new comparison.
       </span>
     </React.Fragment>
   );
+
+  useEffect(() => {
+    scrollToTop();
+  }, [pathname]);
 
   if (
     props.userState.comparisons &&
