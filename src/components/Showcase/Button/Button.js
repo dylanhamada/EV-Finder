@@ -9,7 +9,11 @@ const Button = (props) => {
   switch (props.buttonType) {
     case "details":
       button = (
-        <Link className={styles.Details} to={`/browse/${props.vehicle}`}>
+        <Link
+          className={styles.Details}
+          to={`/browse/${props.vehicle}`}
+          onClick={() => props.click()}
+        >
           Details
         </Link>
       );

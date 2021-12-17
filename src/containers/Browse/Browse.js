@@ -47,6 +47,8 @@ const Browse = (props) => {
     }));
   };
 
+  const scrollIntoView = (card) => {};
+
   return (
     <div className={styles.Browse}>
       <Switch>

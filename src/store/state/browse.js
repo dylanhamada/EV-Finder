@@ -6,6 +6,7 @@ const state = {
   filter: ["", "", "", "", "All", "All"],
   sort: ["Name", "Ascending"],
   vehicles: [...vehicles],
+  currentVehicle: null,
 };
 
 export default state;

@@ -13,3 +13,10 @@ export const browseSort = (order) => {
     order: order,
   };
 };
+
+export const browseCurrentVehicle = (vehicle) => {
+  return {
+    type: actionTypes.BROWSE_CURRENTVEHICLE,
+    vehicle: vehicle,
+  };
+};

@@ -8,6 +8,7 @@ import {
   compareVehicleInfo,
   compareClearVehicle,
 } from "../../store/actions/compare";
+import { browseCurrentVehicle } from "../../store/actions/browse";
 
 import User from "../../components/Showcase/User/User";
 import Title from "../../components/Showcase/Title/Title";
@@ -47,6 +48,10 @@ const Showcase = (props) => {
     dispatch(compareClearVehicle(props.vehicleNum));
   };
 
+  const currentVehicle = () => {
+    dispatch(browseCurrentVehicle(props.vehicle.name));
+  };
+
   if (props.result) {
     user = <User />;
     title = <Title vehicle={props.vehicle} result />;
@@ -57,7 +62,13 @@ const Showcase = (props) => {
   }
 
   if (props.card) {
-    details = <Button buttonType="details" vehicle={props.vehicle.id} />;
+    details = (
+      <Button
+        buttonType="details"
+        vehicle={props.vehicle.id}
+        click={currentVehicle}
+      />
+    );
   }
 
   if (props.compare) {

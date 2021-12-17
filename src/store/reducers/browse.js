@@ -83,12 +83,22 @@ const browseSort = (state, action) => {
   return newState;
 };
 
+const browseCurrentVehicle = (state, action) => {
+  let newState = { ...state };
+
+  newState.currentVehicle = action.vehicle;
+
+  return newState;
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.BROWSE_FILTER:
       return browseFilter(action);
     case actionTypes.BROWSE_SORT:
       return browseSort(state, action);
+    case actionTypes.BROWSE_CURRENTVEHICLE:
+      return browseCurrentVehicle(state, action);
     default:
       return state;
   }
